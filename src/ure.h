@@ -32,7 +32,7 @@
 #if defined(HAVE_GLIBC21) || defined(HAVE_LIBUNICODE)
 
 #include <stdio.h>
-#include <stdint.h>
+#include <inttypes.h>
 
 #ifdef __cplusplus
 extern "C" {
