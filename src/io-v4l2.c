@@ -126,6 +126,8 @@ v4l2_stream(vbi_capture *vc, vbi_capture_buffer **raw,
 
 		if (r <= 0)
 			return r; /* timeout or error */
+
+		break;
 	}
 
 	vbuf.type = v->btype;
@@ -196,6 +198,8 @@ v4l2_read(vbi_capture *vc, vbi_capture_buffer **raw,
 
 		if (r <= 0)
 			return r; /* timeout or error */
+
+		break;
 	}
 
 	if (!raw)
@@ -206,6 +210,9 @@ v4l2_read(vbi_capture *vc, vbi_capture_buffer **raw,
 		(*raw)->size = v->raw_buffer[0].size;
 
 	for (;;) {
+		/* from zapping/libvbi/v4lx.c */
+		pthread_testcancel();
+
 		r = read(v->fd, (*raw)->data, (*raw)->size);
 
 		if (r == -1  && (errno == EINTR || errno == ETIME))
