@@ -186,7 +186,7 @@ vbi_ham8			(unsigned int		c)
  *
  * @since 0.2.12
  */
-vbi_inline unsigned int
+vbi_inline int
 vbi_unham8			(unsigned int		c)
 {
 	return _vbi_hamm8_inv[(uint8_t) c];
