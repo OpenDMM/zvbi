@@ -258,7 +258,7 @@ extern char *			vbi_export_errstr(vbi_export *);
 
 /* Private */
 
-#ifndef DOXYGEN_SHOULD_IGNORE_THIS
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
 
 #include <stdarg.h>
 #include <stddef.h>
@@ -292,7 +292,7 @@ extern const char _zvbi_intl_domainname[];
 #  endif
 #endif
 
-#endif /* !DOXYGEN_SHOULD_IGNORE_THIS */
+#endif /* !DOXYGEN_SHOULD_SKIP_THIS */
 
 typedef struct vbi_export_class vbi_export_class;
 
