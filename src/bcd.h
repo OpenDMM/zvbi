@@ -174,4 +174,6 @@ vbi_is_bcd(unsigned int bcd)
 	return (((bcd + x) ^ (bcd ^ x)) & 0x11111110) == 0;
 }
 
+/* Private */
+
 #endif /* BCD_H */
