@@ -634,6 +634,7 @@ main(int argc, char **argv)
 	char *errstr;
 	unsigned int services;
 	int scanning = 625;
+	int strict;
 	int verbose = 0;
 	int interface = 0;
 	int c, index;
@@ -679,6 +680,8 @@ main(int argc, char **argv)
 		| VBI_SLICED_CAPTION_625 | VBI_SLICED_VPS
 		| VBI_SLICED_WSS_625 | VBI_SLICED_WSS_CPR1204;
 
+	strict = 0;
+
 	if (do_sim) {
 		par = init_sim (scanning, services);
 	} else {
@@ -687,7 +690,7 @@ main(int argc, char **argv)
 				cap = vbi_capture_v4l2k_new
 					(dev_name, /* fd */ -1,
 					 /* buffers */ 5, &services,
-					 /* strict */ -1, &errstr,
+					 strict, &errstr,
 					 /* trace */ !!verbose);
 
 				if (cap)
@@ -702,7 +705,7 @@ main(int argc, char **argv)
 				cap = vbi_capture_v4l2_new (dev_name,
 							    /* buffers */ 5,
 							    &services,
-							    /* strict */ -1,
+							    strict,
 							    &errstr,
 							    /* trace */
 							    !!verbose);
@@ -719,7 +722,7 @@ main(int argc, char **argv)
 				cap = vbi_capture_v4l_new (dev_name,
 							   scanning,
 							   &services,
-							   /* strict */ -1,
+							   strict,
 							   &errstr,
 							   /* trace */
 							   !!verbose);
@@ -737,7 +740,7 @@ main(int argc, char **argv)
 				cap = vbi_capture_bktr_new (dev_name,
 							    scanning,
 							    &services,
-							    /* strict */ -1,
+							    strict,
 							    &errstr,
 							    /* trace */
 							    !!verbose);
