@@ -679,7 +679,7 @@ vbi_eacem_trigger(vbi_decoder *vbi, unsigned char *s)
  * may fire immediately or at a later time).
  **/
 void
-vbi_atvef_trigger(vbi_decoder *vbi, char *s)
+vbi_atvef_trigger(vbi_decoder *vbi, unsigned char *s)
 {
 	vbi_trigger t;
 
