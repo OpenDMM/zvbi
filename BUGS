@@ -6,3 +6,4 @@ $Id$
 * vbi_print_page_region() doesn't work as it should:
   Try spaces between words and double height rows.
 * test/export asserts/crashes w/SRTL text.
+* print should translate linefeeds to target charset (wchar...)

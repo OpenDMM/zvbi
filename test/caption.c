@@ -22,6 +22,8 @@
 
 #undef NDEBUG
 
+#include "config.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -705,7 +707,7 @@ main(int argc, char **argv)
 int
 main(int argc, char **argv)
 {
-	printf("Could not find X11\n");
+	printf("Could not find X11 or has been disabled at configuration time\n");
 	exit(EXIT_FAILURE);
 }
 

@@ -22,6 +22,8 @@
 
 #undef NDEBUG
 
+#include "config.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -31,10 +33,11 @@
 
 #include <libzvbi.h>
 
+#ifndef X_DISPLAY_MISSING
+
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
 #include <X11/Xutil.h>
-//#include <X11/xpm.h>
 
 vbi_capture *		cap;
 vbi_raw_decoder *	par;
@@ -467,3 +470,15 @@ main(int argc, char **argv)
 
 	exit(EXIT_SUCCESS);	
 }
+
+
+#else /* X_DISPLAY_MISSING */
+
+int
+main(int argc, char **argv)
+{
+	printf("Could not find X11 or has been disabled at configuration time\n");
+	exit(EXIT_FAILURE);
+}
+
+#endif
