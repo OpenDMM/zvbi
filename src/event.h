@@ -39,7 +39,7 @@ typedef struct vbi_decoder vbi_decoder;
 
 /**
  * @addtogroup Event Events
- * @ingroup Service
+ * @ingroup HiDec
  *
  * Typically the transmission of VBI data like a Teletext or Closed
  * Caption page spans several VBI lines or even video frames. So internally

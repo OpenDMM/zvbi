@@ -41,7 +41,7 @@ extern const int8_t		_vbi_hamm24_inv_par [3][256];
 
 /**
  * @addtogroup Error Error correction functions
- * @ingroup Raw
+ * @ingroup LowDec
  * @brief Helper functions to decode sliced VBI data.
  * @{
  */
@@ -65,7 +65,7 @@ vbi_rev8			(unsigned int		c)
 /**
  * @param c Unsigned 16 bit word.
  * 
- * Reverses the bits of the argument.
+ * Reverses (or "reflects") the bits of the argument.
  * 
  * @returns
  * Data bits 0 [msb] ... 15 [lsb].
@@ -83,7 +83,7 @@ vbi_rev16			(unsigned int		c)
  * @param p Pointer to a 16 bit word, last significant
  *   byte first.
  * 
- * Reverses the bits of the argument.
+ * Reverses (or "reflects") the bits of the argument.
  * 
  * @returns
  * Data bits 0 [msb] ... 15 [lsb].

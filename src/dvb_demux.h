@@ -51,7 +51,7 @@ typedef struct _vbi_dvb_demux vbi_dvb_demux;
  * @param pts Presentation Time Stamp associated with the first sliced
  *   line.
  *
- * The vbi_dvb_demux_demux() function calls a function of this type when
+ * The vbi_dvb_demux_feed() function calls a function of this type when
  * a new frame of sliced data is complete.
  */
 typedef vbi_bool

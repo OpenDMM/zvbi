@@ -43,7 +43,7 @@ extern const char _zvbi_intl_domainname[];
 
 /**
  * @addtogroup Export Exporting formatted Teletext and Closed Caption pages
- * @ingroup Service
+ * @ingroup HiDec
  * 
  * Once libzvbi received, decoded and formatted a Teletext or Closed
  * Caption page you will want to render it on screen, print it as

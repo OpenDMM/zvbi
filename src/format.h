@@ -35,7 +35,7 @@ typedef struct vbi_decoder vbi_decoder;
 
 /**
  * @addtogroup Page Formatted text page
- * @ingroup Service
+ * @ingroup HiDec
  */
 
 /**

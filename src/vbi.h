@@ -108,7 +108,7 @@ struct vbi_decoder {
 #ifndef VBI_DECODER
 #define VBI_DECODER
 /**
- * @ingroup Service
+ * @ingroup HiDec
  * @brief Opaque VBI data service decoder object.
  *
  * Allocate with vbi_decoder_new().
@@ -147,7 +147,7 @@ typedef struct vbi_decoder vbi_decoder;
 /* Public */
 
 /**
- * @ingroup Service
+ * @ingroup HiDec
  * @brief Page classification.
  *
  * See vbi_classify_page().

@@ -2551,9 +2551,6 @@ vbi_decode_teletext(vbi_decoder *vbi, uint8_t *p)
 			break;
 
 		default:
-#if libzvbi_IDL_ALERT /* no 6.8 ??? */
-			fprintf(stderr, "IDL: %d\n", pmag & 0x0F);
-#endif
 			break;
 		}
 

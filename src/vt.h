@@ -351,7 +351,7 @@ struct raw_page {
 /* Public */
 
 /**
- * @ingroup Service
+ * @ingroup HiDec
  * @brief Teletext implementation level.
  */
 typedef enum {

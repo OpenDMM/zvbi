@@ -34,15 +34,6 @@
 
 /* Public */
 
-/**
- * @addtogroup Basic Types
- *
- * Apart of redefining TRUE and FALSE libzvbi reserves all
- * preprocessor symbols and all type, function, variable and
- * constant names starting with vbi_ or VBI_, and the C++
- * namespace vbi.
- */
-
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
 
 #ifdef __cplusplus
