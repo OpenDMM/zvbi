@@ -26,6 +26,7 @@ $Id$
 * Add VPT decoder.
 * Make Teletext column 41 optional.
 * Investigate other documentation tools, that gtk-doc is suboptimal.
+* http://telepresence.dmem.strath.ac.uk/bt848/
 
 -------------------------------------------------------------------------------
 Ideas? Drop us a note at http://zapping.sourceforge.net.
