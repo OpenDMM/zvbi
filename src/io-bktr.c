@@ -34,13 +34,10 @@ static const char rcsid [] =
 #include <string.h>
 #include <math.h>
 #include <errno.h>
-//#include <fcntl.h>
-//#include <unistd.h>
+#include <unistd.h>
 #include <assert.h>
 #include <sys/time.h>		/* timeval */
 #include <sys/select.h>		/* fd_set */
-//#include <sys/ioctl.h>
-//#include <sys/mman.h>
 #include <pthread.h>
 
 #define printv(format, args...)						\
