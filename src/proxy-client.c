@@ -319,7 +319,7 @@ static vbi_bool proxy_client_check_msg( vbi_proxy_client * vpc, uint len,
    if (result == FALSE)
    {
       dprintf1("check_msg: illegal msg len %d for type %d (%s)\n", len, pHead->type, vbi_proxy_msg_debug_get_type_str(pHead->type));
-      errno = EPROTO;
+      errno = EMSGSIZE;
    }
 
    return result;
@@ -492,12 +492,16 @@ static int proxy_client_wait_select( vbi_proxy_client * vpc, struct timeval * ti
 
       } while ((ret < 0) && (errno == EINTR));
 
-      if (ret > 0)
-         dprintf2("wait_select: waited for %c -> sock r/w %d/%d\n", ((vpc->io.writeLen > 0) ? 'w':'r'), FD_ISSET(vpc->io.sock_fd, &fd_rd), FD_ISSET(vpc->io.sock_fd, &fd_wr));
-      else if (ret == 0)
-         dprintf1("wait_select: timeout\n");
-      else
-         dprintf1("wait_select: error %d (%s)\n", errno, strerror(errno));
+      if (ret > 0) {
+	 dprintf2("wait_select: waited for %c -> sock r/w %d/%d\n",
+		  (vpc->io.writeLen > 0) ? 'w':'r',
+		  (int) FD_ISSET(vpc->io.sock_fd, &fd_rd),
+		  (int) FD_ISSET(vpc->io.sock_fd, &fd_wr));
+      } else if (ret == 0) {
+	 dprintf1("wait_select: timeout\n");
+      } else {
+	 dprintf1("wait_select: error %d (%s)\n", errno, strerror(errno));
+      }
    }
    else
    {
