@@ -384,7 +384,7 @@ option_string(vbi_export *e, const char *s2)
 
 		keyword = s;
 
-		while (isalnum(*s))
+		while (isalnum(*s) || *s == '-' || *s == '_')
 			s++;
 
 		if (!*s)
