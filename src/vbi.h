@@ -35,21 +35,13 @@
 #include "event.h"
 #include "cache.h"
 #include "trigger.h"
+#include "pfc_demux.h"
 
 struct event_handler {
 	struct event_handler *	next;
 	int			event_mask;
 	vbi_event_handler	handler;
 	void *			user_data;
-};
-
-struct page_clear {
-	int			ci;		/* continuity index */
-	int			packet;
-	int			num_packets;
-	int			bi;		/* block index */
-	int			left;
-	pfc_block		pfc;
 };
 
 struct vbi_decoder {
@@ -79,7 +71,7 @@ struct vbi_decoder {
 
 	struct cache		cache;
 
-	struct page_clear	epg_pc[2];
+	vbi_pfc_demux		epg_pc[2];
 
 	/* preliminary */
 	int			pageref;
