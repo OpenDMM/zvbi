@@ -57,15 +57,6 @@ typedef struct vbi_decoder vbi_decoder;
 
 /**
  * @ingroup Event
- * @brief Unique network id (a libzvbi thing).
- *
- * 0 = unknown network, bit 31 reserved for preliminary nuids.
- * Other network codes are arbitrary.
- */
-typedef unsigned int vbi_nuid;
-
-/**
- * @ingroup Event
  * @brief Network description.
  *
  * All strings are ISO 8859-1, local language, and @c NUL terminated.

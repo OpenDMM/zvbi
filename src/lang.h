@@ -80,7 +80,7 @@ struct vbi_font_descr {
 	vbi_character_set	G0;
 	vbi_character_set	G2;	
 	vbi_national_subset	subset;		/* applies only to LATIN_G0 */
-	char *			label;		/* Latin-1 */
+	const char *		label;		/* Latin-1 */
 };
 
 extern struct vbi_font_descr	vbi_font_descriptors[88];

@@ -1659,8 +1659,8 @@ vbi_caption_color_level(vbi_decoder *vbi)
 {
 	int i;
 
-	vbi_transp_colormap(vbi, vbi->cc.channel[0].pg[0].color_map,
-			    default_color_map, 8);
+	vbi_transp_colormap (vbi, vbi->cc.channel[0].pg[0].color_map,
+			     default_color_map, 8);
 
 	for (i = 1; i < 16; i++)
 		memcpy(vbi->cc.channel[i >> 1].pg[i & 1].color_map,

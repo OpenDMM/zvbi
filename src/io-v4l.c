@@ -279,7 +279,7 @@ static vbi_bool
 guess_bttv_v4l(vbi_capture_v4l *v, int *strict,
 	       int given_fd, int scanning, vbi_bool trace)
 {
-	static char *video_devices[] = {
+	static const char *video_devices[] = {
 		"/dev/video",
 		"/dev/video0",
 		"/dev/video1",

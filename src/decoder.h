@@ -22,11 +22,9 @@
 #ifndef DECODER_H
 #define DECODER_H
 
-#ifdef HAVE_CONFIG_H
-#  include "../config.h"
-#endif
+#include "../config.h"
 
-#include "bcd.h"
+#include "misc.h"
 #include "sliced.h"
 
 /* Public */

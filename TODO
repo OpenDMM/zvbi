@@ -24,7 +24,6 @@ Version 0.3
 * Better interface to language codes.
 * Improve TTX roll header + serial (Mxx increment).
 * Spacing ESC
-* Improve TTX page cache.
 * Streaming subtitles (as opposed to exporting single pages).
 * Not relocatable (bindtextdomain)
 * exp-gfx.c: draw_*_page_region different formats, custom fonts.
