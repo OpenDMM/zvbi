@@ -85,7 +85,7 @@ typedef int vbi_subno;
  * @dec: Decimal number.
  * 
  * Converts a decimal number between 0 ... 999 to a bcd number in range
- * number 0x000 ... 0x999. Extra digits in the input will be discarded.
+ * 0x000 ... 0x999. Extra digits in the input will be discarded.
  * 
  * Return value:
  * BCD number.

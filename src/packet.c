@@ -2525,7 +2525,7 @@ default_color_map[40] = {
 };
 
 /**
- * vbi_set_default_region:
+ * vbi_teletext_set_default_region:
  * @vbi: Initialized vbi decoding context.
  * @default_region: A value between 0 ... 80, index into
  *   the Teletext character set table according to ETS 300 706,

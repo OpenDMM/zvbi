@@ -226,7 +226,7 @@ current_time(void)
  * Main entry to the VBI decoder. Decodes zero or more lines of sliced
  * VBI data, updates the decoder state and calls event handlers.
  * 
- * @time shall advance by 1/30 to 1/25 seconds whenever calling this
+ * @timestamp shall advance by 1/30 to 1/25 seconds whenever calling this
  * function. Failure to do so will be interpreted as frame dropping, which
  * starts a resynchronization cycle, and a channel switch may be assumed
  * which resets even more decoder state. So even if a frame did not contain

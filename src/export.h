@@ -169,12 +169,12 @@ typedef union vbi_option_value_ptr {
  *
  * @label: Name of the option to be shown to the user.
  *   This can be %NULL to indicate this option shall not be listed.
- *   gettext()ized N_(), see the gettext manual.
+ *   The string can be translated with gettext(), see the gettext manual.
  *
  * @def, @min, @max, @step, @menu: See #vbi_option_type for details.
  *
  * @tooltip: A brief description (or %NULL) for the user.
- *   gettext()ized N_(), see the gettext manual.
+ *   The string can be translated with gettext(), see the gettext manual.
  **/
 typedef struct vbi_option_info {
 	vbi_option_type		type;

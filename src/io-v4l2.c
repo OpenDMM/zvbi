@@ -297,10 +297,10 @@ print_vfmt(char *s, struct v4l2_format *vfmt)
  *   is allocated for vbi_capture_pull().
  * @services: This must point to a set of VBI_SLICED_ describing the
  *   data services to be decoded. On return the services actually
- *   decodable will be stored here. See #vbi_raw_decoder_add()
+ *   decodable will be stored here. See vbi_raw_decoder_add()
  *   for details. If you want to capture raw data only, set to
  *   #VBI_SLICED_VBI_525, #VBI_SLICED_VBI_625 or both.
- * @strict: Will be passed to #vbi_raw_decoder_add().
+ * @strict: Will be passed to vbi_raw_decoder_add().
  * @errorstr: If not %NULL this function stores a pointer to an error
  *   description here. You must free() this string when no longer needed.
  * @trace: If %TRUE print progress messages on stderr.

@@ -188,7 +188,7 @@ xds_decoder(vbi_decoder *vbi, int class, int type,
 	int neq, i;
 	vbi_event e;
 
-	assert(length > 0 && length < 32);
+	assert(length > 0 && length <= 32);
 
 // XXX we have no indication how long the program info applies.
 //     It will be canceled on channel switch, but who knows
