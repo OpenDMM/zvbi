@@ -23,6 +23,7 @@ static char rcsid[] = "$Id$";
 #  include "../config.h"
 #endif
 
+#include "misc.h"
 #include "vbi.h"
 #include "io.h"
 

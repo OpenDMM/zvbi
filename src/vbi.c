@@ -39,6 +39,7 @@
 #include <sys/time.h>
 #include <pthread.h>
 
+#include "misc.h"
 #include "version.h"
 #include "vbi.h"
 #include "hamm.h"

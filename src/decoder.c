@@ -25,6 +25,7 @@
 #include <assert.h>
 #include <pthread.h>
 
+#include "misc.h"
 #include "decoder.h"
 
 /**

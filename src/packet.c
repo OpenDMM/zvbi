@@ -29,6 +29,7 @@
 #include <errno.h>
 #include <sys/ioctl.h>
 
+#include "misc.h"
 #include "hamm.h"
 #include "lang.h"
 #include "export.h"
