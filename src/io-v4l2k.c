@@ -428,6 +428,9 @@ vbi_capture_v4l2k_new		(const char *		dev_name,
 #endif
 	} else {
 		printv("success\n");
+
+		if (trace)
+			print_vfmt("VBI capture parameters supported: ", &vfmt);
 	}
 
 	if (strict >= 0) {
