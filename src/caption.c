@@ -1743,7 +1743,7 @@ vbi_caption_init(vbi_decoder *vbi)
  * and the #vbi_page dirty fields will mark the lines actually in
  * need of updates, to speed up rendering.
  * 
- * Note although it is safe, this function is not supposed to be
+ * Although safe to do, this function is not supposed to be
  * called from an event handler since rendering may block decoding
  * for extended periods of time.
  * 

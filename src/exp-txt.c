@@ -475,6 +475,8 @@ print_char(text_instance *text, int endian, vbi_page *pg, vbi_char old, vbi_char
 				chg.underline = this.underline;
 				chg.bold = this.bold;
 				chg.flash = this.flash;
+				chg.foreground = ~0;
+				chg.background = ~0;
 			}
 		}
 

@@ -151,7 +151,7 @@ typedef enum {
 	VBI_PROGR_INDEX = 0x7F,
 	VBI_PROGR_SCHEDULE = 0x81,
 	VBI_UNKNOWN_PAGE = 0xFF,
-	/* Private */
+/* Private */
 	VBI_NOT_PUBLIC = 0x80,
 	VBI_CA_DATA_BROADCAST =	0xE0,
 	VBI_EPG_DATA = 0xE3,
@@ -163,7 +163,7 @@ typedef enum {
 	VBI_TRIGGER_DATA = 0xFC,
 	VBI_ACI = 0xFD,
 	VBI_TOP_PAGE = 0xFE
-	/* Public */
+/* Public */
 } vbi_page_type;
 
 extern void             vbi_channel_switched(vbi_decoder *vbi, vbi_nuid nuid);

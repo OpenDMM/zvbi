@@ -51,7 +51,7 @@ extern "C" {
 /*
  * Options that can be combined for searching.
  */
-#define URE_IGNORE_NONSPACING      0x01
+/* mhs: not used, disabled #define URE_IGNORE_NONSPACING      0x01 */
 #define URE_DOT_MATCHES_SEPARATORS 0x02
 #define URE_NOTBOL		   0x04
 #define URE_NOTEOL		   0x08
