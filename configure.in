@@ -7,6 +7,7 @@ AM_CONFIG_HEADER(config.h)
 AM_ACLOCAL_INCLUDE(m4)
 
 AC_PROG_CC
+AC_PROG_CXX dnl just for test
 AM_PROG_LIBTOOL
 
 test -e site_def.h || cat <<EOF >site_def.h
