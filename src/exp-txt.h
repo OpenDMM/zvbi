@@ -46,7 +46,8 @@ extern int		vbi_print_page_region(vbi_page *pg, char *buf, int size,
  * @param format Character set name for iconv() conversion,
  *   for example "ISO-8859-1".
  * @param table When @c FALSE, runs of spaces at the start and
- *   end of rows will be collapsed into single spaces.
+ *   end of rows will be collapsed into single spaces, blank
+ *   lines are suppressed.
  * @param ltr Currently ignored, please set to @c TRUE.
  * 
  * Print a Teletext or Closed Caption vbi_page, rows separated
