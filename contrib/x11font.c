@@ -50,7 +50,7 @@ static void print_head(FILE *fp,
 static void
 print_font(char *filename, char *foundry, char *name, int italic,
 	   unsigned char *font, int cw, int ch, int cpl,
-	   int count, int (*map)(unsigned int,int), int invalid)
+	   int count, unsigned int (*map)(unsigned int,int), int invalid)
 {
     FILE *fp;
     int x,y,i,c,on,bit,byte,mask1,mask2;
@@ -117,4 +117,5 @@ main(int argc, char *argv[])
 	       CCW,CCH,CCPL,120,unicode_ccfont2,15 + 4 * 32);
     return 0;
 }
+
 
