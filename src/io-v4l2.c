@@ -21,7 +21,7 @@ static const char rcsid [] =
 "$Id$";
 
 #ifdef HAVE_CONFIG_H
-#  include "../config.h"
+#  include "config.h"
 #endif
 
 #include "vbi.h"
@@ -34,14 +34,10 @@ static const char rcsid [] =
 #include <string.h>
 #include <math.h>
 #include <errno.h>
-//#include <fcntl.h>
-//#include <unistd.h>		
 #include <assert.h>
 #include <sys/time.h>		/* timeval */
 #include <sys/types.h>		/* fd_set */
-//#include <sys/ioctl.h>
 #include <sys/ioctl.h>		/* for (_)videodev2.h */
-//#include <sys/mman.h>
 #include <asm/types.h>		/* for videodev2.h */
 #include <pthread.h>
 
