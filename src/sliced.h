@@ -182,6 +182,8 @@
 #define VBI_SLICED_VBI_525		0x40000000
 /** @} */
 
+typedef unsigned int vbi_service_set;
+
 /**
  * @ingroup Sliced
  * @brief This structure holds one scan line of sliced vbi data.
