@@ -71,6 +71,14 @@ extern vbi_capture *	vbi_capture_bktr_new (const char *	dev_name,
 					      char **		errstr,
 					      vbi_bool		trace);
 
+extern vbi_capture *    vbi_capture_proxy_new(const char *dev_name,
+                                              int buffers,
+                                              int scanning,
+                                              unsigned int *services,
+                                              int strict,
+                                              char **pp_errorstr,
+                                              vbi_bool trace);
+
 extern int		vbi_capture_read_raw(vbi_capture *capture, void *data,
 					     double *timestamp, struct timeval *timeout);
 extern int		vbi_capture_read_sliced(vbi_capture *capture, vbi_sliced *data, int *lines,
