@@ -578,7 +578,7 @@ export(vbi_export *e, FILE *fp, vbi_page *pg)
 
 		if (row >= pg->rows) {
 			if (text->term > 0)
-				fprintf(fp, "\n\e[m"); /* reset */
+				fprintf(fp, "\e[m\n"); /* reset */
 			else
 				fputc('\n', fp);
 			break;

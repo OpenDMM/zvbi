@@ -463,7 +463,7 @@ extern void		vbi_reset_prog_info(vbi_program_info *pi);
  * VBI_EVENT_CLOSE:
  *
  * The vbi decoding context is about to be closed. This event is
- * part of the work of vbi_close() and can be used to clean up
+ * part of the work of vbi_decoder_delete() and can be used to clean up
  * event handlers.
  **/
 #define	VBI_EVENT_TTX_PAGE	0x0002

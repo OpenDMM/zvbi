@@ -26,10 +26,11 @@
 
 #include <libzvbi.h>
 
-static vbi_char ac;
-static int cx, cy;
+extern unsigned int	vbi_teletext_unicode(int, int, int);
+extern unsigned int	vbi_teletext_composed_unicode(unsigned int a, unsigned int c);
+extern unsigned int	vbi_caption_unicode(unsigned int c);
 
-static int
+static void
 putwchar(int c)
 {
 	if (c < 0x80) {

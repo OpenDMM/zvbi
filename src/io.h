@@ -44,6 +44,14 @@ typedef struct vbi_capture vbi_capture;
 extern vbi_capture *	vbi_capture_v4l2_new(char *dev_name, int buffers,
 					     unsigned int *services, int strict,
 					     char **errorstr, vbi_bool trace);
+extern vbi_capture *	vbi_capture_v4l_new(char *dev_name, int scanning,
+					    unsigned int *services, int strict,
+					    char **errorstr, vbi_bool trace);
+extern vbi_capture *	vbi_capture_v4l_sidecar_new(char *dev_name, int given_fd,
+						    unsigned int *services,
+						    int strict, char **errorstr, 
+						    vbi_bool trace);
+
 extern int		vbi_capture_read_raw(vbi_capture *capture, void *data,
 					     double *timestamp, struct timeval *timeout);
 extern int		vbi_capture_read_sliced(vbi_capture *capture, vbi_sliced *data, int *lines,

@@ -28,9 +28,9 @@
 
 #include <inttypes.h>
 
-extern const unsigned char	vbi_bit_reverse[256];
-extern const char               vbi_hamm24par[3][256];
-extern const char		vbi_hamm8val[256];
+extern const uint8_t		vbi_bit_reverse[256];
+extern const int8_t		vbi_hamm24par[3][256];
+extern const int8_t		vbi_hamm8val[256];
 
 /**
  * vbi_parity:
@@ -40,11 +40,11 @@ extern const char		vbi_hamm8val[256];
  * If the byte has odd parity (sum of bits mod 2 is 1) the
  * byte AND 127, otherwise -1.
  **/
-static inline char
-vbi_parity(unsigned char c)
+static inline int8_t
+vbi_parity(uint8_t c)
 {
 #if 0 /* #cpu (i386) */
-	char r;
+	int8_t r;
 
 	/* This saves cache business */
 	asm (" test	%0,%0\n"
@@ -99,7 +99,7 @@ vbi_set_parity(uint8_t *p, int n)
  * Data bits (D4 [msb] ... D1 [lsb])
  * or -1 if the byte contained incorrectable errors.
  **/
-#define vbi_hamm8(c) vbi_hamm8val[(unsigned char)(c)]
+#define vbi_hamm8(c) vbi_hamm8val[(uint8_t)(c)]
 
 /**
  * vbi_hamm16:
