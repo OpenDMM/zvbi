@@ -487,8 +487,10 @@ print_char(text_instance *text, int endian, vbi_page *pg, vbi_char old, vbi_char
 	p = text->buf;
 
 	if (text->term > 0) {
-		assert(sizeof(vbi_char) == 8);
 		union { vbi_char c; uint64_t i; } u_old, u_tmp, u_this;
+
+		assert(sizeof(vbi_char) == 8);
+
 		u_old.c = old;
 		u_this.c = this;
 

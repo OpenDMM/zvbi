@@ -29,6 +29,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <strings.h> /* strncasecmp */
 #include <ctype.h>
 #include <assert.h>
 
