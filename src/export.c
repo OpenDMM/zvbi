@@ -283,6 +283,7 @@ vbi_export_info *
 vbi_export_info_keyword(const char *keyword)
 {
 	vbi_export_class *xc;
+	int keylen;
 
 	if (!keyword)
 		return NULL;
@@ -290,8 +291,12 @@ vbi_export_info_keyword(const char *keyword)
 	if (!initialized)
 		initialize();
 
+	for (keylen = 0; keyword[keylen]; keylen++)
+		if (keyword[keylen] == ';' || keyword[keylen] == ',')
+			break;
+
 	for (xc = vbi_export_modules; xc; xc = xc->next)
-		if (strcmp(keyword, xc->public.keyword) == 0)
+		if (strncmp(keyword, xc->public.keyword, keylen) == 0)
 			return &xc->public;
 
 	return NULL;
