@@ -47,6 +47,11 @@ dnl	ftp://ftp.gnome.org/pub/GNOME/unstable/sources])
 fi
 
 dnl
+dnl Check for iconv library if not included in libc.
+dnl
+AC_SEARCH_LIBS(iconv_open, iconv)
+
+dnl
 dnl Check for png library.
 dnl
 PNG_LIB=""
