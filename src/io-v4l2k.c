@@ -100,6 +100,8 @@ v4l2_stream(vbi_capture *vc, vbi_capture_buffer **raw,
 	struct v4l2_buffer vbuf;
 	double time;
 
+	memset (&vbuf, 0, sizeof (vbuf));
+
 	if (v->enqueue == -2) {
 		if (IOCTL(v->fd, VIDIOC_STREAMON, &v->btype) == -1)
 			return -1;
@@ -580,6 +582,8 @@ vbi_capture_v4l2k_new		(const char *		dev_name,
 		v->capture.read = v4l2_stream;
 
 		printv("Fifo initialized\nRequesting streaming i/o buffers\n");
+
+		memset (&vrbuf, 0, sizeof (vrbuf));
 
 		vrbuf.type = v->btype;
 		vrbuf.memory = V4L2_MEMORY_MMAP;
