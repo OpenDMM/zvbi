@@ -206,6 +206,7 @@ test_set_entry(vbi_export *ex, vbi_option_info *oi,
 		break;
 	case 2:
 		printf("unexpected success.");
+		break;
 	default:
 		printf("success.");
 	}
@@ -284,7 +285,7 @@ dump_option_info(vbi_export *ex, vbi_option_info *oi)
 	TYPE_STR(VBI_OPTION_MENU);
 	default:
 		printf("  * Option %s has invalid type %d\n", oi->keyword, oi->type);
-		return;
+		exit(EXIT_FAILURE);
 	}
 
 	printf("  * type=%s keyword=%s label=\"%s\" tooltip=\"%s\"\n",
