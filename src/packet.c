@@ -1857,7 +1857,9 @@ parse_28_29(vbi_decoder *vbi, uint8_t *p,
 	if ((designation = vbi_hamm8(*p)) < 0)
 		return FALSE;
 
-//	printf("Packet %d/%d/%d page %x\n", mag8, packet, designation, cvtp->pgno);
+	if (0)
+		fprintf(stderr, "Packet %d/%d/%d page %x\n",
+			mag8, packet, designation, cvtp->pgno);
 
 	for (p++, i = 0; i < 13; p += 3, i++)
 		err |= triplet[i] = vbi_hamm24(p);
@@ -2110,6 +2112,15 @@ vbi_decode_teletext(vbi_decoder *vbi, uint8_t *p)
 
 	p += 2;
 
+	if (0) {
+		unsigned int i;
+
+		fprintf(stderr, "packet 0x%x %d >", mag8 * 0x100, packet);
+		for (i = 0; i < 40; i++)
+			fputc(printable(p[i]), stderr);
+		fprintf(stderr, "<\n");
+	}
+
 	switch (packet) {
 	case 0:
 	{
@@ -2195,8 +2206,9 @@ vbi_decode_teletext(vbi_decoder *vbi, uint8_t *p)
 		cvtp->national = vbi_bit_reverse[flags] & 7;
 		cvtp->flags = (flags << 16) + subpage;
 
-		if (0 && ((page & 15) > 9 || page > 0x99))
-			printf("data page %03x/%04x\n", cvtp->pgno, cvtp->subno);
+//		if (0 && ((page & 15) > 9 || page > 0x99))
+			printf("data page %03x/%04x n%d\n",
+			       cvtp->pgno, cvtp->subno, cvtp->national);
 
 		if (1
 		    && pgno != 0x1E7
