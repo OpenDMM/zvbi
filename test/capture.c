@@ -457,6 +457,7 @@ static const char short_options[] = "d:lnpstv";
 static const struct option
 long_options[] = {
 	{ "device",	required_argument,	NULL,		'd' },
+	{ "pid",	required_argument,	NULL,		'i' },
 	{ "dump-ttx",	no_argument,		NULL,		't' },
 	{ "dump-xds",	no_argument,		&dump_xds,	TRUE },
 	{ "dump-cc",	no_argument,		&dump_cc,	TRUE },
@@ -480,6 +481,7 @@ int
 main(int argc, char **argv)
 {
 	char *dev_name = "/dev/vbi";
+	int pid = -1;
 	char *errstr;
 	unsigned int services;
 	int scanning = 625;
@@ -493,6 +495,9 @@ main(int argc, char **argv)
 			break;
 		case 'd':
 			dev_name = optarg;
+			break;
+		case 'i':
+			pid = atoi (optarg);
 			break;
 		case 'l':
 			bin_sliced ^= TRUE;
@@ -529,6 +534,26 @@ main(int argc, char **argv)
 		par = init_sim (scanning, services);
 	} else {
 		do {
+			if (-1 != pid) {
+				cap = vbi_capture_dvb_new (dev_name,
+							   scanning,
+							   &services,
+							   /* strict */ -1,
+							   &errstr,
+							   verbose);
+				if (cap) {
+					vbi_capture_dvb_filter (cap, pid);
+					break;
+				}
+
+				fprintf (stderr, "Cannot capture vbi data "
+					 "with DVB interface:\n%s\n", errstr);
+
+				free (errstr);
+
+				exit(EXIT_FAILURE);
+			}
+
 			cap = vbi_capture_v4l2_new (dev_name,
 						    /* buffers */ 5,
 						    &services,
