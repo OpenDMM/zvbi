@@ -340,7 +340,6 @@ parse_eacem(vbi_trigger *t, unsigned char *s1, unsigned int nuid, double now)
 		t->link.type = VBI_LINK_TELEWEB;
 	else if (strncmp(t->link.url, "dummy", 5) == 0) {
 		t->link.pgno = parse_dec(t->link.url + 5, 2);
-#warning parse_dec signed
 		if (!t->link.name || t->link.pgno < 0 || t->link.url[7])
 			return NULL;
 		t->link.type = VBI_LINK_MESSAGE;
@@ -357,7 +356,6 @@ parse_eacem(vbi_trigger *t, unsigned char *s1, unsigned int nuid, double now)
 			return NULL;
 
 		t->link.subno = parse_hex(t->link.url + 15, 4);
-#warning parse_hex signed
 		if (t->link.subno < 0)
 			return NULL;
 

@@ -162,7 +162,7 @@ highlight(struct vbi_search *s, vt_page *vtp,
 }
 
 static int
-search_page_fwd(void *p, const vt_page *vtp, vbi_bool wrapped)
+search_page_fwd(void *p, vt_page *vtp, vbi_bool wrapped)
 {
 	vbi_search *s = p;
 	vbi_char *acp;
@@ -259,7 +259,7 @@ fprintf(stderr, "exec: %x/%x; start %d,%d; %c%c%c...\n",
 }
 
 static int
-search_page_rev(void *p, const vt_page *vtp, vbi_bool wrapped)
+search_page_rev(void *p, vt_page *vtp, vbi_bool wrapped)
 {
 	vbi_search *s = p;
 	vbi_char *acp;
@@ -390,7 +390,7 @@ vbi_search_delete(vbi_search *search)
 static size_t
 ucs2_strlen(const void *string)
 {
-	const ucs2_t *p = (ucs2_t *) string;
+	ucs2_t *p = (ucs2_t *) string;
 	size_t i = 0;
 
 	if (!string)
@@ -589,12 +589,8 @@ vbi_search_next(vbi_search *search, vbi_page **pg, int dir)
 		search->stop_subno[1] = search->start_subno;
 	}
 #endif
-	switch (vbi_cache_foreach (search->vbi, NUID0,
-				   search->start_pgno,
-				   search->start_subno,
-				   dir,
-				   (dir > 0) ? search_page_fwd
-				   : search_page_rev, search)) {
+	switch (vbi_cache_foreach(search->vbi, search->start_pgno, search->start_subno, dir,
+		 (dir > 0) ? search_page_fwd : search_page_rev, search)) {
 	case 1:
 		*pg = &search->pg;
 		return VBI_SEARCH_SUCCESS;

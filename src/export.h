@@ -315,7 +315,7 @@ struct vbi_export {
 	 * Name of the file we are writing, @c NULL if none (may be
 	 * an anonymous FILE though).
 	 */
-	const char *		name;
+	char *			name;
 	/**
 	 * Generic option: Network name or @c NULL.
 	 */
