@@ -27,6 +27,11 @@ $Id$
 * 018 http://telepresence.dmem.strath.ac.uk/bt848/
 * 019 print should translate linefeeds to target charset (wchar...)
 * 020 VR triggers from VPS/PDC/XDS.
+* 021 Not relocatable (bindtextdomain)
 
 -------------------------------------------------------------------------------
 Ideas? Drop us a note at http://zapping.sourceforge.net.
+
+
+
+
