@@ -359,8 +359,12 @@ extern void		vbi_raw_decoder_destroy(vbi_raw_decoder *rd);
 extern unsigned int	vbi_raw_decoder_add_services(vbi_raw_decoder *rd,
 						     unsigned int services,
 						     int strict);
+extern unsigned int     vbi_raw_decoder_check_services(vbi_raw_decoder *rd,
+						     unsigned int services, int strict);
 extern unsigned int	vbi_raw_decoder_remove_services(vbi_raw_decoder *rd,
 							unsigned int services);
+extern void             vbi_raw_decoder_resize( vbi_raw_decoder *rd,
+						int * start, unsigned int * count );
 extern unsigned int	vbi_raw_decoder_parameters(vbi_raw_decoder *rd, unsigned int services,
 						   int scanning, int *max_rate);
 extern int		vbi_raw_decode(vbi_raw_decoder *rd, uint8_t *raw, vbi_sliced *out);
