@@ -497,15 +497,6 @@ typedef struct vbi_program_info {
 extern void		vbi_reset_prog_info(vbi_program_info *pi);
 /** @} */
 
-/* Future */
-typedef struct pfc_block {
-	vbi_pgno		pgno;
-	int			stream;
-	int			application_id;
-	int			block_size;
-	uint8_t			block[2048];
-} pfc_block;
-
 /**
  * @ingroup Event
  * @name Event types.
