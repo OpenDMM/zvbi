@@ -1532,7 +1532,7 @@ vbi_decode_caption(vbi_decoder *vbi, int line, uint8_t *buf)
 		for (i = 0; i < 2; i++) {
 			char ci = vbi_parity(buf[i]) & 0x7F; /* 127 if bad */
 
-			if (ci <= 0x20) /* 0x00 no char, 0x01 ... 0x1F invalid */
+			if (ci <= 0x1F) /* 0x00 no char, 0x01 ... 0x1F invalid */
 				continue;
 
 			if (ch == cc->channel + 5) // 'T2'
