@@ -619,7 +619,7 @@ vbi_capture_v4l2_new(char *dev_name, int buffers,
 					     errno, strerror(errno));
 				goto mmap_failure;
 			} else {
-				int i, s;
+				unsigned int i, s;
 
 				v->raw_buffer[v->num_raw_buffers].data = p;
 				v->raw_buffer[v->num_raw_buffers].size = vbuf.length;

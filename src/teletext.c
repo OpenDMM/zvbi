@@ -488,6 +488,8 @@ dump_pex26(struct pex26 *pt, int n)
 			pt->caf);
 }
 
+#if 0
+
 /*
 
 type	pre	text		____      post       ____
@@ -711,6 +713,8 @@ fprintf(stderr, "AT1 %08x\n", value);
 
 	return 0; /* invalid */
 }
+
+#endif
 
 /*
  *  Zapzilla navigation

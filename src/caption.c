@@ -770,7 +770,7 @@ xds_separator(vbi_decoder *vbi, uint8_t *buf)
 	xds_sub_packet *sp = cc->curr_sp;
 	int c1 = vbi_parity(buf[0]);
 	int c2 = vbi_parity(buf[1]);
-	int class, type;
+	unsigned int class, type;
 
 	XDS_SEP_DEBUG(printf("XDS %02x %02x\n", buf[0], buf[1]));
 
