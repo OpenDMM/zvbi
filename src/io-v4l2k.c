@@ -450,8 +450,8 @@ vbi_capture_v4l2k_new		(const char *		dev_name,
 		vfmt.fmt.vbi.samples_per_line	= v->dec.bytes_per_line;
 		vfmt.fmt.vbi.offset		= v->dec.offset;
 		vfmt.fmt.vbi.start[0]		= v->dec.start[0];
-		vfmt.fmt.vbi.count[0]		= v->dec.count[1];
-		vfmt.fmt.vbi.start[1]		= v->dec.start[0];
+		vfmt.fmt.vbi.count[0]		= v->dec.count[0];
+		vfmt.fmt.vbi.start[1]		= v->dec.start[1];
 		vfmt.fmt.vbi.count[1]		= v->dec.count[1];
 
 		if (trace)
