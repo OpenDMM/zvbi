@@ -30,7 +30,7 @@ static const char rcsid [] =
  */
 
 #ifdef HAVE_CONFIG_H
-#  include "../config.h"
+#  include "config.h"
 #endif
 
 #include "vbi.h"
@@ -1092,6 +1092,8 @@ vbi_capture_v4l2k_new		(const char *		dev_name,
 		errno = ENOMEM;
 		return NULL;
 	}
+
+	vbi_raw_decoder_init (&v->dec);
 
 	v->do_trace = trace;
 
