@@ -5,4 +5,5 @@ $Id$
   > maybe a sleep() loop works, but what about timestamping?
 * vbi_print_page_region() doesn't work as it should:
   Try spaces between words and double height rows.
-
+* VPATH builds don't, gtk-doc doesn't like that.
+ 
