@@ -732,6 +732,8 @@ v4l_new(char *dev_name, int given_fd, int scanning,
 
 	printv("Guessed videostandard %d\n", v->dec.scanning);
 
+	v->dec.sampling_format = VBI_PIXFMT_YUV420;
+
 	if (*services & ~(VBI_SLICED_VBI_525 | VBI_SLICED_VBI_625)) {
 		/* Nyquist */
 

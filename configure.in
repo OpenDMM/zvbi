@@ -109,9 +109,16 @@ dnl
 AC_OUTPUT([
 Makefile
 src/Makefile
+intl/Makefile
 po/Makefile.in
 po/Makefile
 test/Makefile
 libzvbi.spec
 doc/Makefile
 ])
+
+if test ! -r po/Makefile; then
+	PF="POT"
+	PF=$PF"FILES"
+        sed -e "/$PF =/r po/PF" po/Makefile.in > po/Makefile
+fi
