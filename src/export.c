@@ -835,7 +835,7 @@ vbi_export_option_menu_set(vbi_export *export, const char *keyword,
 	if (!(oi = vbi_export_option_info_keyword(export, keyword)))
 		return FALSE;
 
-	if (entry > oi->max.num)
+	if (entry < 0 || entry > oi->max.num)
 		return FALSE;
 
 	switch (oi->type) {
