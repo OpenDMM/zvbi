@@ -543,8 +543,8 @@ vbi_raw_decoder_resize		(vbi_raw_decoder *	rd,
 	{
 		if ((rd->start[0] == start[0])
 		    && (rd->start[1] == start[1])
-		    && (rd->count[0] == count[0])
-		    && (rd->count[1] == count[1])) {
+		    && (rd->count[0] == (int) count[0])
+		    && (rd->count[1] == (int) count[1])) {
 			pthread_mutex_unlock (&rd->mutex);
 			return;
 		}
