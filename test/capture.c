@@ -118,7 +118,7 @@ decode_vps(uint8_t *buf)
 
 	c = vbi_bit_reverse[buf[1]];
 
-	if ((char) c < 0) {
+	if ((int8_t) c < 0) {
 		label[l] = 0;
 		memcpy(pr_label, label, sizeof(pr_label));
 		l = 0;
