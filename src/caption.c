@@ -69,7 +69,7 @@ caption_send_event(vbi_decoder *vbi, vbi_event *ev)
 #define XDS_END			15
 
 /* vbi_classify_page, program_info language */
-static char *
+static const unsigned char *
 language[8] = {
 	"Unknown",
 	"English",
@@ -87,19 +87,19 @@ language[8] = {
 #define UNUSED
 #endif
 
-static char *
+static const char *
 map_type[] UNUSED = {
 	"unknown", "mono", "simulated stereo", "stereo",
 	"stereo surround", "data service", "unknown", "none"
 };
 
-static char *
+static const char *
 sap_type[] UNUSED = {
 	"unknown", "mono", "video descriptions", "non-program audio",
 	"special effects", "data service", "unknown", "none"
 };
 
-static char *
+static const char *
 cgmsa[] UNUSED = {
 	"copying permitted",
 	"-",
@@ -107,7 +107,7 @@ cgmsa[] UNUSED = {
 	"no copying permitted"
 };
 
-static char *
+static const char *
 scrambling[] UNUSED = {
 	"no pseudo-sync pulse",
 	"pseudo-sync pulse on; color striping off",
@@ -115,13 +115,13 @@ scrambling[] UNUSED = {
 	"pseudo-sync pulse on; 4-line color striping on"
 };
 
-static char *
+static const char *
 month_names[] UNUSED = {
 	"0?", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug",
 	"Sep", "Oct", "Nov", "Dec", "13?", "14?", "15?"
 };
 
-static char *
+static const char *
 day_names[] UNUSED = {
 	"0?", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"
 };
@@ -153,7 +153,7 @@ init_hcrc(void)
 }
 
 static int
-xds_strfu(char *d, char *s, int len)
+xds_strfu(char *d, const char *s, int len)
 {
 	int c, neq = 0;
 
@@ -464,7 +464,7 @@ xds_decoder(vbi_decoder *vbi, int _class, int type,
 			for (i = 0; i < 2; i++) {
 				int l = (buffer[i] >> 3) & 7;
 				vbi_audio_mode m = mode[i][buffer[i] & 7];
-				char *s = ((1 << l) & 0xC1) ? NULL : language[l];
+				const unsigned char *s = ((1 << l) & 0xC1) ? NULL : language[l];
 
 				if (pi->audio[i].mode != m) {
 					neq = 1; pi->audio[i].mode = m;
@@ -490,7 +490,7 @@ xds_decoder(vbi_decoder *vbi, int _class, int type,
 			for (i = 0; i < length; i++) {
 				int ch = buffer[i] & 7;
 				int l = (buffer[i] >> 3) & 7;
-				char *s;
+				const unsigned char *s;
 
 				ch = (ch & 1) * 4 + (ch >> 1);
 

@@ -208,7 +208,7 @@ hexnum(char *buf, unsigned int num)
 }
 
 static char *
-adjust(char *p, char *str, char fill, int width, int deq)
+adjust(char *p, const char *str, char fill, int width, int deq)
 {
     int c, l = width - strlen(str);
 
@@ -224,7 +224,7 @@ adjust(char *p, char *str, char fill, int width, int deq)
 
 char *
 vbi_export_mkname(vbi_export *e, char *fmt,
-	int pgno, int subno, char *usr)
+	int pgno, int subno, const char *usr)
 {
     char bbuf[1024];
     char *s = bbuf;
@@ -524,7 +524,7 @@ option_string(vbi_export *e, const char *s2)
 vbi_export *
 vbi_export_new(const char *keyword, char **errstr)
 {
-	unsigned char key[256];
+	char key[256];
 	vbi_export_class *xc;
 	vbi_export *e;
 	unsigned int keylen;
@@ -990,7 +990,7 @@ vbi_export_file(vbi_export *export, const char *name,
 		return FALSE;
 	}
 
-	export->name = (char *) name;
+	export->name = name;
 
 	success = export->_class->export(export, fp, pg);
 

@@ -36,7 +36,7 @@ typedef struct vbi_decoder vbi_decoder;
 typedef struct {
 	int			count;
 	int			chksum;
-	char			buffer[32];
+	char			buffer[32];			/* ASCII */
 } xds_sub_packet;
 
 typedef enum {

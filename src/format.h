@@ -385,7 +385,7 @@ typedef struct vbi_page {
 	struct {
 		int			pgno, subno;
 	}			nav_link[6];
-	char			nav_index[64];
+	int8_t			nav_index[64];
 
 	struct vbi_font_descr *	font[2];
 	unsigned int		double_height_lower;	/* legacy */

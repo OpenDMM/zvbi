@@ -289,7 +289,7 @@ v4l2_fd(vbi_capture *vc)
 }
 
 static void
-print_vfmt(char *s, struct v4l2_format *vfmt)
+print_vfmt(const char *s, struct v4l2_format *vfmt)
 {
 	fprintf(stderr, "%sformat %08x, %d Hz, %d bpl, offs %d, "
 		"F1 %d+%d, F2 %d+%d, flags %08x\n", s,

@@ -486,10 +486,10 @@ struct vbi_service_par {
 							    625 (FV = 50 Hz, FH = 15625 Hz) */
 	unsigned int	cri_frc;	/* Clock Run In and FRaming Code, LSB last txed bit of FRC */
 	unsigned int	cri_mask;	/* cri bits significant for identification, */
-	char		cri_bits;
-	char		frc_bits;	/* cri_bits at cri_rate, frc_bits at bit_rate */
-	short		payload;	/* in bits */
-	char		modulation;	/* payload modulation */
+	uint8_t		cri_bits;
+	uint8_t		frc_bits;	/* cri_bits at cri_rate, frc_bits at bit_rate */
+	uint16_t	payload;	/* in bits */
+	uint8_t		modulation;	/* payload modulation */
 };
 
 const struct vbi_service_par
