@@ -589,8 +589,13 @@ vbi_capture_v4l2_new(char *dev_name, int buffers,
 				goto mmap_failure;
 			}
 
-			p = mmap(NULL, vbuf.length, PROT_READ,
+			/* bttv 0.8.x wants PROT_WRITE */
+			p = mmap(NULL, vbuf.length, PROT_READ | PROT_WRITE,
 				 MAP_SHARED, v->fd, vbuf.offset); /* MAP_PRIVATE ? */
+
+			if ((int) p == -1)
+			  p = mmap(NULL, vbuf.length, PROT_READ,
+				   MAP_SHARED, v->fd, vbuf.offset); /* MAP_PRIVATE ? */
 
 			if ((int) p == -1) {
 				if (errno == ENOMEM && v->num_raw_buffers >= 2) {
