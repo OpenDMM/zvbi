@@ -196,6 +196,8 @@ main(int argc, char **argv)
 
 	assert((vbi = vbi_decoder_new()));
 
+vbi_teletext_set_default_region(vbi,48);
+
 	assert(vbi_event_handler_add(vbi, VBI_EVENT_TTX_PAGE, handler, NULL)); 
 
 	stream();
