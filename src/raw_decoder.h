@@ -64,11 +64,11 @@ extern vbi_service_set
 vbi3_raw_decoder_set_sampling_par
 				(vbi3_raw_decoder *	rd,
 				 const vbi_sampling_par *sp,
-				 unsigned int		strict);
+				 int			strict);
 extern vbi_service_set
 vbi3_raw_decoder_add_services	(vbi3_raw_decoder *	rd,
 				 vbi_service_set	services,
-				 unsigned int		strict);
+				 int			strict);
 extern vbi_service_set
 vbi3_raw_decoder_remove_services
 				(vbi3_raw_decoder *	rd,
@@ -91,7 +91,7 @@ _vbi_sampling_par_verify	(const vbi_sampling_par *sp);
 vbi_service_set
 vbi_sampling_par_check_services	(const vbi_sampling_par *sp,
 				 vbi_service_set	services,
-				 unsigned int		strict);
+				 int			strict);
 vbi_service_set
 vbi_sampling_par_from_services	(vbi_sampling_par *	sp,
 				 unsigned int *		max_rate,
