@@ -228,6 +228,18 @@ device_ioctl			(FILE *			fp,
 				 int			fd,
 				 unsigned int		cmd,
 				 void *			arg);
+extern void *
+device_mmap			(FILE *			fp,
+				 void *			start,
+				 size_t			length,
+				 int			prot,
+				 int			flags,
+				 int			fd,
+				 off_t			offset);
+extern int
+device_munmap			(FILE *			fp,
+				 void *			start,
+				 size_t			length);
 
 extern void
 vbi_capture_set_log_fp		(vbi_capture *		capture,
