@@ -450,13 +450,13 @@ parse_atvef(vbi_trigger *t, unsigned char *s1, double now)
 			s++; 
 
 			if (c != ':') {
-				int i;
+				unsigned int i;
 
-				for (i = 1; i < sizeof(type_attrs) / sizeof(type_attrs[0]) - 1; i++)
+				for (i = 1; i < (sizeof(type_attrs) / sizeof(type_attrs[0]) - 1); i++)
 					if (strcasecmp(type_attrs[i], attr) == 0)
 						break;
 
-				if (i < sizeof(type_attrs) / sizeof(type_attrs) - 1) {
+				if (i < (sizeof(type_attrs) / sizeof(type_attrs[0]) - 1)) {
 					t->link.itv_type = i + 1;
 					continue;
 				}
