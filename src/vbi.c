@@ -38,6 +38,7 @@
 #include <sys/time.h>
 #include <pthread.h>
 
+#include "version.h"
 #include "vbi.h"
 #include "hamm.h"
 #include "lang.h"
@@ -809,6 +810,25 @@ vbi_decoder_new(void)
 	vbi_caption_init(vbi);
 
 	return vbi;
+}
+
+/**
+ * @param major Store major number here, can be NULL.
+ * @param minor Store minor number here, can be NULL.
+ * @param micro Store micro number here, can be NULL.
+ *
+ * Returns the library version defined in the libzvbi.h header file
+ * when the library was compiled. This function is available since
+ * version 0.2.5.
+ */
+void
+vbi_version			(unsigned int *		major,
+				 unsigned int *		minor,
+				 unsigned int *		micro)
+{
+	if (major) *major = VBI_VERSION_MAJOR;
+	if (minor) *minor = VBI_VERSION_MINOR;
+	if (micro) *micro = VBI_VERSION_MICRO;
 }
 
 /**

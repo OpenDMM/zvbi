@@ -200,6 +200,7 @@ extern void		vbi_decode(vbi_decoder *vbi, vbi_sliced *sliced,
 extern void             vbi_channel_switched(vbi_decoder *vbi, vbi_nuid nuid);
 extern vbi_page_type	vbi_classify_page(vbi_decoder *vbi, vbi_pgno pgno,
 					  vbi_subno *subno, char **language);
+extern void		vbi_version(unsigned int *major, unsigned int *minor, unsigned int *micro);
 /** @} */
 
 /* Private */
