@@ -107,6 +107,11 @@ dnl
 AC_CHECK_FUNCS(getopt_long)
 
 dnl
+dnl getaddrinfo (proxy service via TCP/IP)
+dnl
+AC_CHECK_FUNCS(getaddrinfo)
+
+dnl
 dnl Enable OS dependent device interfaces.
 dnl (Linux videodev.h, videodev2.h, bktr dependencies)
 dnl
