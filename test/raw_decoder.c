@@ -229,9 +229,8 @@ compare_sliced			(const vbi_sliced *	in,
 		assert (s < in + in_lines);
 
 		/* Identified as something else */
-		// fprintf (stderr, "%3u id %08x %08x\n", s->line, s->id, out->id);
+		/* fprintf (stderr, "%3u id %08x %08x\n", s->line, s->id, out->id); */
 		assert (s->id == out->id);
-//		if (s->id != out->id) return;
 
 		/* Same data as sent */
 		payload = vbi_sliced_payload_bits (out->id);
