@@ -2622,9 +2622,8 @@ vbi_teletext_set_default_region(vbi_decoder *vbi, int default_region)
 	for (i = 0; i < 9; i++) {
 		vt_extension *ext = &vbi->vt.magazine[i].extension;
 
-		ext->char_set[0] =
-		ext->char_set[1] =
-			default_region;
+		ext->char_set[0] = default_region;
+		ext->char_set[1] = 0;
 	}
 }
 
