@@ -25,7 +25,7 @@
 /* $Id$ */
 
 #ifdef HAVE_CONFIG_H
-#  include "../config.h"
+#  include "config.h"
 #endif
 
 #include <stdio.h>
@@ -487,6 +487,7 @@ draw_blank(int canvas_type, uint8_t *canvas, unsigned int rowstride,
 }
 
 /**
+ * @param pg Source vbi_page, see vbi_fetch_cc_page().
  * @param fmt Target format. For now only VBI_PIXFMT_RGBA32_LE (vbi_rgba) permitted.
  * @param canvas Pointer to destination image (currently an array of vbi_rgba), this
  *   must be at least @a rowstride * @a height * 26 bytes large.
