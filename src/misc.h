@@ -187,17 +187,36 @@ do {									\
 #define CLEAR(d) memset (&(d), 0, sizeof (d))
 #define MOVE(d, s) memmove (d, s, sizeof (d))
 
-/* Strcpy considered harmful. */
+/* Use this instead of strncpy().
+   strlcpy is a BSD/GNU extension.*/
 #ifdef HAVE_STRLCPY
-#define vbi_strlcpy strlcpy
+#  define _vbi_strlcpy strlcpy
 #else
 extern size_t
-vbi_strlcpy			(char *			d,
-				 const char *		s,
-				 size_t			size);
+_vbi_strlcpy			(char *			dst,
+				 const char *		src,
+				 size_t			len);
 #endif
 
-#define STRCOPY(d, s) (vbi_strlcpy (d, s, sizeof (d)) < sizeof (d))
+/* strndup is a BSD/GNU extension. */
+#ifdef HAVE_STRNDUP
+#  define _vbi_strndup strndup
+#else
+extern char *
+_vbi_strndup			(const char *		s,
+				 size_t			len);
+#endif
+
+#ifdef HAVE_ASPRINTF
+#  define vbi_asprintf asprintf
+#else
+extern int
+vbi_asprintf			(char **		dstp,
+				 const char *		templ,
+				 ...);
+#endif
+
+#define STRCOPY(d, s) (_vbi_strlcpy (d, s, sizeof (d)) < sizeof (d))
 
 /* Gettext i18n */
 
