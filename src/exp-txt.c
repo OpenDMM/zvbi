@@ -320,7 +320,7 @@ print_unicode(iconv_t cd, int endian, int unicode, char **p, int n)
  *   full pg->columns width. In this mode runs of spaces at
  *   the start and end of rows are collapsed into single spaces,
  *   blank lines are suppressed.
- * @param ltr Currently ignored, please set to @c TRUE.
+ * @param rtl Currently ignored.
  * @param column First source column, 0 ... pg->columns - 1.
  * @param row First source row, 0 ... pg->rows - 1.
  * @param width Number of columns to print, 1 ... pg->columns.
