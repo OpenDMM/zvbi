@@ -31,7 +31,7 @@ extern const char *vbi_country_names_en[];
 /* documented in table.c */
 struct vbi_cni_entry {
 	int16_t			id;
-	int16_t			country;
+	char *			country;
 	char *			name;
 	uint16_t		cni1;
 	uint16_t		cni2;
