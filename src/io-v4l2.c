@@ -1085,7 +1085,7 @@ vbi_capture_v4l2_new(const char *dev_name, int buffers,
 		     char **errorstr, vbi_bool trace)
 {
 	pthread_once (&vbi_init_once, vbi_init);
-	vbi_asprintf(errorstr, _("V4L2 interface not compiled."));
+	vbi_asprintf(errorstr, _("V4L2 driver interface not compiled."));
 	return NULL;
 }
 

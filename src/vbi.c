@@ -818,8 +818,9 @@ vbi_decoder_new(void)
  * @param micro Store micro number here, can be NULL.
  *
  * Returns the library version defined in the libzvbi.h header file
- * when the library was compiled. This function is available since
- * version 0.2.5.
+ * when the library was compiled.
+ *
+ * @since 0.2.5
  */
 void
 vbi_version			(unsigned int *		major,

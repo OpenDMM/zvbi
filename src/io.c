@@ -190,7 +190,7 @@ vbi_capture_pull_raw(vbi_capture *capture, vbi_capture_buffer **buffer,
  * Read a sliced vbi frame, that is an array of vbi_sliced,
  * from the capture device, returning a pointer to the array as @a buffer->data.
  * @a buffer->size is the size of the array, that is the number of lines decoded,
- * which can be zero, <u>times the size of structure vbi_sliced</u>. The data
+ * which can be zero, <i>times the size of structure vbi_sliced</i>. The data
  * remains valid until the next vbi_capture_pull_sliced() call and must be read only.
  * 
  * @return

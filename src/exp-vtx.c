@@ -74,6 +74,7 @@ export(vbi_export *e, FILE *fp, vbi_page *pg)
 	struct header h;
 
 	if (pg->pgno < 0x100 || pg->pgno > 0x8FF) {
+		/* TRANSLATORS: Not Closed Caption pages. */
 		vbi_export_error_printf(e, _("Can only export Teletext pages."));
 		return FALSE;
 	}
@@ -127,7 +128,7 @@ write_error:
 static vbi_export_info
 info_vtx = {
 	.keyword	= "vtx",
-	.label		= N_("VTX"),
+	.label		= "VTX", /* proper name */
 	.tooltip	= N_("Export this page as VTX file, the format "
 			     "used by VideoteXt and vbidecode"),
 

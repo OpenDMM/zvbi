@@ -18,6 +18,9 @@
  *
  *
  *  $Log$
+ *  Revision 1.10  2003/10/16 18:16:11  mschimek
+ *  *** empty log message ***
+ *
  *  Revision 1.9  2003/06/07 09:42:32  tomzo
  *  Optimized client I/O in proxy-msg.c/.h: keep message header and body in one
  *  struct VBIPROXY_MSG to be able to write it to the pipe in one syscall.
@@ -1139,6 +1142,8 @@ vbi_capture_proxy_new(const char *dev_name, int buffers, int scanning,
  * and all captured data forwarded transparently.  Whenever possible
  * the proxy should be used instead of opening the device directly, since
  * it allows multiple VBI clients to operate concurrently.
+ *
+ * @since 0.2.5
  * 
  * @return
  * Initialized vbi_capture context, @c NULL on failure.
