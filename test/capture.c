@@ -462,6 +462,7 @@ long_options[] = {
 	{ "ntsc",	no_argument,		NULL,		'n' },
 	{ "pal",	no_argument,		NULL,		'p' },
 	{ "verbose",	no_argument,		NULL,		'v' },
+	{ 0, 0, 0, 0 }
 };
 
 int

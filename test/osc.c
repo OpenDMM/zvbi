@@ -390,6 +390,7 @@ long_options[] = {
 	{ "pal",	no_argument,		NULL,		'p' },
 	{ "sim",	no_argument,		&do_sim,	TRUE },
 	{ "verbose",	no_argument,		NULL,		'v' },
+	{ 0, 0, 0, 0 }
 };
 
 int

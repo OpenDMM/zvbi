@@ -494,6 +494,7 @@ list_modules(void)
 static const struct option
 long_options[] = {
 	{ "check", no_argument, NULL, 'c' },
+	{ 0, 0, 0, 0 }
 };
 
 int
