@@ -421,11 +421,11 @@ vbi_print_page_region(vbi_page *pg, char *buf, int size,
 	}
 
 	iconv_close(cd);
-	return TRUE;
+	return p - buf;
 
  failure:
 	iconv_close(cd);
-	return FALSE;
+	return 0;
 }
 
 
