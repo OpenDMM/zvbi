@@ -251,7 +251,7 @@ export(vbi_export *e, FILE *fp, vbi_page *pg)
  */
 vbi_export_class
 vbi_export_class_tmpl = {
-	.public = {
+	._public = {
 		/* The mandatory keyword must be unique and shall
                    contain only "AZaz09-_" */
 		.keyword	= "templ",
@@ -264,8 +264,8 @@ vbi_export_class_tmpl = {
 
 	/* Functions to allocate and free a tmpl_class vbi_export instance.
 	   When you omit these, libzvbi will allocate a bare struct vbi_export */
-	.new			= tmpl_new,
-	.delete			= tmpl_delete,
+	._new			= tmpl_new,
+	._delete		= tmpl_delete,
 
 	/* Functions to enumerate, read and write options */
 	.option_enum		= option_enum,

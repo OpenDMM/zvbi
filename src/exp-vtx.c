@@ -126,7 +126,7 @@ write_error:
 
 vbi_export_class
 vbi_export_class_vtx = {
-	.public = {
+	._public = {
 		.keyword	= "vtx",
 		.label		= N_("VTX"),
 		.tooltip	= N_("Export this page as VTX file, the format "

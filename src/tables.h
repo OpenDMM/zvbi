@@ -43,8 +43,13 @@ extern const struct vbi_cni_entry vbi_cni_table[];
 
 /* Public */
 
+/**
+ * @addtogroup Event
+ * @{
+ */
 extern char *		vbi_rating_string(vbi_rating_auth auth, int id);
 extern char *		vbi_prog_type_string(vbi_prog_classf classf, int id);
+/** @} */
 
 /* Private */
 

@@ -715,7 +715,7 @@ export(vbi_export *e, FILE *fp, vbi_page *pgp)
 
 vbi_export_class
 vbi_export_class_html = {
-	.public = {
+	._public = {
 		.keyword	= "html",
 		.label		= N_("HTML"),
 		.tooltip	= N_("Export this page as HTML page"),
@@ -724,8 +724,8 @@ vbi_export_class_html = {
 		.extension	= "html,htm",
 	},
 
-	.new			= html_new,
-	.delete			= html_delete,
+	._new			= html_new,
+	._delete		= html_delete,
 	.option_enum		= option_enum,
 	.option_get		= option_get,
 	.option_set		= option_set,
