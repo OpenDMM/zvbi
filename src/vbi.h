@@ -43,6 +43,15 @@ struct event_handler {
 	void *			user_data;
 };
 
+struct page_clear {
+	int			ci;		/* continuity index */
+	int			packet;
+	int			num_packets;
+	int			bi;		/* block index */
+	int			left;
+	pfc_block		pfc;
+};
+
 struct vbi_decoder {
 #if 0 // obsolete
 	fifo			*source;
@@ -69,6 +78,8 @@ struct vbi_decoder {
 	struct caption		cc;
 
 	struct cache		cache;
+
+	struct page_clear	epg_pc[2];
 
 	/* preliminary */
 	int			pageref;

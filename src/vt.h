@@ -44,6 +44,7 @@ typedef struct vbi_decoder vbi_decoder;
  * X/28/3 and X/28/4).
  **/
 typedef enum {
+	PAGE_FUNCTION_EPG = -4,		/* libzvbi private */
 	PAGE_FUNCTION_TRIGGER = -3,	/* libzvbi private */
 	PAGE_FUNCTION_DISCARD = -2,	/* libzvbi private */
 	PAGE_FUNCTION_UNKNOWN = -1,	/* libzvbi private */

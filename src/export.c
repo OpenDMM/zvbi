@@ -52,10 +52,9 @@ vbi_register_export_module(vbi_export_class *new)
 {
 	vbi_export_class **xcp;
 
-#if 0
-	fprintf(stderr, "libzvbi:vbi_register_export_module(\"%s\")\n",
-	       new->public.keyword);
-#endif
+	if (0)
+		fprintf(stderr, "libzvbi:vbi_register_export_module(\"%s\")\n",
+		        new->public.keyword);
 
 	for (xcp = &vbi_export_modules; *xcp; xcp = &(*xcp)->next)
 		if (strcmp(new->public.keyword, (*xcp)->public.keyword) < 0)

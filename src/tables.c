@@ -536,12 +536,12 @@ vbi_cni_table[] = {
 	{ 0, 0,  0,  0, 0, 0, 0 }
 };
 
-#if 0
+#if 1
 
 /*
  *  ETS 300 231 Table 3: Codes for programme type (PTY) Principle of classification
  */
-static const char *
+const char *
 ets_program_class[16] =
 {
 	"undefined content",
@@ -567,7 +567,7 @@ ets_program_class[16] =
 /*
  *  ETS 300 231 Table 3: Codes for programme type (PTY) Principle of classification
  */
-static const char *
+const char *
 ets_program_type[8][16] =
 {
 	{

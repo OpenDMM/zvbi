@@ -587,10 +587,10 @@ xds_decoder(vbi_decoder *vbi, int class, int type,
 			return; /* no event */
 		}
 
-#if 0
-		printf("[type %d cycle %08x class %d neq %d]\n",
-		       type, vbi->cc.info_cycle[class], class, neq);
-#endif
+		if (0)
+			printf("[type %d cycle %08x class %d neq %d]\n",
+			       type, vbi->cc.info_cycle[class], class, neq);
+
 		if (neq) /* first occurence of this type with this data */
 			vbi->cc.info_cycle[class] |= 1 << type;
 		else if (vbi->cc.info_cycle[class] & (1 << type)) {

@@ -280,6 +280,6 @@ vbi_export_class_tmpl = {
  *  This is a constructor calling vbi_register_export_module().
  *  (Commented out since we don't want the example module listed.)
  */
-#if 1
+#if 0
 VBI_AUTOREG_EXPORT_MODULE(vbi_export_class_tmpl)
 #endif

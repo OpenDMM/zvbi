@@ -40,18 +40,17 @@ extern const int8_t		vbi_hamm8val[256];
  * If the byte has odd parity (sum of bits mod 2 is 1) the
  * byte AND 127, otherwise -1.
  **/
-static inline int8_t
-vbi_parity(uint8_t c)
+static inline int
+vbi_parity(unsigned int c)
 {
-#if 0 /* #cpu (i386) */
-	int8_t r;
+#if 0 /* #cpu (i686) */
+	int r = c;
 
-	/* This saves cache business */
-	asm (" test	%0,%0\n"
-	     " setpe	%1\n"
-	     " and	$127,%0\n"
-	     " or	%1,%0n"
-	     : "=r" (r) : "&r" (c));
+	/* This saves cache business and a branch */
+	asm (" andl	$127,%0\n"
+	     " testb	%1,%1\n"
+	     " cmovp    %2,%0\n"
+	     : "+&r" (r) : "abcd" (c), "rm" (-1));
 
 	return r;
 #else
