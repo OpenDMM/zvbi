@@ -98,7 +98,7 @@ stream(void)
 	vbi_sliced *s, sliced[40];
 
 	while (!quit) {
-		if (feof(stdin) || !fgets(buf, 255, stdin))
+		if (ferror(stdin) || !fgets(buf, 255, stdin))
 			goto abort;
 
 		dt = strtod(buf, NULL);
