@@ -1216,7 +1216,7 @@ v4l_new(const char *dev_name, int given_fd, int scanning,
 		 *  v4l ioctls, let's see if we can guess the beast.
 		 */
 		printv("Driver doesn't support VIDIOCGCAP\n");
-		strncpy(v->vcap.name, _("driver unknown"), sizeof(v->vcap.name));
+		strncpy(v->vcap.name, _("driver unknown"), sizeof(v->vcap.name) - 1);
 		v->vcap.name[sizeof(v->vcap.name) - 1] = 0;
 
 		if (!guess_bttv_v4l(v, &strict, given_fd, scanning))
@@ -1225,7 +1225,7 @@ v4l_new(const char *dev_name, int given_fd, int scanning,
 		if (v->vcap.name[0] != 0) {
 			printv("Driver name '%s'\n", v->vcap.name);
 		} else {
-			strncpy(v->vcap.name, _("driver unknown"), sizeof(v->vcap.name));
+			strncpy(v->vcap.name, _("driver unknown"), sizeof(v->vcap.name) - 1);
 			v->vcap.name[sizeof(v->vcap.name) - 1] = 0;
 		}
 

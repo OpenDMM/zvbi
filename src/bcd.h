@@ -226,7 +226,9 @@ vbi_is_bcd(unsigned int bcd)
  *  Return a pointer to a structure of @a type from
  *  a @a ptr to one of its @a members.
  */
-#define PARENT(ptr, type, member)					\
-  ((type *)(((char *) ptr) - offsetof(type, member)))
+#define PARENT(_ptr, _type, _member)					\
+	({ char *_p = (char *)(_ptr); (_p != 0) ?			\
+	  (_type *)(_p - offsetof (_type, _member)) : (_type *) 0; })
+/* XXX gcc specific, see zvbi-0.3 for better solution */
 
 #endif /* BCD_H */

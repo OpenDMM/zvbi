@@ -1124,14 +1124,14 @@ vbi_export_invalid_option(vbi_export *export, const char *keyword, ...)
 		case VBI_OPTION_STRING:
 			s = va_arg(args, char *);
 			if (s == NULL)
-				strncpy(buf, "NULL", 4);
+				strcpy(buf, "NULL");
 			else
 				snprintf(buf, sizeof(buf) - 1, "'%s'", s);
 			break;
 		default:
 			fprintf(stderr, "%s: unknown export option type %d\n",
 				__PRETTY_FUNCTION__, oi->type);
-			strncpy(buf, "?", 1);
+			strcpy(buf, "?");
 			break;
 		}
 

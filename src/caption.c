@@ -1423,7 +1423,7 @@ vbi_decode_caption(vbi_decoder *vbi, int line, uint8_t *buf)
 	char c1 = buf[0] & 0x7F;
 	int field2 = 1, i;
 
-	pthread_mutex_unlock(&cc->mutex);
+	pthread_mutex_lock(&cc->mutex);
 
 	switch (line) {
 	case 21:	/* NTSC */

@@ -190,6 +190,7 @@ AC_OUTPUT([
   src/Makefile
   test/Makefile
   daemon/Makefile
+  daemon/zvbid.init
   doc/Makefile
   doc/Doxyfile
   contrib/Makefile

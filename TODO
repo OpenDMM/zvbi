@@ -2,6 +2,10 @@ $Id$
 
 Version 0.3
 
+(Note some of these objectives have been accomplished or work
+ is in progress. For details see branch-0-3 in our CVS repository
+ cvs.sourceforge.net:/cvsroot/zapping, module vbi.)
+
 * Events suck badly. Change to query functions (fetch page, station
   name, aspect ratio, ...) and just notify apps of changes.
 * vbi_page split into public and private, allocate when fetched.
