@@ -261,7 +261,7 @@ extern vbi_bool vbi_capture_force_read_mode;
  * @ingroup Devmod
  */
 struct vbi_capture {
-	vbi_bool		(* read)(vbi_capture *,
+        int		        (* read)(vbi_capture *,
 					 vbi_capture_buffer **,
 					 vbi_capture_buffer **,
 					 const struct timeval *);
