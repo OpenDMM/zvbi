@@ -108,7 +108,7 @@ export(vbi_export *e, FILE *fp, vbi_page *pg)
 	h.charset = page.national & 7;
 
 	h.wst_flags = page.flags & C4_ERASE_PAGE;
-	h.wst_flags |= vbi_bit_reverse[page.flags >> 12];
+	h.wst_flags |= vbi_rev8 (page.flags >> 12);
 	h.vtx_flags = (0 << 7) | (0 << 6) | (0 << 5) | (0 << 4) | (0 << 3);
 	/* notfound, pblf (?), hamming error, virtual, seven bits */
 

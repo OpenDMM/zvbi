@@ -32,8 +32,6 @@
 #  define DVB_MUX_LOG 0
 #endif
 
-#define vbi_rev8(n) vbi_bit_reverse[n]
-
 static vbi_bool
 stuffing			(uint8_t *		p,
 				 unsigned int		p_left,

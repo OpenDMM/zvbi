@@ -27,8 +27,6 @@
 #include "decoder.h"
 #endif
 
-#define vbi_alloc
-
 #if 0 /* in decoder.h */
 
 /*

@@ -45,12 +45,6 @@ do {									\
 		fprintf (stderr, "%s: " templ, __FUNCTION__ , ##args);	\
 } while (0)
 
-#define vbi_inline static __inline__
-#define vbi_rev8(n) vbi_bit_reverse[n]
-
-#define printable(c) \
-	((((c) & 0x7F) < 0x20 || ((c) & 0x7F) > 0x7E) ? '.' : ((c) & 0x7F))
-
 struct wrap {
 	/* Size must be >= maximum consume + maximum lookahead. */
 	uint8_t	*		buffer;
@@ -506,7 +500,8 @@ demux_data_units		(struct frame *		f,
 			if (0) {
 				fprintf (stderr, "DU-TTX %u >", s->line);
 				for (i = 0; i < 42; ++i)
-					fputc (printable (s->data[i]), stderr);
+					fputc (vbi_printable (s->data[i]),
+					       stderr);
 				fprintf (stderr, "<\n");
 			}
 

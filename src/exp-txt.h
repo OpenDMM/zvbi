@@ -62,7 +62,7 @@ extern int		vbi_print_page_region(vbi_page *pg, char *buf, int size,
  * data. Note this function does not append a terminating null
  * character.
  **/
-static_inline int
+vbi_inline int
 vbi_print_page(vbi_page *pg, char *buf, int size,
 	       const char *format, vbi_bool table, vbi_bool ltr)
 {
