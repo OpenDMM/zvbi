@@ -32,6 +32,9 @@
  *  $Id$
  *
  *  $Log$
+ *  Revision 1.12  2004/12/13 07:17:09  mschimek
+ *  *** empty log message ***
+ *
  *  Revision 1.11  2004/10/25 16:56:29  mschimek
  *  *** empty log message ***
  *
@@ -68,7 +71,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-#  include "../config.h"
+#  include "config.h"
 #endif
 
 #ifdef ENABLE_PROXY

@@ -24,7 +24,7 @@
 /* $Id$ */
 
 #ifdef HAVE_CONFIG_H
-#  include "../config.h"
+#  include "config.h"
 #endif
 
 #include <stdlib.h>
@@ -738,7 +738,7 @@ vbi_export_option_get(vbi_export *export, const char *keyword,
 /**
  * @param export Pointer to a initialized vbi_export object.
  * @param keyword Keyword identifying the option, as in vbi_option_info.
- * @param Varargs New value to set.
+ * @param ... New value to set.
  *
  * Sets the value of the named option. Make sure the value is casted
  * to the correct type (int, double, char *).

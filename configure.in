@@ -33,10 +33,13 @@ test -e site_def.h || cat <<EOF >site_def.h
 
 #ifndef SITE_DEF_H
 #define SITE_DEF_H
+/* #define BIT_SLICER_LOG 1 */
 /* #define CACHE_DEBUG 1 */
 /* #define CACHE_STATUS 1 */
-/* #define DECODER_PATTERN_DUMP 1 */
-/* #define DECODER_SERVICE_DIAG 1 */
+/* #define DVB_DEMUX_LOG 1 */
+/* #define DVB_MUX_LOG 1 */
+/* #define RAW_DECODER_LOG 1 */
+/* #define RAW_DECODER_PATTERN_DUMP 1 */
 #endif /* SITE_DEF_H */
 EOF
 

@@ -29,7 +29,7 @@
 #include "misc.h"		/* CLEAR() */
 
 #ifndef DVB_DEMUX_LOG
-#define DVB_DEMUX_LOG 0
+#  define DVB_DEMUX_LOG 0
 #endif
 
 #define log(templ, args...)						\

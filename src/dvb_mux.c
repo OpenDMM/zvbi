@@ -29,7 +29,7 @@
 #include "misc.h"		/* MIN(), CLEAR() */
 
 #ifndef DVB_MUX_LOG
-#define DVB_MUX_LOG 0
+#  define DVB_MUX_LOG 0
 #endif
 
 #define vbi_rev8(n) vbi_bit_reverse[n]
