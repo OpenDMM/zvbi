@@ -266,6 +266,15 @@ sub add_arg {
     $args .= "($type) t->" . &trail ($item) . ", ";
 }
 
+# text .= "unsigned int", "structname.field1.flags", "%x"
+sub add_ref_arg {
+    my ($text, $type, $item, $template) = @_;
+    my $flush = 0;
+
+    $templ .= &field ($item) . "=$template ";
+    $args .= "($type) & t->" . &trail ($item) . ", ";
+}
+
 # text .= functions this depends upon, "struct foo", "structname.field1.foo"
 sub add_arg_func {
     my ($text, $deps, $type, $item) = @_;
@@ -512,7 +521,7 @@ sub aggregate_body {
 	    } elsif ($hint eq "hex") {
 		&add_arg ($text, "unsigned long", $item, "0x%lx");
 	    } elsif ($hint eq "fourcc") {
-		&add_arg ($text, "const char *", $item, "\\\"%.4s\\\"=0x%lx");
+		&add_ref_arg ($text, "const char *", $item, "\\\"%.4s\\\"=0x%lx");
 		$args .= "(unsigned long) t->$field, ";
 	    # Field contains symbols, could be flags or enum or both
 	    } elsif ($hint ne "") {
