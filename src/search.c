@@ -98,9 +98,6 @@ highlight(struct vbi_search *s, vt_page *vtp,
 				}
 			}
 
-			if (!vbi_is_print(acp->unicode))
-				continue; /* gfx | drcs, insignificant */
-
 			switch (acp->size) {
 			case VBI_DOUBLE_SIZE:
 				if (offset >= ms) {
@@ -254,7 +251,7 @@ fprintf(stderr, "exec: %x/%x; start %d,%d; %c%c%c...\n",
 static int
 search_page_rev(void *p, vt_page *vtp, vbi_bool wrapped)
 {
-	vbi_search *s;
+	vbi_search *s = p;
 	vbi_char *acp;
 	int row, this, start, stop;
 	unsigned long ms, me;
