@@ -84,10 +84,12 @@ extern void		vbi_capture_delete(vbi_capture *capture);
 #include <stdarg.h>
 #include <stddef.h>
 
+extern const char _zvbi_intl_domainname[];
+
 #ifndef _
 #  ifdef ENABLE_NLS
 #    include <libintl.h>
-#    define _(String) gettext (String)
+#    define _(String) dgettext (_zvbi_intl_domainname, String)
 #    ifdef gettext_noop
 #      define N_(String) gettext_noop (String)
 #    else
