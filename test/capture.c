@@ -390,6 +390,9 @@ mainloop(void)
 	double timestamp;
 	struct timeval tv;
 
+	tv.tv_sec = 2;
+	tv.tv_usec = 0;
+
 	raw = malloc(src_w * src_h);
 	sliced = malloc(sizeof(vbi_sliced) * src_h);
 
