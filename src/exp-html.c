@@ -713,17 +713,19 @@ export(vbi_export *e, FILE *fp, vbi_page *pgp)
 	return TRUE;
 }
 
+static vbi_export_info
+info_html = {
+	.keyword	= "html",
+	.label		= N_("HTML"),
+	.tooltip	= N_("Export this page as HTML page"),
+
+	.mime_type	= "text/html",
+	.extension	= "html,htm",
+};
+
 vbi_export_class
 vbi_export_class_html = {
-	._public = {
-		.keyword	= "html",
-		.label		= N_("HTML"),
-		.tooltip	= N_("Export this page as HTML page"),
-
-		.mime_type	= "text/html",
-		.extension	= "html,htm",
-	},
-
+	._public		= &info_html,
 	._new			= html_new,
 	._delete		= html_delete,
 	.option_enum		= option_enum,

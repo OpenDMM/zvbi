@@ -642,23 +642,23 @@ export(vbi_export *e, FILE *fp, vbi_page *pg)
 	return !ferror(fp);
 }
 
+static vbi_export_info
+info_text = {
+	.keyword	= "text",
+	.label		= N_("Text"),
+	.tooltip	= N_("Export this page as text file"),
+
+	.mime_type	= "text/plain",
+	.extension	= "txt",
+};
+
 vbi_export_class
 vbi_export_class_text = {
-	._public = {
-		.keyword	= "text",
-		.label		= N_("Text"),
-		.tooltip	= N_("Export this page as text file"),
-
-		.mime_type	= "text/plain",
-		.extension	= "txt",
-	},
-
+	._public		= &info_text,
 	._new			= text_new,
 	._delete		= text_delete,
-
 	.option_enum		= option_enum,
 	.option_get		= option_get,
 	.option_set		= option_set,
-
 	.export			= export
 };

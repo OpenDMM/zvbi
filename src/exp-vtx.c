@@ -124,18 +124,21 @@ write_error:
 	return FALSE;
 }
 
+static vbi_export_info
+info_vtx = {
+	.keyword	= "vtx",
+	.label		= N_("VTX"),
+	.tooltip	= N_("Export this page as VTX file, the format "
+			     "used by VideoteXt and vbidecode"),
+
+	/* From VideoteXt examples/mime.types */
+	.mime_type	= "application/videotext",
+	.extension	= "vtx",
+};
+
 vbi_export_class
 vbi_export_class_vtx = {
-	._public = {
-		.keyword	= "vtx",
-		.label		= N_("VTX"),
-		.tooltip	= N_("Export this page as VTX file, the format "
-				     "used by VideoteXt and vbidecode"),
-
-		/* From VideoteXt examples/mime.types */
-		.mime_type	= "application/videotext",
-		.extension	= "vtx",
-	},
+	._public		= &info_vtx,
 
 	/* no private data, no options */
 	.export			= export

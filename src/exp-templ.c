@@ -249,18 +249,21 @@ export(vbi_export *e, FILE *fp, vbi_page *pg)
  *  Let's describe us.
  *  You can leave away assignments unless mandatory.
  */
+static vbi_export_info
+info_tmpl = {
+	/* The mandatory keyword must be unique and shall
+           contain only "AZaz09-_" */
+	.keyword	= "templ",
+	.label		= N_("Template"),
+	.tooltip	= N_("This is just an export template"),
+
+	.mime_type	= "misc/example",
+	.extension	= "tmpl",
+};
+
 vbi_export_class
 vbi_export_class_tmpl = {
-	._public = {
-		/* The mandatory keyword must be unique and shall
-                   contain only "AZaz09-_" */
-		.keyword	= "templ",
-		.label		= N_("Template"),
-		.tooltip	= N_("This is just an export template"),
-
-		.mime_type	= "misc/example",
-		.extension	= "tmpl",
-	},
+	._public		= &info_tmpl,
 
 	/* Functions to allocate and free a tmpl_class vbi_export instance.
 	   When you omit these, libzvbi will allocate a bare struct vbi_export */

@@ -342,7 +342,7 @@ struct vbi_export {
  */
 struct vbi_export_class {
 	vbi_export_class *	next;
-	vbi_export_info		_public;
+	vbi_export_info	*	_public;
 
 	vbi_export *		(* _new)(void);
 	void			(* _delete)(vbi_export *);

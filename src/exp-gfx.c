@@ -888,17 +888,19 @@ write_error:
 	return FALSE;
 }
 
+static vbi_export_info
+info_ppm = {
+	.keyword	= "ppm",
+	.label		= N_("PPM"),
+	.tooltip	= N_("Export this page as raw PPM image"),
+
+	.mime_type	= "image/x-portable-pixmap",
+	.extension	= "ppm",
+};
+
 vbi_export_class
 vbi_export_class_ppm = {
-	._public = {
-		.keyword	= "ppm",
-		.label		= N_("PPM"),
-		.tooltip	= N_("Export this page as raw PPM image"),
-
-		.mime_type	= "image/x-portable-pixmap",
-		.extension	= "ppm",
-	},
-
+	._public		= &info_ppm,
 	._new			= gfx_new,
 	._delete		= gfx_delete,
 	.option_enum		= option_enum,
@@ -1238,23 +1240,25 @@ unknown_error:
 	return FALSE;
 }
 
+static vbi_export_info
+info_png = {
+	.keyword	= "png",
+	.label		= N_("PNG"),
+	.tooltip	= N_("Export this page as PNG image"),
+
+	.mime_type	= "image/png",
+	.extension	= "png",
+};
+
 vbi_export_class
 vbi_export_class_png = {
-	._public = {
-		.keyword	= "png",
-		.label		= N_("PNG"),
-		.tooltip	= N_("Export this page as PNG image"),
-
-		.mime_type	= "image/png",
-		.extension	= "png",
-	},
-
-	._new			= gfx_new,
-	._delete		= gfx_delete,
-	.option_enum		= option_enum,
-	.option_get		= option_get,
-	.option_set		= option_set,
-	.export			= png_export
+	._public	= &info_png,
+	._new		= gfx_new,
+	._delete	= gfx_delete,
+	.option_enum	= option_enum,
+	.option_get	= option_get,
+	.option_set	= option_set,
+	.export		= png_export
 };
 
 VBI_AUTOREG_EXPORT_MODULE(vbi_export_class_png)
