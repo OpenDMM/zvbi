@@ -130,7 +130,10 @@ static uint32_t hcrc[128];
 
 static void init_hcrc(void) __attribute__ ((constructor));
 
+
 /*
+http://www.fcc.gov/cgb/statid.html
+ *
  *  XDS has no unique station id as EBU (or is the call sign?)
  *  so we create a checksum over the station name.
  */

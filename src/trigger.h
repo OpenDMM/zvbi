@@ -35,6 +35,6 @@ typedef struct vbi_trigger vbi_trigger;
 extern void		vbi_trigger_flush(vbi_decoder *vbi);
 extern void		vbi_deferred_trigger(vbi_decoder *vbi);
 extern void		vbi_eacem_trigger(vbi_decoder *vbi, unsigned char *s);
-extern void		vbi_atvef_trigger(vbi_decoder *vbi, char *s);
+extern void		vbi_atvef_trigger(vbi_decoder *vbi, unsigned char *s);
 
 #endif /* TRIGGER_H */

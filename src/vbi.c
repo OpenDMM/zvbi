@@ -57,7 +57,9 @@
  *
  * The ZVBI library provides routines to access raw VBI sampling devices
  * (currently the Linux <a href="http://roadrunner.swansea.uk.linux.org/v4l.shtml">V4L</a>
- * and <a href="http://www.thedirks.org/v4l2/">V4L2</a> API
+ * and <a href="http://www.thedirks.org/v4l2/">V4L2</a> API and the
+ * FreeBSD, OpenBSD, NetBSD and BSDi
+ * <a href="http://telepresence.dmem.strath.ac.uk/bt848/">bktr driver</a> API
  * are supported), a versatile raw VBI bit slicer,
  * decoders for various data services and basic search,
  * render and export functions for text pages. The library was written for

@@ -591,7 +591,7 @@ vbi_services[] = {
  * Name of the @a service, ASCII, or @c NULL if unknown.
  */
 /* XXX make return type const */
-char *
+const char *
 vbi_sliced_name(unsigned int service)
 {
 	int i;

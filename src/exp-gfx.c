@@ -184,7 +184,7 @@ special:
  * @return
  * Glyph number.
  */
-static int
+static unsigned int
 unicode_ccfont2(unsigned int c, int italic)
 {
 	static const unsigned short specials[] = {
@@ -1163,21 +1163,21 @@ png_export(vbi_export *e, FILE *fp, vbi_page *pg)
 			title[0] = 0;
 
 		/*
+		 *  FIXME
 		 *  ISO 8859-1 (Latin-1) character set required,
 		 *  see png spec for other
 		 */
-		if (pg->pgno < 0x100)
+		if (pg->pgno < 0x100) {
 			size += snprintf(title + size, sizeof(title) - size - 1,
 					 "Closed Caption"); /* no i18n, proper name */
-		else if (pg->subno != VBI_ANY_SUBNO)
+		} else if (pg->subno != VBI_ANY_SUBNO) {
 			size += snprintf(title + size, sizeof(title) - size - 1,
-					 /* NLS: .png title, must be Latin-1 */
 					 _("Teletext Page %3x.%x"),
 					 pg->pgno, pg->subno);
-		else
+		} else {
 			size += snprintf(title + size, sizeof(title) - size - 1,
-					 /* NLS: .png title, must be Latin-1 */
 					 _("Teletext Page %3x"), pg->pgno);
+		}
 	}
 
 	memset(text, 0, sizeof(text));

@@ -215,7 +215,7 @@ typedef struct {
 /** @addtogroup Sliced
  * @{
  */
-extern char *			vbi_sliced_name(unsigned int service);
+extern const char *		vbi_sliced_name(unsigned int service);
 /** @} */
 
 /* Private */

@@ -37,6 +37,7 @@
 /* Public */
 
 #ifndef DOXYGEN_SHOULD_IGNORE_THIS
+/* doxygen omits static objects */
 #define static_inline static inline
 #endif
 
@@ -85,6 +86,7 @@ typedef int vbi_bool;
  *   "Additional text channel"</td></tr>
  * </table>
  */
+/* XXX unsigned? */
 typedef int vbi_pgno;
 
 /**

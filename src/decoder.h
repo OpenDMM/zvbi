@@ -129,7 +129,7 @@
  * <td>&nbsp;</td><td>&nbsp;</td></tr>
  * </table>
  */
-/* Attn: keep this in sync with vbi, don't change order */
+/* Attn: keep this in sync with rte, don't change order */
 typedef enum {
 	VBI_PIXFMT_YUV420 = 1,
 	VBI_PIXFMT_YUYV,
@@ -276,7 +276,7 @@ typedef struct vbi_raw_decoder {
 	/* Sampling parameters */
 
 	/**
-	 * Either 525 (NTSC) or 625 (PAL, SECAM), describing the
+	 * Either 525 (M/NTSC, M/PAL) or 625 (PAL, SECAM), describing the
 	 * scan line system all line numbers refer to.
 	 */
 	int			scanning;
@@ -298,7 +298,7 @@ typedef struct vbi_raw_decoder {
 	int			bytes_per_line;
 	/**
 	 * The distance from 0H (leading edge hsync, half amplitude point)
-	 * to the first sample/pixel captured, in samples/pixels. You want
+	 * to the first sample (pixel) captured, in samples (pixels). You want
 	 * an offset small enough not to miss the start of the data
 	 * transmitted.
 	 */

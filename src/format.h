@@ -306,7 +306,7 @@ typedef struct vbi_page {
 	 * 
 	 * Practically this is only used in Closed Caption roll-up
 	 * mode, otherwise all rows are always marked dirty. Clients
-	 * are free to this information.
+	 * are free to ignore this information.
 	 */
 	struct {
 	     /* int			x0, x1; */
@@ -353,7 +353,7 @@ typedef struct vbi_page {
 	 * @endcode
 	 * whereby drcs_clut[0] shall be replaced by vbi_char->foreground,
 	 * drcs_clut[1] by vbi_char->background. (Renderers are supposed to convert the
-	 * drcs_clut into a private color map of the desired type.)
+	 * drcs_clut into a private color map of the desired pixel format.)
 	 * 
 	 * Practically vbi_char->drcs_clut_offs encodes the DRCS color depth
 	 * and selects between the vbi_char colors and one of two 4- or

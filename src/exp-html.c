@@ -212,28 +212,26 @@ static const char *html_italic[]	= { "</i>", "<i>" };
 static void
 title(html_instance *html, vbi_page *pg)
 {
-	if (pg->pgno < 0x100)
+	if (pg->pgno < 0x100) {
 		fprintf(html->fp, "<title lang=\"en\">");
-	else
-		/*
-		 *  NLS: "lang=\"en\" refers to the page title "Teletext Page..."
-		 *  below, specify "de", "fr", "es" etc.
-		 */
+	} else {
+		/* TRANSLATORS: "lang=\"en\" refers to the page title
+		   "Teletext Page ...". Please specify "de", "fr", "es" etc. */
 		fprintf(html->fp, _("<title lang=\"en\">"));
+	}
 
 	if (html->export.network) {
 		escaped_fputs(html->fp, html->export.network);
 		putc(' ', html->fp);
 	}
 
-	if (pg->pgno < 0x100)
+	if (pg->pgno < 0x100) {
 		fprintf(html->fp, "Closed Caption"); /* no i18n, proper name */
-	else if (pg->subno != VBI_ANY_SUBNO)
-		/* NLS: HTML export page title */
+	} else if (pg->subno != VBI_ANY_SUBNO) {
 		fprintf(html->fp, _("Teletext Page %3x.%x"), pg->pgno, pg->subno);
-	else
-		/* NLS: HTML export page title */
+	} else {
 		fprintf(html->fp, _("Teletext Page %3x"), pg->pgno);
+	}
 
 	fputs("</title>", html->fp);
 }
