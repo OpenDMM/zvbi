@@ -69,7 +69,7 @@ typedef unsigned int vbi_nuid;
 
 /* Private */
 
-#define lengthof(array) (sizeof (array) / sizeof (*(array)))
+#define N_ELEMENTS(array) (sizeof (array) / sizeof (*(array)))
 
 #define PARENT(ptr, type, member)					\
   ((type *)(((char *) ptr) - offsetof (type, member)))
