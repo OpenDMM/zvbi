@@ -488,6 +488,14 @@ v4l_delete(vbi_capture *vc)
 	free(v);
 }
 
+static int
+v4l_fd(vbi_capture *vc)
+{
+	vbi_capture_v4l *v = PARENT(vc, vbi_capture_v4l, capture);
+
+	return v->fd;
+}
+
 static vbi_capture *
 v4l_new(char *dev_name, int given_fd, int scanning,
 	unsigned int *services, int strict,
@@ -515,6 +523,7 @@ v4l_new(char *dev_name, int given_fd, int scanning,
 
 	v->capture.parameters = v4l_parameters;
 	v->capture.delete = v4l_delete;
+	v->capture.get_fd = v4l_fd;
 
 	if ((v->fd = open(dev_name, O_RDONLY)) == -1) {
 		vbi_asprintf(errorstr, _("Cannot open '%s': %d, %s."),

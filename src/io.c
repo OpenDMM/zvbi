@@ -253,6 +253,24 @@ vbi_capture_parameters(vbi_capture *capture)
 }
 
 /**
+ * vbi_capture_fd:
+ * @capture: Initialized vbi capture context, can be %NULL.
+ * 
+ * Return value: 
+ * The file descriptor associated used to read from the device.
+ * If not applicable or the @capture object is invalid -1
+ * will be returned.
+ **/
+int
+vbi_capture_fd(vbi_capture *capture)
+{
+	if (capture)
+		return capture->get_fd(capture);
+	else
+		return -1;
+}
+
+/**
  * vbi_capture_delete:
  * @capture: Initialized vbi capture context, can be %NULL.
  * 
