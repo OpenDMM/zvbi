@@ -36,7 +36,7 @@ static const char rcsid[] = "$Id$";
 #include <fcntl.h>
 #include <unistd.h>
 #include <assert.h>
-#include <utils.h>
+/* #include <utils.h> ? */
 #include <sys/time.h>
 #include <sys/types.h>
 #include <sys/ioctl.h>
@@ -46,6 +46,27 @@ static const char rcsid[] = "$Id$";
 #include "proxy-msg.h"
 #include "bcd.h"
 
+#ifndef __GNUC__
+#define __inline__
+#endif
+
+static __inline__ const unsigned int
+swap32 (unsigned int x)
+{
+#if __GNUC__ >= 3
+#if #cpu (i686)
+	if (!__builtin_constant_p (x)) {
+		__asm__ __volatile__ ("bswap %0" : "=r" (x) : "0" (x));
+		return x;
+	}
+#endif
+#endif
+	return
+		  (((x) & 0xFFUL) << 24)
+		| (((x) & 0xFF00UL) << 8)
+		| (((x) & 0xFF0000UL) >> 8)
+		| (((x) & 0xFF000000UL) >> 24);
+}
 
 #define dprintf1(fmt, arg...)    if (v->trace) printf("WARN  io-proxy: " fmt, ## arg)
 #define dprintf2(fmt, arg...)    if (v->trace) printf("TRACE io-proxy: " fmt, ## arg)
