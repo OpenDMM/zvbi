@@ -1198,7 +1198,7 @@ enhance(vbi_decoder *vbi, vt_magazine *mag, vt_extension *ext,
 	struct pex26 *pt, ptmp;
 	int pdc_hr;
 
-	static void
+	void
 	flush(int column)
 	{
 		int row = inv_row + active_row;
@@ -1358,7 +1358,7 @@ enhance(vbi_decoder *vbi, vt_magazine *mag, vt_extension *ext,
 		active_column = column;
 	}
 
-	static void
+	void
 	flush_row(void)
 	{
 		if (type == OBJ_TYPE_PASSIVE || type == OBJ_TYPE_ADAPTIVE)

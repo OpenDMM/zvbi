@@ -1839,7 +1839,7 @@ parse_28_29(vbi_decoder *vbi, uint8_t *p,
 	vt_extension *ext;
 	int i, j, err = 0;
 
-	static int
+	int
 	bits(int count)
 	{
 		int r, n;

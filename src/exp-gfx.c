@@ -1120,7 +1120,7 @@ png_export(vbi_export *e, FILE *fp, vbi_page *pg)
 	}
 
 	/* avoid possible longjmp breakage due to libpng ugliness */
-	{ static int do_write() {
+	{ int do_write() {
 	if (setjmp(png_ptr->jmpbuf))
 		return 1;
 
