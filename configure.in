@@ -115,6 +115,7 @@ dnl (Test programs)
 dnl
 AC_PATH_XTRA
 test "$no_x" = yes || X_LIBS="$X_LIBS -lX11"
+AM_CONDITIONAL(HAVE_X, [test "$no_x" = yes])
 
 dnl
 dnl Enable OS dependent device interfaces.
@@ -125,13 +126,13 @@ enable_dvb_auto=no
 enable_bktr_auto=no
 enable_proxy_auto=no
 
-case "`uname -s`" in
-  Linux)
+case $host_os in
+  linux*)
     enable_v4l_auto=yes
     enable_dvb_auto=yes
     enable_proxy_auto=yes
     ;;
-  OpenBSD | FreeBSD | NetBSD | BSDi)
+  freebsd* | kfreebsd*-gnu | openbsd* | netbsd*)
     enable_bktr_auto=yes
     ;;
   *)
