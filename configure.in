@@ -180,6 +180,7 @@ if test "$enable_proxy" = yes; then
       AC_DEFINE(HAVE_IOCTL_INT_ULONG_DOTS, 1, [ioctl request type])
       ;;
     OpenBSD | FreeBSD | NetBSD | BSDi)
+      AC_DEFINE(HAVE_IOCTL_INT_ULONG_DOTS, 1, [ioctl request type])
       ;;
     *)
       ;;
