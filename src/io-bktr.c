@@ -21,7 +21,7 @@ static const char rcsid [] =
 "$Id$";
 
 #ifdef HAVE_CONFIG_H
-#  include "../config.h"
+#  include "config.h"
 #endif
 
 #include "vbi.h"
@@ -159,6 +159,8 @@ bktr_delete(vbi_capture *vc)
 	for (; v->num_raw_buffers > 0; v->num_raw_buffers--)
 		free(v->raw_buffer[v->num_raw_buffers - 1].data);
 
+	vbi_raw_decoder_destroy (&v->dec);
+
 	if (-1 != v->fd)
 		device_close (v->capture.sys_log_fp, v->fd);
 
@@ -196,6 +198,8 @@ vbi_capture_bktr_new		(const char *		dev_name,
 		errno = ENOMEM;
 		return NULL;
 	}
+
+	vbi_raw_decoder_init (&v->dec);
 
 	v->capture.parameters = bktr_parameters;
 	v->capture._delete = bktr_delete;
