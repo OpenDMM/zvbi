@@ -105,6 +105,7 @@ v4l2_stream(vbi_capture *vc, vbi_capture_buffer **raw,
 			return -1;
 	} else if (v->enqueue >= 0) {
 		vbuf.type = v->btype;
+		vbuf.memory = V4L2_MEMORY_MMAP;
 		vbuf.index = v->enqueue;
 
 		if (IOCTL(v->fd, VIDIOC_QBUF, &vbuf) == -1)
@@ -135,6 +136,7 @@ v4l2_stream(vbi_capture *vc, vbi_capture_buffer **raw,
 	}
 
 	vbuf.type = v->btype;
+	vbuf.memory = V4L2_MEMORY_MMAP;
 
 	if (IOCTL(v->fd, VIDIOC_DQBUF, &vbuf) == -1)
 		return -1;
@@ -580,6 +582,7 @@ vbi_capture_v4l2k_new		(const char *		dev_name,
 		printv("Fifo initialized\nRequesting streaming i/o buffers\n");
 
 		vrbuf.type = v->btype;
+		vrbuf.memory = V4L2_MEMORY_MMAP;
 		vrbuf.count = buffers;
 
 		if (IOCTL(v->fd, VIDIOC_REQBUFS, &vrbuf) == -1) {
@@ -613,6 +616,7 @@ vbi_capture_v4l2k_new		(const char *		dev_name,
 			uint8_t *p;
 
 			vbuf.type = v->btype;
+			vbuf.memory = V4L2_MEMORY_MMAP;
 			vbuf.index = v->num_raw_buffers;
 
 			if (IOCTL(v->fd, VIDIOC_QUERYBUF, &vbuf) == -1) {
