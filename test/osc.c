@@ -436,8 +436,7 @@ main(int argc, char **argv)
 			&services, /* strict */ -1, &errstr, /* trace */ verbose);
 
 		if (!cap) {
-			fprintf(stderr, "Cannot capture vbi data "
-				"with v4l2 interface:\n%s\n", errstr);
+			fprintf(stderr, "Failed to open v4l2 device:\n%s\n", errstr);
 
 			if (errstr)
 				free(errstr);
@@ -447,8 +446,7 @@ main(int argc, char **argv)
 				/* trace */ verbose);
 
 			if (!cap) {
-				fprintf(stderr, "Cannot capture vbi data "
-					"with v4l interface:\n%s\n", errstr);
+				fprintf(stderr, "Failed to open v4l device:\n%s\n", errstr);
 		
 				exit(EXIT_FAILURE);
 			}
