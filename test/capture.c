@@ -20,6 +20,8 @@
 
 /* $Id$ */
 
+#undef NDEBUG
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -388,10 +390,10 @@ mainloop(void)
 	double timestamp;
 	struct timeval tv;
 
-	if (do_read || do_sim) {
-		assert((raw = malloc(src_w * src_h)));
-		assert((sliced = malloc(sizeof(vbi_sliced) * src_h)));
-	}
+	raw = malloc(src_w * src_h);
+	sliced = malloc(sizeof(vbi_sliced) * src_h);
+
+	assert(raw && sliced);
 
 	for (quit = FALSE; !quit;) {
 		int r;
