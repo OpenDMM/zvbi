@@ -40,6 +40,7 @@ static char rcsid[] = "$Id$";
 #include <sys/types.h>		/* fd_set */
 #include <sys/ioctl.h>
 #include <sys/mman.h>
+#include <pthread.h>
 
 #include "io.h"
 #include "videodev.h"
@@ -507,6 +508,8 @@ v4l_new(char *dev_name, int given_fd, int scanning,
 	char *driver_name = _("driver unknown");
 	vbi_capture_v4l *v;
 
+	pthread_once (&vbi_init_once, vbi_init);
+
 	assert(services && *services != 0);
 
 	if (scanning != 525 && scanning != 625)
@@ -856,6 +859,7 @@ vbi_capture_v4l_sidecar_new(char *dev_name, int given_fd,
 			    unsigned int *services, int strict,
 			    char **errorstr, vbi_bool trace)
 {
+	pthread_once (&vbi_init_once, vbi_init);
 	vbi_asprintf(errorstr, _("V4L interface not compiled."));
 	return NULL;
 }
@@ -865,6 +869,7 @@ vbi_capture_v4l_new(char *dev_name, int scanning,
 		     unsigned int *services, int strict,
 		     char **errorstr, vbi_bool trace)
 {
+	pthread_once (&vbi_init_once, vbi_init);
 	vbi_asprintf(errorstr, _("V4L interface not compiled."));
 	return NULL;
 }

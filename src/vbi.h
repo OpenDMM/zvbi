@@ -204,6 +204,9 @@ extern vbi_page_type	vbi_classify_page(vbi_decoder *vbi, vbi_pgno pgno,
 
 /* Private */
 
+extern pthread_once_t	vbi_init_once;
+extern void		vbi_init(void);
+
 extern void		vbi_transp_colormap(vbi_decoder *vbi, vbi_rgba *d, vbi_rgba *s, int entries);
 extern void             vbi_chsw_reset(vbi_decoder *vbi, vbi_nuid nuid);
 

@@ -25,6 +25,7 @@
 /* $Id$ */
 
 #include "site_def.h"
+#include "../config.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -67,6 +68,16 @@
 /** @defgroup Basic Basic types */
 /** @defgroup Raw Raw VBI */
 /** @defgroup Service Data Service Decoder */
+
+pthread_once_t vbi_init_once = PTHREAD_ONCE_INIT;
+
+void
+vbi_init			(void)
+{
+#ifdef ENABLE_NLS
+	bindtextdomain (PACKAGE, PACKAGE_LOCALE_DIR);
+#endif
+}
 
 /*
  *  Events
@@ -772,6 +783,8 @@ vbi_decoder *
 vbi_decoder_new(void)
 {
 	vbi_decoder *vbi;
+
+	pthread_once (&vbi_init_once, vbi_init);
 
 	if (!(vbi = (vbi_decoder *) calloc(1, sizeof(*vbi))))
 		return NULL;

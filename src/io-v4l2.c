@@ -41,6 +41,7 @@ static char rcsid[] = "$Id$";
 #include <sys/ioctl.h>
 #include <sys/mman.h>
 #include <asm/types.h>		/* for videodev2.h */
+#include <pthread.h>
 
 #include "io.h"
 #include "videodev2.h"
@@ -310,6 +311,8 @@ vbi_capture_v4l2_new(char *dev_name, int buffers,
 	char *guess = "";
 	vbi_capture_v4l2 *v;
 	int max_rate, g_fmt;
+
+	pthread_once (&vbi_init_once, vbi_init);
 
 	assert(services && *services != 0);
 
@@ -726,6 +729,7 @@ vbi_capture_v4l2_new(char *dev_name, int buffers,
 		     unsigned int *services, int strict,
 		     char **errorstr, vbi_bool trace)
 {
+	pthread_once (&vbi_init_once, vbi_init);
 	vbi_asprintf(errorstr, _("V4L2 interface not compiled."));
 	return NULL;
 }
