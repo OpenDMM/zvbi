@@ -32,9 +32,6 @@
 
 #include "src/libzvbi.h"
 
-#define TEST 1
-#include "src/dvb_demux.h"
-
 vbi_decoder *		vbi;
 vbi_bool		quit = FALSE;
 vbi_pgno		pgno;
@@ -114,10 +111,10 @@ pes_mainloop			(void)
 			unsigned int lines;
 			int64_t pts;
 
-			lines = _vbi_dvb_demux_cor (dx,
-						    sliced, 64,
-						    &pts,
-						    &bp, &left);
+			lines = vbi_dvb_demux_cor (dx,
+						   sliced, 64,
+						   &pts,
+						   &bp, &left);
 			if (lines > 0) {
 				vbi_decode (vbi, sliced, lines,
 					    pts / 90000.0);
@@ -244,7 +241,7 @@ main(int argc, char **argv)
 	ungetc (c, stdin);
 
 	if (0 == c) {
-		dx = _vbi_dvb_demux_pes_new (/* callback */ NULL, NULL);
+		dx = vbi_dvb_pes_demux_new (/* callback */ NULL, NULL);
 		assert (NULL != dx);
 
 		pes_mainloop ();
