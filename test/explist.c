@@ -22,14 +22,17 @@
 
 #undef NDEBUG
 
-#include "../config.h"
+#include "config.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include <assert.h>
+#include <unistd.h>
+#ifdef HAVE_GETOPT_LONG
 #include <getopt.h>
+#endif
 #include <locale.h>
 
 #include <libzvbi.h>
@@ -494,7 +497,7 @@ list_modules(void)
 	puts("-- end of list --");
 }
 
-const char short_options[] = "c";
+static const char short_options[] = "c";
 
 #ifdef HAVE_GETOPT_LONG
 static const struct option

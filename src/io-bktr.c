@@ -35,7 +35,6 @@ static char rcsid[] = "$Id$";
 #include <errno.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <getopt.h>
 #include <assert.h>
 #include <sys/time.h>		/* timeval */
 #include <sys/types.h>		/* fd_set */

@@ -86,7 +86,7 @@ export(vbi_export *e, FILE *fp, vbi_page *pg)
 		return FALSE;
 	}
 
-	page = *vtp;
+ 	memcpy(&page, vtp, vtp_size(vtp));
 
 	/**/
 
