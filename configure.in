@@ -184,13 +184,15 @@ dnl
 AC_CHECK_PROG(HAVE_DOXYGEN, doxygen, yes, no)
 AM_CONDITIONAL(HAVE_DOXYGEN, [test "$HAVE_DOXYGEN" = yes])
 
+dnl See proxy branch
+dnl daemon/Makefile
+dnl daemon/zvbid.init
+
 AC_OUTPUT([
   Makefile
   po/Makefile.in
   src/Makefile
   test/Makefile
-  daemon/Makefile
-  daemon/zvbid.init
   doc/Makefile
   doc/Doxyfile
   contrib/Makefile
