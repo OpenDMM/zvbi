@@ -211,6 +211,4 @@ extern void		vbi_init(void);
 extern void		vbi_transp_colormap(vbi_decoder *vbi, vbi_rgba *d, vbi_rgba *s, int entries);
 extern void             vbi_chsw_reset(vbi_decoder *vbi, vbi_nuid nuid);
 
-extern void		vbi_asprintf(char **errstr, char *templ, ...);
-
 #endif /* VBI_H */

@@ -54,6 +54,7 @@
  *
  * @author Iñaki García Etxebarria<br>
  * Michael H. Schimek<br>
+ * Tom Zoerner<br>
  * based on AleVT by Edgar Toernig
  *
  * @section intro Introduction
@@ -832,32 +833,4 @@ vbi_version			(unsigned int *		major,
 	if (major) *major = VBI_VERSION_MAJOR;
 	if (minor) *minor = VBI_VERSION_MINOR;
 	if (micro) *micro = VBI_VERSION_MICRO;
-}
-
-/**
- * @internal
- * libzvbi internal helper function.
- * Note asprintf() is a GNU libc extension.
- */
-void
-vbi_asprintf(char **errstr, char *templ, ...)
-{
-	char buf[512];
-	va_list ap;
-	int temp;
-
-	if (!errstr)
-		return;
-
-	temp = errno;
-
-	va_start(ap, templ);
-
-	vsnprintf(buf, sizeof(buf) - 1, templ, ap);
-
-	va_end(ap);
-
-	*errstr = strdup(buf);
-
-	errno = temp;
 }
