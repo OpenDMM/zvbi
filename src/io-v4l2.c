@@ -351,8 +351,9 @@ vbi_capture_v4l2_new(const char *dev_name, int buffers,
 		v4l2_delete (&v->capture);
 
 		/* Try api revision 2002-10 */
-		return vbi_capture_v4l2k_new (dev_name, 0, buffers,
-					      services, strict, errorstr, trace);
+		return vbi_capture_v4l2k_new (dev_name, /* fd */ -1, buffers,
+					      services, strict, errorstr,
+					      trace);
 	}
 
 	if (vcap.type != V4L2_TYPE_VBI) {

@@ -2027,9 +2027,12 @@ parse_28_29(vbi_decoder *vbi, uint8_t *p,
 			return FALSE;
 
 		if (cvtp->function == PAGE_FUNCTION_UNKNOWN) {
-			memmove(cvtp->data.drcs.raw,
-				cvtp->data.unknown.raw,
-				sizeof(cvtp->data.drcs.raw));
+			/* If to prevent warning: statement with no effect
+			   when .raw unions coincidentally align. */
+			if (cvtp->data.drcs.raw != cvtp->data.unknown.raw)
+				memmove(cvtp->data.drcs.raw,
+					cvtp->data.unknown.raw,
+					sizeof(cvtp->data.drcs.raw));
 			cvtp->function = function;
 		} else if (cvtp->function != function) {
 			cvtp->function = PAGE_FUNCTION_DISCARD;
