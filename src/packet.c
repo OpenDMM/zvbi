@@ -1153,6 +1153,7 @@ vbi_decode_vps(vbi_decoder *vbi, uint8_t *buf)
 			unknown_cni(vbi, "VPS", cni);
 		} else {
 			strncpy(n->name, name, sizeof(n->name) - 1);
+			n->name[sizeof(n->name) - 1] = 0;
 		}
 
 		if (id != n->nuid) {
@@ -1261,6 +1262,7 @@ parse_bsd(vbi_decoder *vbi, uint8_t *raw, int packet, int designation)
 					unknown_cni(vbi, "8/30/1", cni);
 				} else {
 					strncpy(n->name, name, sizeof(n->name) - 1);
+					n->name[sizeof(n->name) - 1] = 0;
 				}
 
 				if (id != n->nuid) {
@@ -1346,6 +1348,7 @@ parse_bsd(vbi_decoder *vbi, uint8_t *raw, int packet, int designation)
 					unknown_cni(vbi, "8/30/2", cni);
 				} else {
 					strncpy(n->name, name, sizeof(n->name) - 1);
+					n->name[sizeof(n->name) - 1] = 0;
 				}
 
 				if (id != n->nuid) {
