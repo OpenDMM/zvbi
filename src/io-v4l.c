@@ -771,8 +771,8 @@ set_parameters(vbi_capture_v4l *v, struct vbi_format *p_vfmt, int *p_max_rate,
 		break;
 	default:
 		vbi_asprintf(errorstr, _("Could not set the vbi "
-					 "capture parameters for %s (%s): %d, %s."),
-			     v->p_dev_name, v->vcap.name, errno, strerror(errno));
+					 "capture parameters for %s (%s): %s."),
+			     v->p_dev_name, v->vcap.name, strerror(errno));
 		/* guess = _("Maybe a bug in the driver or libzvbi."); */
 		break;
 	}

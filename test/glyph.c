@@ -27,7 +27,7 @@
 #include <string.h>
 #include <assert.h>
 
-#include <libzvbi.h>
+#include "src/libzvbi.h"
 
 extern unsigned int	vbi_teletext_unicode(int, int, int);
 extern unsigned int	vbi_teletext_composed_unicode(unsigned int a, unsigned int c);

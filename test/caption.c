@@ -35,9 +35,8 @@
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
 #include <X11/Xutil.h>
-//#include <X11/xpm.h>
 
-#include <libzvbi.h>
+#include "src/libzvbi.h"
 
 #define printable(c) ((((c) & 0x7F) < 0x20 || ((c) & 0x7F) > 0x7E) ? '.' : ((c) & 0x7F))
 

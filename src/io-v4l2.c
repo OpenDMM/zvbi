@@ -126,8 +126,9 @@ vbi_capture_v4l2_new		(const char *		dev_name,
 	printv ("Opened %s\n", dev_name);
 
 	if (-1 == xioctl (v, VIDIOC_QUERYCAP, &v->vcap)) {
-		vbi_asprintf (errorstr, _("Cannot identify '%s': %d, %s."),
-			      dev_name, errno, strerror (errno));
+		/* TRANSLATORS: Cannot identify '/dev/some'. */
+		vbi_asprintf (errorstr, _("Cannot identify '%s': %s."),
+			      dev_name, strerror (errno));
 		guess = _("Probably not a v4l2 device.");
 
 		v4l2_delete (&v->capture);

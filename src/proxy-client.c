@@ -42,6 +42,7 @@ static const char rcsid[] = "$Id$";
 #include "vbi.h"
 #include "io.h"
 #include "bcd.h"
+#include "misc.h"
 
 #include "proxy-msg.h"
 #include "proxy-client.h"
@@ -148,9 +149,9 @@ static vbi_bool proxy_client_connect_server( vbi_proxy_client * vpc )
    {
       dprintf1("connect_server: hostname or port not configured\n");
       if (use_tcp_ip && (vpc->p_srv_host == NULL))
-         vbi_asprintf(&vpc->p_errorstr, "%s", _("Server hostname not configured"));
+         vbi_asprintf(&vpc->p_errorstr, _("Server hostname not configured."));
       else if (vpc->p_srv_port == NULL)
-         vbi_asprintf(&vpc->p_errorstr, "%s", _("Server service name (i.e. port) not configured"));
+         vbi_asprintf(&vpc->p_errorstr, _("Server port not configured."));
    }
    return result;
 }
@@ -417,7 +418,7 @@ static vbi_bool proxy_client_take_message( vbi_proxy_client * vpc )
    if ((result == FALSE) && (vpc->p_errorstr == NULL))
    {
       dprintf1("take_message: message type %d (len %d) not expected in state %d\n", vpc->p_client_msg->head.type, vpc->p_client_msg->head.len, vpc->state);
-      vbi_asprintf(&vpc->p_errorstr, "%s", _("Proxy protocol error (unecpected message)"));
+      vbi_asprintf(&vpc->p_errorstr, _("Protocol error (unexpected message)."));
    }
 
    return result;
@@ -574,7 +575,7 @@ static vbi_bool proxy_client_rpc( vbi_proxy_client * vpc,
    return TRUE;
 
 failure:
-   vbi_asprintf(&vpc->p_errorstr, "%s", _("Lost connection to proxy (I/O error)"));
+   vbi_asprintf(&vpc->p_errorstr, _("Connection lost due to I/O error."));
    return FALSE;
 }
 
@@ -626,7 +627,7 @@ static int proxy_client_read_message( vbi_proxy_client * vpc,
    return ret;
 
 failure:
-   vbi_asprintf(&vpc->p_errorstr, "%s", _("Lost connection (I/O error)"));
+   vbi_asprintf(&vpc->p_errorstr, _("Connection lost due to I/O error."));
    proxy_client_close(vpc);
    return -1;
 }
@@ -746,15 +747,16 @@ static vbi_bool proxy_client_start_acq( vbi_proxy_client * vpc )
       {
          dprintf1("take_message: CONNECT_CNF: reply version %x, protocol %x\n", p_cnf_msg->magics.protocol_version, p_cnf_msg->magics.protocol_compat_version);
 
-         vbi_asprintf(&vpc->p_errorstr, "%s: %d.%d.%d", _("Incompatible server version"),
-                                   ((p_cnf_msg->magics.protocol_compat_version >> 16) & 0xff),
-                                   ((p_cnf_msg->magics.protocol_compat_version >>  8) & 0xff),
-                                   ((p_cnf_msg->magics.protocol_compat_version      ) & 0xff));
+         vbi_asprintf (&vpc->p_errorstr,
+		       _("Incompatible server version %u.%u.%u."),
+		       ((p_cnf_msg->magics.protocol_compat_version >> 16) & 0xff),
+		       ((p_cnf_msg->magics.protocol_compat_version >>  8) & 0xff),
+		       ((p_cnf_msg->magics.protocol_compat_version      ) & 0xff));
          goto failure;
       }
       else if (vpc->endianSwap)
       {  /* endian swapping currently unsupported */
-         vbi_asprintf(&vpc->p_errorstr, "%s", _("Incompatible server CPU architecture (endianess mismatch)"));
+         vbi_asprintf(&vpc->p_errorstr, _("Incompatible server architecture (endianess mismatch)."));
          goto failure;
       }
       else

@@ -206,8 +206,8 @@ vbi_capture_bktr_new		(const char *		dev_name,
 
 	v->fd = device_open (v->capture.sys_log_fp, dev_name, O_RDONLY, 0);
 	if (-1 == v->fd) {
-		vbi_asprintf(errstr, _("Cannot open '%s': %d, %s."),
-			     dev_name, errno, strerror(errno));
+		vbi_asprintf(errstr, _("Cannot open '%s': %s."),
+			     dev_name, strerror(errno));
 		goto io_error;
 	}
 

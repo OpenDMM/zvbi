@@ -35,7 +35,7 @@
 #endif
 #include <locale.h>
 
-#include <libzvbi.h>
+#include "src/libzvbi.h"
 
 #ifndef _
 #ifdef ENABLE_NLS

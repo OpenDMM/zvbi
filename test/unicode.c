@@ -26,7 +26,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
-#include <libzvbi.h>
+#include "src/libzvbi.h"
 
 /* Note these are private functions, used here for testing only. */
 

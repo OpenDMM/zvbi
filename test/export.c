@@ -30,7 +30,7 @@
 #include <assert.h>
 #include <unistd.h>
 
-#include <libzvbi.h>
+#include "src/libzvbi.h"
 
 vbi_decoder *		vbi;
 vbi_bool		quit = FALSE;

@@ -25,6 +25,9 @@
  *    for a list of possible options.
  *
  *  $Log$
+ *  Revision 1.13  2004/10/25 16:56:30  mschimek
+ *  *** empty log message ***
+ *
  *  Revision 1.12  2004/10/24 18:20:00  tomzo
  *  Added test support for norm change handling
  *
@@ -68,11 +71,11 @@ static const char rcsid[] = "$Id$";
 #include <inttypes.h>
 
 #define USE_LIBZVBI
-#include "libzvbi.h"
+#include "src/libzvbi.h"
 
-#include "../config.h"
+#include "config.h"
 #ifdef ENABLE_V4L
-#include "videodev.h"
+#include "src/videodev.h"
 #endif
 
 
@@ -917,7 +920,7 @@ int main ( int argc, char ** argv )
 
                   for (line=0; line < lineCount; line++)
                   {
-                     if ((pVbiData[line].id & VBI_SLICED_TELETEXT_B|VBI_SLICED_TELETEXT_BD_525) != 0)
+                     if ((pVbiData[line].id & (VBI_SLICED_TELETEXT_B|VBI_SLICED_TELETEXT_BD_525)) != 0)
                      {
                         PrintTeletextData(pVbiData[line].data, pVbiData[line].line, pVbiData[line].id);
                      }

@@ -35,7 +35,7 @@
 #include <getopt.h>
 #endif
 
-#include <libzvbi.h>
+#include "src/libzvbi.h"
 
 #ifndef X_DISPLAY_MISSING
 

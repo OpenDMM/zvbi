@@ -2,7 +2,7 @@
 
 /* $Id$ */
 
-#include "exp-gfx.c"
+#include "src/exp-gfx.c"
 
 static void print_head(FILE *fp,
 		       char *foundry, char *name, char *slant,

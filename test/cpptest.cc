@@ -20,7 +20,7 @@
 
 /* $Id$ */
 
-#include "libzvbi.h"
+#include "src/libzvbi.h"
 
 /* For now just to see if it compiles. */
 
