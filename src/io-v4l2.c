@@ -480,9 +480,9 @@ vbi_capture_v4l2_new(const char *dev_name, int buffers,
 
 				break;
 			}
+		} else {
+			printv("Successful set vbi capture parameters\n");
 		}
-
-		printv("Successful set vbi capture parameters\n");
 	}
 
 	if (trace)

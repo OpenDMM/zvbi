@@ -434,6 +434,8 @@ vbi_capture_v4l2k_new		(const char *		dev_name,
 	}
 
 	if (strict >= 0) {
+		struct v4l2_format vfmt_temp = vfmt;
+
 		printv("Attempt to set vbi capture parameters\n");
 
 		*services = vbi_raw_decoder_parameters(&v->dec, *services,
@@ -464,6 +466,7 @@ vbi_capture_v4l2k_new		(const char *		dev_name,
 				if (g_fmt != -1) {
 					printv("VIDIOC_S_FMT returned EBUSY, "
 					       "will try the current parameters\n");
+					vfmt = vfmt_temp;
 					break;
 				}
 #endif
