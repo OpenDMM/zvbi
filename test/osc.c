@@ -241,6 +241,7 @@ draw(unsigned char *raw)
 	unsigned char *data = raw;
 	int i, v, h0, field, end, line;
         XTextItem xti;
+	int x;
 
 	if (draw_count == 0)
 		return;
@@ -358,7 +359,7 @@ draw(unsigned char *raw)
 		       src_h, 1, dst_h);
         /* 50% grey */
         XSetForeground(display, gc, 0xAAAAAAAA);  
-        int x=draw_offset;
+        x=draw_offset;
         while (x<src_w && (x-draw_offset)<dst_w) {
 	   XFillRectangle(display, window, gc,
 			  x-draw_offset, /* x,y, w,h */

@@ -69,7 +69,7 @@ extern const char _zvbi_intl_domainname[];
 #  endif
 #endif
 
-#define DEBUG 0
+#define DEBUG 1
 
 #define printable(c) ((((c) & 0x7F) < 0x20 || ((c) & 0x7F) > 0x7E) ? \
                       '.' : ((c) & 0x7F))
