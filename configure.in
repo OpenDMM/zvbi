@@ -127,5 +127,6 @@ AC_OUTPUT([
   doc/Makefile
   doc/Doxyfile
   contrib/Makefile
+  m4/Makefile
   zvbi.spec
 ])
