@@ -2206,7 +2206,7 @@ vbi_decode_teletext(vbi_decoder *vbi, uint8_t *p)
 		cvtp->national = vbi_bit_reverse[flags] & 7;
 		cvtp->flags = (flags << 16) + subpage;
 
-//		if (0 && ((page & 15) > 9 || page > 0x99))
+		if (0 && ((page & 15) > 9 || page > 0x99))
 			printf("data page %03x/%04x n%d\n",
 			       cvtp->pgno, cvtp->subno, cvtp->national);
 
