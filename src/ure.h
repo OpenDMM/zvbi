@@ -25,6 +25,12 @@
 #ifndef _h_ure
 #define _h_ure
 
+#ifdef HAVE_CONFIG_H
+#  include "../config.h"
+#endif
+
+#ifdef HAVE_LIBUNICODE
+
 #include <stdio.h>
 #include <unicode.h>
 
@@ -134,5 +140,7 @@ extern int ure_exec __((ure_dfa_t dfa, int flags,
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* HAVE_LIBUNICODE */
 
 #endif /* _h_ure */
