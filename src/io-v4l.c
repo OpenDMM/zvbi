@@ -227,7 +227,7 @@ v4l_read_frame(vbi_capture_v4l *v, vbi_capture_buffer *raw, struct timeval *time
 
 static int
 v4l_read(vbi_capture *vc, vbi_capture_buffer **raw,
-	 vbi_capture_buffer **sliced, struct timeval *timeout_orig)
+	 vbi_capture_buffer **sliced, const struct timeval *timeout_orig)
 {
 	vbi_capture_v4l *v = PARENT(vc, vbi_capture_v4l, capture);
 	vbi_capture_buffer *my_raw = v->raw_buffer;
