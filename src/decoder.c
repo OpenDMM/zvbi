@@ -738,7 +738,7 @@ vbi_raw_decoder_parameters	(vbi_raw_decoder *	rd,
 	{
 		service_set = vbi_sampling_par_from_services
 			((vbi_sampling_par *) rd,
-			 max_rate,
+			 (unsigned int *) max_rate,
 			 videostd_set,
 			 service_set);
 	}

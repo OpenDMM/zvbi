@@ -527,7 +527,7 @@ option_string(vbi_export *e, const char *s2)
 vbi_export *
 vbi_export_new(const char *keyword, char **errstr)
 {
-	unsigned char key[256];
+	char key[256];
 	vbi_export_class *xc;
 	vbi_export *e;
 	unsigned int keylen;

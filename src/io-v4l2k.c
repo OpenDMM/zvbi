@@ -1178,10 +1178,10 @@ vbi_capture_v4l2k_new		(const char *		dev_name,
 	printv("%s (%s) is a v4l2 vbi device,\n", v->p_dev_name, v->vcap.card);
 	printv("driver %s, version 0x%08x\n", v->vcap.driver, v->vcap.version);
 
-	if (0 == strcmp (v->vcap.driver, "bttv")) {
+	if (0 == strcmp ((char *) v->vcap.driver, "bttv")) {
 		if (v->vcap.version <= 0x00090F)
 			v->start1_fix = TRUE;
-	} else if (0 == strcmp (v->vcap.driver, "saa7134")) {
+	} else if (0 == strcmp ((char *) v->vcap.driver, "saa7134")) {
 		v->start1_fix = TRUE;
 	}
 

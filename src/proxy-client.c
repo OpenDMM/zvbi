@@ -721,7 +721,7 @@ static vbi_bool proxy_client_start_acq( vbi_proxy_client * vpc )
    p_req_msg = &vpc->p_client_msg->body.connect_req;
    vbi_proxy_msg_fill_magics(&p_req_msg->magics);
 
-   strncpy(p_req_msg->client_name, vpc->p_client_name, VBIPROXY_CLIENT_NAME_MAX_LENGTH);
+   strncpy((char *) p_req_msg->client_name, vpc->p_client_name, VBIPROXY_CLIENT_NAME_MAX_LENGTH);
    p_req_msg->client_name[VBIPROXY_CLIENT_NAME_MAX_LENGTH - 1] = 0;
    p_req_msg->pid = getpid();
 
@@ -791,7 +791,7 @@ static vbi_bool proxy_client_start_acq( vbi_proxy_client * vpc )
          vpc->p_errorstr = NULL;
       }
       if (p_rej_msg->errorstr[0] != 0)
-         vpc->p_errorstr = strdup(p_rej_msg->errorstr);
+         vpc->p_errorstr = strdup((char *) p_rej_msg->errorstr);
 
       goto failure;
    }
@@ -1349,7 +1349,7 @@ vbi_proxy_client_update_services( vbi_capture * vc,
          if ( (vpc->p_client_msg->body.service_rej.errorstr[0] != 0) &&
               (pp_errorstr != NULL) )
          {
-            *pp_errorstr = strdup(vpc->p_client_msg->body.service_rej.errorstr);
+            *pp_errorstr = strdup((char *) vpc->p_client_msg->body.service_rej.errorstr);
          }
       }
       vpc->state = CLNT_STATE_CAPTURING;
