@@ -372,7 +372,7 @@ draw(unsigned char *raw)
 	xti.font = 0;
 
 	XDrawText(display, window, gc, 4, src_h + 12, &xti, 1);
-        xti.nchars = snprintf(buf, 255, "(%d, %3.0d)\0", cur_x+draw_offset, (1000*(dst_h-cur_y))/(dst_h-src_h));
+        xti.nchars = snprintf(buf, 255, "(%d, %3.0d)", cur_x+draw_offset, (1000*(dst_h-cur_y))/(dst_h-src_h));
         XDrawText(display, window, gc, 4, src_h + 24, &xti, 1);
 
 	data = raw + draw_offset + draw_row * src_w;

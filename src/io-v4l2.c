@@ -341,10 +341,11 @@ vbi_capture_v4l2_new(const char *dev_name, int buffers,
 	printv("Opened %s\n", dev_name);
 
 	if (IOCTL(v->fd, VIDIOC_QUERYCAP, &vcap) == -1) {
+/*
 		vbi_asprintf(errorstr, _("Cannot identify '%s': %d, %s."),
 			     dev_name, errno, strerror(errno));
 		guess = _("Probably not a v4l2 device.");
-/*
+
 		goto io_error;
 */
 		v4l2_delete (&v->capture);

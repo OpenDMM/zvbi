@@ -7,3 +7,4 @@ $Id$
    v4l/vbi0 and would never give me any pages.  Changing the link to
    /dev/v4l/vbi0 (absolute reference) fixed the problem."
   Maybe v4l device probing.
+* vbi_page.text[1056] < 26 * 41. D'oh!

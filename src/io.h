@@ -70,6 +70,10 @@ extern vbi_capture *	vbi_capture_bktr_new (const char *	dev_name,
 					      int		strict,
 					      char **		errstr,
 					      vbi_bool		trace);
+extern int		vbi_capture_dvb_filter(vbi_capture *cap, int pid);
+extern vbi_capture*	vbi_capture_dvb_new(char *dev, int scanning,
+				        unsigned int *services, int strict,
+				        char **errstr, vbi_bool trace);
 
 extern int		vbi_capture_read_raw(vbi_capture *capture, void *data,
 					     double *timestamp, struct timeval *timeout);
