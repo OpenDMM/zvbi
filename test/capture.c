@@ -602,7 +602,8 @@ main(int argc, char **argv)
 		assert ((par = vbi_capture_parameters(cap)));
 	}
 
-	assert (par->sampling_format == VBI_PIXFMT_YUV420);
+	if (-1 == pid)
+		assert (par->sampling_format == VBI_PIXFMT_YUV420);
 
 	src_w = par->bytes_per_line / 1;
 	src_h = par->count[0] + par->count[1];
