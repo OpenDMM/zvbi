@@ -76,6 +76,20 @@ int                     cur_x, cur_y;
 
 #include "sim.c"
 
+vbi_inline int
+vbi_printable			(int			c)
+{
+	if (c < 0)
+		return '?';
+
+	c &= 0x7F;
+
+	if (c < 0x20 || c >= 0x7F)
+		return '.';
+
+	return c;
+}
+
 extern void
 vbi_capture_set_log_fp		(vbi_capture *		capture,
 				 FILE *			fp);
@@ -95,7 +109,7 @@ decode_ttx(uint8_t *buf, int line)
 
         text_start = text = malloc(255);
         memset(text, 0, 255);
-	packet_address = vbi_hamm16(buf + 0);
+	packet_address = vbi_unham16p (buf + 0);
 
 	if (packet_address < 0)
 		return text; /* hamming error */
@@ -162,7 +176,7 @@ decode_vps(uint8_t *buf)
         
 	text += sprintf(text, "VPS: ");
 
-	c = vbi_bit_reverse[buf[1]];
+	c = vbi_rev8 (buf[1]);
 
 	if ((int8_t) c < 0) {
 		label[l] = 0;
