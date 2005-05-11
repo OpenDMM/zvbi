@@ -425,7 +425,7 @@ usage				(FILE *			fp)
 		 my_name);
 }
 
-static const char short_options[] = "dhv";
+static const char short_options[] = "d:hv";
 
 #ifdef HAVE_GETOPT_LONG
 static const struct option
@@ -457,7 +457,7 @@ main				(int			argc,
 			break;
 
 		case 'd':
-			dev_name = optarg;
+			dev_name = strdup (optarg);
 			break;
 
 		case 'h':
