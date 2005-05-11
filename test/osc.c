@@ -599,7 +599,7 @@ mainloop(void)
 	}
 }
 
-static const char short_options[] = "123de:npsv";
+static const char short_options[] = "123d:enpsv";
 
 #ifdef HAVE_GETOPT_LONG
 static const struct option
@@ -645,7 +645,7 @@ main(int argc, char **argv)
 			interface = c - '0';
 			break;
 		case 'd':
-			dev_name = optarg;
+			dev_name = strdup (optarg);
 			break;
 		case 'e':
 			ignore_error ^= TRUE;
