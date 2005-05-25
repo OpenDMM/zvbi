@@ -400,6 +400,9 @@ binary_ts_pes			(vbi_dvb_mux *		mx,
 				 const uint8_t *	packet,
 				 unsigned int		packet_size)
 {
+	mx = mx;
+	user_data = user_data;
+
 	fwrite (packet, 1, packet_size, stdout);
 	return TRUE;
 }
@@ -518,7 +521,7 @@ long_options[] = {
 int
 main(int argc, char **argv)
 {
-	char *dev_name = "/dev/vbi";
+	char *dev_name;
 	int pid = -1;
 	char *errstr;
 	unsigned int services;
@@ -527,6 +530,9 @@ main(int argc, char **argv)
 	int verbose = 0;
 	int c, index;
 	int interface = 0;
+
+	dev_name = strdup ("/dev/vbi");
+	assert (NULL != dev_name);
 
 	while ((c = getopt_long(argc, argv, short_options,
 				long_options, &index)) != -1)
@@ -542,7 +548,9 @@ main(int argc, char **argv)
 			interface = c - '0';
 			break;
 		case 'd':
+			free (dev_name);
 			dev_name = strdup (optarg);
+			assert (NULL != dev_name);
 			break;
 		case 'e':
 			ignore_error ^= TRUE;
