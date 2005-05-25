@@ -93,6 +93,9 @@ main (int argc, char **argv)
 {
 	unsigned int i, j;
 
+	argc = argc;
+	argv = argv;
+
 	putwstr ("libzvbi unicode test -*- coding: utf-8 -*-\n\n");
 	putwstr ("ETS 300 706 Table 36: Latin National Option Sub-sets\n\n");
 

@@ -43,10 +43,12 @@ int			cr;
 vbi_dvb_demux *		dx;
 
 static void
-handler(vbi_event *ev, void *unused)
+handler(vbi_event *ev, void *user_data)
 {
 	FILE *fp;
 	vbi_page page;
+
+	user_data = user_data;
 
 	fprintf(stderr, "%cPage %03x.%02x ",
 		cr,
