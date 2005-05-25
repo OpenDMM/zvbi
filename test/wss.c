@@ -448,8 +448,9 @@ main				(int			argc,
 
 	my_name = argv[0];
 
-	dev_name = "/dev/video";
-	
+	dev_name = strdup ("/dev/video");
+	assert (NULL != dev_name);
+
 	while (-1 != (c = getopt_long (argc, argv, short_options,
 				       long_options, &index))) {
 		switch (c) {
@@ -457,7 +458,9 @@ main				(int			argc,
 			break;
 
 		case 'd':
+			free (dev_name);
 			dev_name = strdup (optarg);
+			assert (NULL != dev_name);
 			break;
 
 		case 'h':
