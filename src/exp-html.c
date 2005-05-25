@@ -617,7 +617,12 @@ export(vbi_export *e, FILE *fp, vbi_page *pgp)
 						} else {
 							html->foreground = acp[j].foreground;
 							html->background = acp[j].background;
-							html->flash = s->flash;
+							if (s) {
+								/* XXX acp[j].flash? */
+								html->flash = s->flash;
+							} else {
+								html->flash = FALSE;
+							}
 							fputs("<span style=\"color:", html->fp);
 							hash_color(html->fp, pg.color_map[html->foreground]);
 							fputs(";background-color:", html->fp);
