@@ -29,7 +29,7 @@
 #include "misc.h"		/* CLEAR() */
 
 /**
- * @addtogroup DVBDemux DVB VBI Demultiplexer
+ * @addtogroup DVBDemux DVB VBI demultiplexer
  * @ingroup Raw
  * @brief Separating VBI data from a DVB PES stream
  *   (EN 301 472, EN 301 775).

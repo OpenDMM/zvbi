@@ -43,7 +43,7 @@ do {									\
 } while (0)
 
 /*
- * $addtogroup BitSlicer Bit Slicer
+ * $addtogroup BitSlicer Bit slicer
  * $ingroup Raw
  * $brief Converting a single scan line of raw VBI
  *   data to sliced VBI data.

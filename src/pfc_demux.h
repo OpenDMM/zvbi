@@ -74,6 +74,9 @@ typedef struct _vbi_pfc_demux vbi_pfc_demux;
  * 
  * Function called by vbi_pfc_demux_demux() when a
  * new data block is available.
+ *
+ * @returns
+ * FALSE on error, will be returned by vbi_pfc_demux_feed().
  */
 typedef vbi_bool
 vbi_pfc_demux_cb		(vbi_pfc_demux *	dx,

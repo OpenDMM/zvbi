@@ -31,7 +31,7 @@
 /* Public */
 
 /**
- * @addtogroup IDLDemux Teletext IDL Packet Demultiplexer
+ * @addtogroup IDLDemux Teletext IDL packet demultiplexer
  * @ingroup LowDec
  * @brief Functions to decode data transmissions in Teletext
  *   Independent Data Line packets (EN 300 708 section 6).

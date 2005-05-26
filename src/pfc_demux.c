@@ -31,7 +31,7 @@
 #define FILLER_BYTE 0x03
 
 /**
- * @addtogroup PFCDemux Teletext Page Function Clear Demultiplexer
+ * @addtogroup PFCDemux Teletext Page Function Clear demultiplexer
  * @ingroup LowDec
  * @brief Separating data transmitted in Page Function Clear
  *   Teletext packets (ETS 300 708 section 4).
