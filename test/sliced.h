@@ -21,8 +21,10 @@
 /* $Id$ */
 
 #include <stdio.h>
-
 #include "src/libzvbi.h"
+
+/* Reader for old test/capture --sliced output.
+   ATTN this code is not reentrant. */
 
 extern int
 read_sliced			(vbi_sliced *		sliced,

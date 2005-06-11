@@ -34,7 +34,7 @@
 #include "src/libzvbi.h"
 #include "sliced.h"
 
-/* Reader for the old ad-hoc sliced VBI file format.
+/* Reader for old test/capture --sliced output.
    ATTN this code is not reentrant. */
 
 static FILE *			file;
