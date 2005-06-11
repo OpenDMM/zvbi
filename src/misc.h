@@ -89,7 +89,11 @@ typedef int vbi_bool;
 #ifdef __GNUC__
 
 #if __GNUC__ < 3
-#define __builtin_expect(exp, c) (exp)
+#  define likely(exp) (exp)
+#  define unlikely(exp) (exp)
+#else
+#  define likely(exp) __builtin_expect (exp, 1)
+#  define unlikely(exp) __builtin_expect (exp, 0)
 #endif
 
 #undef __i386__
@@ -178,7 +182,8 @@ do {									\
 
 #else /* !__GNUC__ */
 
-#define __builtin_expect(exp, c) (exp)
+#define likely(exp) (exp)
+#define unlikely(exp) (exp)
 #undef __i386__
 #undef __i686__
 #define __inline__

@@ -143,7 +143,7 @@ bit_slicer_##fmt		(vbi3_bit_slicer *	bs,		\
 			b = ((t + (oversampling / 2))			\
 				/ oversampling) >= tr;			\
 									\
-    			if (__builtin_expect (b ^ b1, 0)) {		\
+    			if (unlikely (b ^ b1)) {			\
 				cl = bs->oversampling_rate >> 1;	\
 			} else {					\
 				cl += bs->cri_rate;			\
