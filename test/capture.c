@@ -32,6 +32,7 @@
 #include <errno.h>
 #include <assert.h>
 #include <unistd.h>
+#include <limits.h>
 #ifdef HAVE_GETOPT_LONG
 #include <getopt.h>
 #endif
@@ -480,8 +481,9 @@ mainloop(void)
 			binary_sliced(sliced, timestamp, lines);
 		if (bin_pes || bin_ts) {
 			/* XXX shouldn't use system time. */
-			pts = timestamp * 90000;
-			_vbi_dvb_mux_mux(mx, pts, sliced, lines, -1);
+			pts = (int64_t)(timestamp * 90000.0);
+			_vbi_dvb_mux_feed (mx, pts, sliced, lines,
+					   /* service_set: all */ -1);
 		}
 	}
 }

@@ -24,8 +24,8 @@
 #ifndef __ZVBI_DVB_MUX_H__
 #define __ZVBI_DVB_MUX_H__
 
-#ifndef TEST
 #include <inttypes.h>		/* uint8_t */
+#ifndef TEST
 #include "bcd.h"		/* vbi_bool */
 #include "sliced.h"		/* vbi_sliced, vbi_service_set */
 #endif
@@ -64,7 +64,7 @@ vbi_dvb_mux_cb			(vbi_dvb_mux *		mx,
 extern void
 _vbi_dvb_mux_reset		(vbi_dvb_mux *		mx);
 extern vbi_bool
-_vbi_dvb_mux_mux		(vbi_dvb_mux *		mx,
+_vbi_dvb_mux_feed		(vbi_dvb_mux *		mx,
 				 int64_t		pts,
 				 const vbi_sliced *	sliced,
 				 unsigned int		sliced_size,
