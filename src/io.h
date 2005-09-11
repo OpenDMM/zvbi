@@ -116,6 +116,7 @@ vbi_capture_proxy_new( struct vbi_proxy_client * vpc,
                         unsigned int *p_services, int strict,
                         char **pp_errorstr );
 
+/* XXX need to somehow report raw VBI capability. */
 extern int		vbi_capture_read_raw(vbi_capture *capture, void *data,
 					     double *timestamp, struct timeval *timeout);
 extern int		vbi_capture_read_sliced(vbi_capture *capture, vbi_sliced *data, int *lines,
