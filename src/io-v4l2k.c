@@ -26,7 +26,7 @@ static const char rcsid [] =
  *  Linux 2.5/2.6. There are a few subtle differences, in order to
  *  keep the source clean this interface has been forked off from the
  *  old V4L2 interface. "v4l2k" is no official designation, there is
- *  none, take it as v4l2-kernel or v4l-2000.
+ *  none, take it as v4l2-kernel or v4l-2000. 
  */
 
 #ifdef HAVE_CONFIG_H
