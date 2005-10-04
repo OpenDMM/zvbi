@@ -23,12 +23,19 @@
 #include <stdio.h>
 #include "src/libzvbi.h"
 
-/* Reader for old test/capture --sliced output.
-   ATTN this code is not reentrant. */
+/* Reader and write for old test/capture --sliced output.
+   Attn: this code is not reentrant. */
 
+extern vbi_bool
+write_sliced			(vbi_sliced *		sliced,
+				 unsigned int		n_lines,
+				 double			timestamp);
+extern vbi_bool
+open_sliced_write		(FILE *			fp,
+				 double			timestamp);
 extern int
 read_sliced			(vbi_sliced *		sliced,
 				 double *		timestamp,
 				 unsigned int		max_lines);
 extern vbi_bool
-open_sliced			(FILE *			fp);
+open_sliced_read		(FILE *			fp);
