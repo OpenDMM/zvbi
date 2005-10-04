@@ -142,7 +142,7 @@ main				(int			argc,
 				   /* user_data */ NULL);
 	assert (NULL != mx);
 
-	open_sliced (stdin);
+	open_sliced_read (stdin);
 
 	mainloop ();
 

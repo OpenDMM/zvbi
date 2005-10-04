@@ -866,7 +866,7 @@ main				(int			argc,
 
 		pes_mainloop ();
 	} else {
-		open_sliced (stdin);
+		open_sliced_read (stdin);
 
 		old_mainloop ();
 	}

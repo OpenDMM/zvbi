@@ -719,7 +719,7 @@ main				 (int			argc,
 
 			vbi_dvb_demux_delete (dx);
 		} else {
-			open_sliced (stdin);
+			open_sliced_read (stdin);
 
 			old_mainloop ();
 		}
