@@ -134,7 +134,7 @@ typedef struct vt_triplet {
 	unsigned	address : 8;
 	unsigned	mode : 8;
 	unsigned	data : 8;
-} __attribute__ ((packed)) vt_triplet;
+} /* __attribute__ ((packed)) */ vt_triplet;
 
 typedef struct vt_pagenum {
 	unsigned	type : 8;
