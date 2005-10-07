@@ -28,15 +28,14 @@
 
 extern const char *vbi_country_names_en[];
 
-/* documented in table.c */
 struct vbi_cni_entry {
-	int16_t			id;
-	char *			country;
-	char *			name;
-	uint16_t		cni1;
-	uint16_t		cni2;
-	uint16_t		cni3;
-	uint16_t		cni4;
+	int16_t			id; /* arbitrary */
+	const char *		country; /* RFC 1766 / ISO 3166-1 alpha-2 */
+	const char *		name; /* UTF-8 */
+	uint16_t		cni1; /* Teletext packet 8/30 format 1 */
+	uint16_t		cni2; /* Teletext packet 8/30 format 2 */
+	uint16_t		cni3; /* PDC Method B */
+	uint16_t		cni4; /* VPS */
 };
 
 extern const struct vbi_cni_entry vbi_cni_table[];
