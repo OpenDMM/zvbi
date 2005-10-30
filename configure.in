@@ -5,6 +5,7 @@ AC_INIT(configure.in)
 AM_INIT_AUTOMAKE(zvbi, 0.2.17)
 AM_CONFIG_HEADER(config.h)
 AM_ACLOCAL_INCLUDE(m4)
+AM_MAINTAINER_MODE
 
 dnl [current:revision:age]
 dnl Any change: ++revision
