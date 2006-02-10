@@ -39,6 +39,13 @@
 #  define DVB_DEMUX_LOG 0
 #endif
 
+#ifndef PRIx64
+#  define PRIx64 "llx"
+#endif
+#ifndef PRId64
+#  define PRId64 "lld"
+#endif
+
 #define log(level, templ, args...)					\
 do {									\
 	if (DVB_DEMUX_LOG >= level)					\
@@ -732,7 +739,7 @@ timestamp			(int64_t *		pts,
 		old_pts = *pts;
 		new_pts = t | (((int64_t) p[0] & 0x0E) << 29);
 
-		fprintf (stderr, "TS%x 0x%llx (%+lld)\n",
+		fprintf (stderr, "TS%x 0x%" PRIx64 " (%+" PRId64 ")\n",
 			 mark, new_pts, new_pts - old_pts);
 	}
 

@@ -753,6 +753,8 @@ gfx_options[] = {
 static vbi_option_info *
 option_enum(vbi_export *e, int index)
 {
+	e = e;
+
 	if (index < 0 || index >= (int) elements(gfx_options))
 		return NULL;
 	else
@@ -1132,6 +1134,7 @@ png_export(vbi_export *e, FILE *fp, vbi_page *pg)
 	}
 
 	/* avoid possible longjmp breakage due to libpng ugliness */
+	/* XXX not portable, to be removed */
 	{ int do_write() {
 	if (setjmp(png_ptr->jmpbuf))
 		return 1;

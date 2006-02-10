@@ -122,17 +122,17 @@ vbi_register_export_module(vbi_export_class *new_module)
 	*xcp = new_module;
 }
 
+extern vbi_export_class vbi_export_class_ppm;
+extern vbi_export_class vbi_export_class_png;
+extern vbi_export_class vbi_export_class_html;
+extern vbi_export_class vbi_export_class_tmpl;
+extern vbi_export_class vbi_export_class_text;
+extern vbi_export_class vbi_export_class_vtx;
+
 /* AUTOREG not reliable, sigh. */
 static void
 initialize(void)
 {
-	extern vbi_export_class vbi_export_class_ppm;
-	extern vbi_export_class vbi_export_class_png;
-	extern vbi_export_class vbi_export_class_html;
-	extern vbi_export_class vbi_export_class_tmpl;
-	extern vbi_export_class vbi_export_class_text;
-	extern vbi_export_class vbi_export_class_vtx;
-
 	static vbi_export_class *modules[] = {
 		&vbi_export_class_ppm,
 #ifdef HAVE_LIBPNG
@@ -848,6 +848,7 @@ vbi_export_option_menu_get(vbi_export *export, const char *keyword,
 		case VBI_OPTION_REAL:
 			if (!oi->menu.dbl)
 				return FALSE;
+			/* XXX unsafe */
 			r = (oi->menu.dbl[i] == val.dbl);
 			break;
 

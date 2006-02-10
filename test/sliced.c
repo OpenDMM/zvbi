@@ -135,6 +135,9 @@ read_sliced			(vbi_sliced *		sliced,
 
 	/* Time in seconds since last frame. */
 	dt = strtod (buf, NULL);
+	if (dt < 0.0) {
+		dt = -dt;
+	}
 
 	*timestamp = read_elapsed;
 	read_elapsed += dt;

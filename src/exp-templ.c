@@ -123,6 +123,8 @@ tmpl_options[] = {
 static vbi_option_info *
 option_enum(vbi_export *e, int index)
 {
+	e = e;
+
 	/* Enumeration 0 ... n */
 	if (index < 0 || index >= (int) elements(tmpl_options))
 		return NULL;
@@ -235,6 +237,8 @@ export(vbi_export *e, FILE *fp, vbi_page *pg)
 	/*
 	 *  Write pg to fp, that's all.
 	 */
+	fp = fp;
+	pg = pg;
 
 	tmpl->counter++; /* just for fun */
 

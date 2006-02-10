@@ -140,7 +140,7 @@ process_image			(const void *		p)
 	vbi_sliced sliced[1];
 	unsigned int n_lines;
 
-	n_lines = vbi_raw_decode (&rd, (uint8_t *) p, sliced);
+	n_lines = vbi_raw_decode (&rd, (const uint8_t *) p, sliced);
 	if (n_lines > 0) {
 		assert (VBI_SLICED_WSS_625 == sliced[0].id);
 		decode_wss_625 (sliced[0].data);

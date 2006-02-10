@@ -388,7 +388,7 @@ vbi_search_delete(vbi_search *search)
 static size_t
 ucs2_strlen(const void *string)
 {
-	ucs2_t *p = (ucs2_t *) string;
+	const ucs2_t *p = (ucs2_t *) string;
 	size_t i = 0;
 
 	if (!string)

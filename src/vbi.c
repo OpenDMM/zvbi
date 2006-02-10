@@ -532,6 +532,8 @@ vbi_channel_switched(vbi_decoder *vbi, vbi_nuid nuid)
 {
 	/* XXX nuid */
 
+	nuid = nuid;
+
 	pthread_mutex_lock(&vbi->chswcd_mutex);
 
 	vbi->chswcd = 1;

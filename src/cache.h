@@ -39,22 +39,20 @@ typedef struct node node;
 typedef struct list list;
 
 struct node {
-	node *			succ;
-	node *			pred;
+	node *			_succ;
+	node *			_pred;
 };
 
 struct list {
-	node *			head;
-	node *			null;
-	node *			tail;
-	int			members;
+	node			_head;
+	unsigned int		_n_members;
 };
 
 struct cache {
 	/* TODO: thread safe */
 	list			hash[HASH_SIZE];
 
-	int			npages;
+	int			n_pages;
 
 	/* TODO */
 	unsigned long		mem_used;
