@@ -64,8 +64,11 @@ main				(int			argc,
 {
 	unsigned int i;
 
+	argc = argc;
+	argv = argv;
+
 	for (i = 0; i < 10000; ++i) {
-		unsigned int n = (i < 256) ? i : mrand48 ();
+		unsigned int n = (i < 256) ? i : (unsigned int) mrand48 ();
 		uint8_t buf[4] = { n, n >> 8, n >> 16 };
 		unsigned int r;
 		unsigned int j;
@@ -95,7 +98,7 @@ main				(int			argc,
 	}
 
 	for (i = 0; i < 10000; ++i) {
-		unsigned int n = (i < 256) ? i : mrand48 ();
+		unsigned int n = (i < 256) ? i : (unsigned int) mrand48 ();
 		unsigned int A, B, C, D;
 		int d;
 
