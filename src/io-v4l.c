@@ -73,7 +73,7 @@ static __inline__ void IOCTL_ARG_TYPE_CHECK_BTTV_VBISIZE
 #define printv(format, args...)						\
 do {									\
 	if (v->do_trace) {						\
-		fprintf(stderr, format ,##args);			\
+		fprintf(stderr, "libzvbi: " format ,##args);		\
 		fflush(stderr);						\
 	}								\
 } while (0)
@@ -372,7 +372,7 @@ reverse_lookup(vbi_capture_v4l *v, int fd, struct stat *vbi_stat)
 		return FALSE;
 	}
 
-	if (vunit.vbi != minor(vbi_stat->st_rdev)) {
+	if (vunit.vbi != (int) minor(vbi_stat->st_rdev)) {
 		printv("Driver reports vbi minor %d, need %d\n",
 			vunit.vbi, minor(vbi_stat->st_rdev));
 		return FALSE;

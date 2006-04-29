@@ -424,7 +424,8 @@ _vbi_test_image_vbi		(uint8_t *		raw,
 	unsigned int black_level;
 	unsigned int white_level;
 
-	if (!_vbi_sampling_par_verify (sp))
+	if (!_vbi_sampling_par_valid (sp, /* log_fn */ NULL,
+				      /* log_user_data */ NULL))
 		return FALSE;
 
 	scan_lines = sp->count[0] + sp->count[1];
@@ -576,7 +577,8 @@ _vbi_test_image_video		(uint8_t *		raw,
 	uint8_t *s;
 	uint8_t *d;
 
-	if (!_vbi_sampling_par_verify (sp))
+	if (!_vbi_sampling_par_valid (sp, /* log_fn */ NULL,
+				      /* log_user_data */ NULL))
 		return FALSE;
 
 	scan_lines = sp->count[0] + sp->count[1];

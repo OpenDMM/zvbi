@@ -27,6 +27,7 @@
 #include "decoder.h"
 #endif
 
+
 #if 0 /* in decoder.h */
 
 /*
@@ -112,6 +113,8 @@ struct _vbi3_bit_slicer {
 	unsigned int		endian;
 	unsigned int		skip;
 	unsigned int		green_mask;
+	vbi_log_fn *		log_fn;
+	void *			log_user_data;
 };
 
 extern void

@@ -40,6 +40,7 @@
 #include "src/libzvbi.h"
 
 #define TEST 1
+#include "src/misc.h"
 #include "src/raw_decoder.h"	/* _vbi_service_table[] */
 
 #ifndef X_DISPLAY_MISSING
