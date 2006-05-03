@@ -562,7 +562,9 @@ test_services			(void)
 
 	set = vbi_sampling_par_from_services (&sp, NULL,
 					      VBI_VIDEOSTD_SET_625_50,
-					      ~0 & ~VBI_SLICED_VBI_625);
+					      ~0 & ~VBI_SLICED_VBI_625,
+					      /* log_fn */ NULL,
+					      /* log_user_data */ NULL);
 	assert (set == (VBI_SLICED_TELETEXT_A |
 			VBI_SLICED_TELETEXT_B_625 |
 			VBI_SLICED_TELETEXT_C_625 |
@@ -575,7 +577,9 @@ test_services			(void)
 
 	set = vbi_sampling_par_from_services (&sp, NULL,
 					      VBI_VIDEOSTD_SET_525_60,
-					      ~0 & ~VBI_SLICED_VBI_525);
+					      ~0 & ~VBI_SLICED_VBI_525,
+					      /* log_fn */ NULL,
+					      /* log_user_data */ NULL);
 	assert (set == (VBI_SLICED_TELETEXT_B_525 |
 			VBI_SLICED_TELETEXT_C_525 |
 			VBI_SLICED_TELETEXT_D_525 |

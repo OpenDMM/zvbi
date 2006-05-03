@@ -218,7 +218,7 @@ vbi_log_printf			(vbi_log_fn		log_fn,
 		if (len < 0) {
 			/* Not enough space. */
 			buffer_size *= 2;
-		} else if (len < buffer_size) {
+		} else if (len < (int) buffer_size) {
 			log_fn (level, function, buffer, user_data);
 			break;
 		} else {

@@ -1057,7 +1057,7 @@ old_mainloop			(void)
 static void
 usage				(FILE *			fp)
 {
-	fprintf (fp, _("\
+	fprintf (fp, "\
 %s %s -- low-level VBI decoder\n\n\
 Copyright (C) 2004, 2006 Michael H. Schimek\n\
 This program is licensed under GPL 2 or later. NO WARRANTIES.\n\n\
@@ -1101,7 +1101,7 @@ Modifying options:\n\
 -b | --bin             With -t, -p, -v dump data in binary format\n\
                          instead of ASCII\n\
 -T | --time            Dump capture timestamps\n\
-"),
+",
 		 PROGRAM_NAME, VERSION, program_invocation_name);
 }
 
