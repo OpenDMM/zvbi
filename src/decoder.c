@@ -469,6 +469,10 @@ vbi_bit_slicer_init(vbi_bit_slicer *slicer,
 	}
 }
 
+/**
+ * @example examples/wss.c
+ * WSS capture example.
+ */
 
 /**
  * @param rd Initialized vbi_raw_decoder structure.
