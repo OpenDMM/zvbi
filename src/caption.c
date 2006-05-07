@@ -515,6 +515,9 @@ xds_decoder(vbi_decoder *vbi, int _class, int type,
 				vbi->network.type = VBI_EVENT_NETWORK;
 				caption_send_event(vbi, &vbi->network);
 
+				vbi->network.type = VBI_EVENT_NETWORK_ID;
+				caption_send_event(vbi, &vbi->network);
+
 				n->cycle = 3;
 			}
 
