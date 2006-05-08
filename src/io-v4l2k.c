@@ -1076,8 +1076,8 @@ v4l2_update_services(vbi_capture *vc,
 		}
 
 		if (v->bttv_offset_fix
-		    && 256 != vfmt.fmt.vbi.offset) {
-			vfmt.fmt.vbi.offset = 256;
+		    && 128 == vfmt.fmt.vbi.offset) {
+			vfmt.fmt.vbi.offset = 244;
 			fixed = TRUE;
 		}
 
