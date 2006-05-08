@@ -792,7 +792,7 @@ vps				(const uint8_t		buffer[13],
 		if (0 != pi.cni)
 			dump_cni (pi.cni_type, pi.cni);
 #else
-		printf ("VPS line=%3u CNI=%x", line, cni);
+		printf ("VPS line=%3u CNI=%x\n", line, cni);
 #endif
 	}
 
