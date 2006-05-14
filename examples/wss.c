@@ -46,10 +46,10 @@
 #include <sys/mman.h>
 #include <sys/ioctl.h>
 
-#include "src/libzvbi.h"
+#include <libzvbi.h>
 
 #include <asm/types.h>		/* for videodev2.h */
-#include "src/videodev2k.h"
+#include "videodev2k.h"
 
 #define CLEAR(x) memset (&(x), 0, sizeof (x))
 
