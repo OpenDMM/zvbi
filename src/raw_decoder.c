@@ -644,7 +644,7 @@ _vbi_sampling_par_valid		(const vbi_sampling_par *sp,
 
 		if (0 != sp->start[1])
 			if (sp->start[1] < 263
-			    || (sp->start[1] + sp->count[0]) > 526)
+			    || (sp->start[1] + sp->count[1]) > 526)
 				goto range;
 	} else if (625 == sp->scanning) {
 		if (0 != sp->start[0])
@@ -653,7 +653,7 @@ _vbi_sampling_par_valid		(const vbi_sampling_par *sp,
 
 		if (0 != sp->start[1])
 			if (sp->start[1] < 310
-			    || (sp->start[1] + sp->count[0]) > 626)
+			    || (sp->start[1] + sp->count[1]) > 626)
 				goto range;
 	} else {
 		sp_log (VBI_LOG_ERR,
