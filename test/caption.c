@@ -41,20 +41,6 @@
 #include "src/libzvbi.h"
 #include "sliced.h"
 
-vbi_inline int
-vbi_printable			(int			c)
-{
-	if (c < 0)
-		return '?';
-
-	c &= 0x7F;
-
-	if (c < 0x20 || c >= 0x7F)
-		return '.';
-
-	return c;
-}
-
 vbi_decoder *		vbi;
 vbi_pgno		pgno = -1;
 vbi_dvb_demux *		dx;

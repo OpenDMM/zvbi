@@ -66,7 +66,7 @@ dump_raw(vt_page *vtp, vbi_bool unham)
 			for (i = 0; i < 40; i++)
 				printf("%02x ", vtp->data.lop.raw[j][i]);
 		for (i = 0; i < 40; i++)
-			putchar(vbi_printable (vtp->data.lop.raw[j][i]));
+			putchar(_vbi_to_ascii (vtp->data.lop.raw[j][i]));
 		putchar('\n');
 	}
 }
@@ -1305,7 +1305,7 @@ parse_bsd(vbi_decoder *vbi, uint8_t *raw, int packet, int designation)
 			for (i = 20; i < 40; i++) {
 				int c = vbi_parity(raw[i]);
 
-				c = (c < 0) ? '?' : vbi_printable (c);
+				c = (c < 0) ? '?' : _vbi_to_ascii (c);
 				putchar(c);
 			}
 
@@ -1504,7 +1504,7 @@ store_lop(vbi_decoder *vbi, vt_page *vtp)
 			int i;
 
 			for (i = 0; i < 40; i++)
-				putchar(vbi_printable (vtp->data.unknown.raw[0][i]));
+				putchar(_vbi_to_ascii (vtp->data.unknown.raw[0][i]));
 			putchar('\r');
 			fflush(stdout);
 		}
@@ -1924,7 +1924,7 @@ vbi_decode_teletext(vbi_decoder *vbi, uint8_t *p)
 
 		fprintf(stderr, "packet 0x%x %d >", mag8 * 0x100, packet);
 		for (i = 0; i < 40; i++)
-			fputc(vbi_printable (p[i]), stderr);
+			fputc(_vbi_to_ascii (p[i]), stderr);
 		fprintf(stderr, "<\n");
 	}
 

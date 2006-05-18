@@ -526,7 +526,7 @@ demux_data_units		(struct frame *		f,
 			if (DVB_DEMUX_LOG >= 2) {
 				fprintf (stderr, "DU-TTX %u >", s->line);
 				for (i = 0; i < 42; ++i)
-					fputc (vbi_printable (s->data[i]),
+					fputc (_vbi_to_ascii (s->data[i]),
 					       stderr);
 				fprintf (stderr, "<\n");
 			}

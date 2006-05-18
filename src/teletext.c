@@ -2090,7 +2090,7 @@ post_enhance(vbi_page *pg, int display_rows)
 	for (row = 0; row <= last_row; row++) {
 		for (column = 0; column < COLUMNS; acp++, column++) {
 			if (1)
-				printv("%c", vbi_printable (acp->unicode));
+				printv("%c", _vbi_to_ascii (acp->unicode));
 			else
 				printv("%04xF%dB%dS%dO%d ", acp->unicode,
 				       acp->foreground, acp->background,

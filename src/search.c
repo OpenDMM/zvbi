@@ -244,9 +244,9 @@ search_page_fwd(void *p, vt_page *vtp, vbi_bool wrapped)
 fprintf(stderr, "exec: %x/%x; start %d,%d; %c%c%c...\n",
 	vtp->pgno, vtp->subno,
 	s->row[0], s->col[0],
-	vbi_printable (first[0]),
-	vbi_printable (first[1]),
-	vbi_printable (first[2])
+	_vbi_to_ascii (first[0]),
+	_vbi_to_ascii (first[1]),
+	_vbi_to_ascii (first[2])
 );
 */
 	if (!ure_exec(s->ud, flags, first, hp - first, &ms, &me))
@@ -344,9 +344,9 @@ break2:
 /*
 fprintf(stderr, "exec: %x/%x; %d, %d; '%c%c%c...'\n",
 	vtp->pgno, vtp->subno, i, me,
-	vbi_printable (s->haystack[me + 0]),
-	vbi_printable (s->haystack[me + 1]),
-	vbi_printable (s->haystack[me + 2])
+	_vbi_to_ascii (s->haystack[me + 0]),
+	_vbi_to_ascii (s->haystack[me + 1]),
+	_vbi_to_ascii (s->haystack[me + 2])
 );
 */
 		if (!ure_exec(s->ud, (me > 0) ? (flags | URE_NOTBOL) : flags,
