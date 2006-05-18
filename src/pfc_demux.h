@@ -24,7 +24,7 @@
 
 #include <inttypes.h>		/* uint8_t */
 #include <stdio.h>		/* FILE */
-/* #include "macros.h" */
+#include "macros.h"
 #include "bcd.h"		/* vbi_pgno */
 
 /* VBI_BEGIN_DECLS */
@@ -94,7 +94,8 @@ extern vbi_pfc_demux *
 vbi_pfc_demux_new		(vbi_pgno		pgno,
 				 unsigned int		stream,
 				 vbi_pfc_demux_cb *	callback,
-				 void *			user_data) vbi_alloc;
+				 void *			user_data)
+  __attribute__ ((_vbi_alloc));
 
 /* Private */
 

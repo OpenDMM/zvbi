@@ -19,11 +19,11 @@
 
 /* $Id$ */
 
-#include "../config.h"
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
 
-#include <assert.h>
-#include <stdlib.h>		/* malloc() */
-#include <string.h>		/* memcpy() */
+#include "misc.h"
 #include "hamm.h"		/* vbi_iham8(), vbi_iham16p() */
 #include "pfc_demux.h"
 
@@ -57,7 +57,7 @@ _vbi_pfc_block_dump		(const vbi_pfc_block *	pb,
 		unsigned int i;
 
 		for (i = 0; i < pb->block_size; ++i) {
-			fputc (vbi_printable (pb->block[i]), fp);
+			fputc (_vbi_to_ascii (pb->block[i]), fp);
 
 			if ((i % 75) == 75)
 				fputc ('\n', fp);
