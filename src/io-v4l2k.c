@@ -851,7 +851,7 @@ print_vfmt			(vbi_capture_v4l2 *	v,
 	vbi_log_printf (v->log_fn, v->log_user_data,
 			VBI_LOG_INFO, __FUNCTION__,
 			"%sformat %08x [%c%c%c%c], %d Hz, %d bpl, offs %d, "
-			"F1 %d...%d, F2 %d...%d, flags %08x\n", s,
+			"F1 %d...%d, F2 %d...%d, flags %08x.", s,
 			vfmt->fmt.vbi.sample_format,
 			(char)((vfmt->fmt.vbi.sample_format      ) & 0xff),
 			(char)((vfmt->fmt.vbi.sample_format >>  8) & 0xff),
