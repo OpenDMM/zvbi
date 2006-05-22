@@ -22,11 +22,8 @@
 #ifndef __ZVBI_BIT_SLICER_H__
 #define __ZVBI_BIT_SLICER_H__
 
-#ifndef TEST
 #include <inttypes.h>		/* uint8_t, uint16_t */
 #include "decoder.h"
-#endif
-
 
 #if 0 /* in decoder.h */
 
@@ -86,7 +83,8 @@ vbi3_bit_slicer_new		(vbi_pixfmt		sample_format,
 				 unsigned int		frc_bits,
 				 unsigned int		payload_bits,
 				 unsigned int		payload_rate,
-				 vbi_modulation		modulation) vbi_alloc;
+				 vbi_modulation		modulation)
+  __attribute__ ((_vbi_alloc));
 
 /* Private */
 
