@@ -22,11 +22,9 @@
 #ifndef __ZVBI_DVB_DEMUX_H__
 #define __ZVBI_DVB_DEMUX_H__
 
-#ifndef TEST
 #include <inttypes.h>		/* uintN_t */
 #include "bcd.h"		/* vbi_bool */
 #include "sliced.h"		/* vbi_sliced, vbi_service_set */
-#endif
 
 /* Public */
 

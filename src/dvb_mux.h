@@ -25,10 +25,9 @@
 #define __ZVBI_DVB_MUX_H__
 
 #include <inttypes.h>		/* uint8_t */
-#ifndef TEST
+
 #include "bcd.h"		/* vbi_bool */
 #include "sliced.h"		/* vbi_sliced, vbi_service_set */
-#endif
 
 typedef enum {
 	VBI_VIDEOSTD_SET_525_60 = 1,
