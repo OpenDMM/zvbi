@@ -28,7 +28,6 @@
 
 #include <inttypes.h>		/* uintN_t */
 #include "misc.h"
-/* #include "macros.h" */
 
 VBI_BEGIN_DECLS
 
@@ -214,7 +213,8 @@ vbi_unham16p			(const uint8_t *	p)
 }
 
 extern int
-vbi_unham24p			(const uint8_t *	p) vbi_pure;
+vbi_unham24p			(const uint8_t *	p)
+  __attribute__ ((_vbi_pure));
 
 /** @} */
 
