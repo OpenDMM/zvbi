@@ -37,10 +37,10 @@
 #include <getopt.h>
 #endif
 
-#include "src/libzvbi.h"
-
-#define TEST 1
+#include "src/io.h"
+#include "src/decoder.h"
 #include "src/misc.h"
+#include "src/hamm.h"
 #include "src/raw_decoder.h"	/* _vbi_service_table[] */
 
 #ifndef X_DISPLAY_MISSING
@@ -75,8 +75,6 @@ int			depth;
 int			draw_row, draw_offset;
 int			draw_count = -1;
 int                     cur_x, cur_y;
-
-#include "sim.c"
 
 vbi_inline int
 _vbi_to_ascii			(int			c)
@@ -566,13 +564,8 @@ mainloop(void)
 	for (quit = FALSE; !quit;) {
 		int r;
 
-		if (do_sim) {
-			read_sim(raw1, sliced, &slines, &timestamp);
-			r = 1;
-		} else {
-			r = vbi_capture_read(cap, raw1, sliced,
-					     &slines, &timestamp, &tv);
-		}
+		r = vbi_capture_read(cap, raw1, sliced,
+				     &slines, &timestamp, &tv);
 
 		switch (r) {
 		case -1:
@@ -684,7 +677,9 @@ main(int argc, char **argv)
 	strict = 0;
 
 	if (do_sim) {
-		par = init_sim (scanning, services, !desync);
+		cap = vbi_capture_sim_new (scanning, &services,
+					   /* interlaced */ FALSE, !desync);
+		assert ((par = vbi_capture_parameters(cap)));
 	} else {
 		do {
 			if (1 != interface) {
