@@ -261,9 +261,9 @@ match_color8(vbi_rgba color)
 	int i, d, imin = 0, dmin = INT_MAX;
 
 	for (i = 0; i < 8; i++) {
-		d  = ABS(       (i & 1) * 0xFF - VBI_R(color));
-		d += ABS(((i >> 1) & 1) * 0xFF - VBI_G(color));
-		d += ABS( (i >> 2)      * 0xFF - VBI_B(color));
+		d  = ABS((int)(       (i & 1) * 0xFF - VBI_R(color)));
+		d += ABS((int)(((i >> 1) & 1) * 0xFF - VBI_G(color)));
+		d += ABS((int)( (i >> 2)      * 0xFF - VBI_B(color)));
 
 		if (d < dmin) {
 			dmin = d;
