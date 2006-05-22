@@ -21,7 +21,8 @@
 /* $Id$ */
 
 #include <stdio.h>
-#include "src/libzvbi.h"
+#include "src/macros.h"
+#include "src/sliced.h"
 
 /* Reader and write for old test/capture --sliced output.
    Attn: this code is not reentrant. */

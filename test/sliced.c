@@ -31,7 +31,6 @@
 #include <string.h>
 #include <assert.h>
 
-#include "src/libzvbi.h"
 #include "sliced.h"
 
 /* Writer for old test/capture --sliced output.

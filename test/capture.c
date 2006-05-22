@@ -37,24 +37,10 @@
 #include <getopt.h>
 #endif
 
-#include "src/libzvbi.h"
-
-vbi_inline int
-_vbi_to_ascii			(int			c)
-{
-	if (c < 0)
-		return '?';
-
-	c &= 0x7F;
-
-	if (c < 0x20 || c >= 0x7F)
-		return '.';
-
-	return c;
-}
-
-#define TEST 1
 #include "src/dvb_mux.h"
+#include "src/decoder.h"
+#include "src/io.h"
+#include "src/hamm.h"
 
 vbi_capture *		cap;
 vbi_raw_decoder *	par;

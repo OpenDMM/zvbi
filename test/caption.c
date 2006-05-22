@@ -38,7 +38,10 @@
 #include <X11/keysym.h>
 #include <X11/Xutil.h>
 
-#include "src/libzvbi.h"
+#include "src/vbi.h"
+#include "src/exp-gfx.h"
+#include "src/hamm.h"
+#include "src/dvb_demux.h"
 #include "sliced.h"
 
 vbi_decoder *		vbi;

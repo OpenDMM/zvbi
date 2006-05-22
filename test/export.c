@@ -32,7 +32,12 @@
 #include <assert.h>
 #include <unistd.h>
 
-#include "src/libzvbi.h"
+#include "src/decoder.h"
+#include "src/export.h"
+#include "src/dvb_demux.h"
+#include "src/vt.h"
+#include "src/cache.h"
+#include "src/vbi.h"
 #include "sliced.h"
 
 vbi_decoder *		vbi;

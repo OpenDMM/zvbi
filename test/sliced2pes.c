@@ -34,8 +34,6 @@
 #include <getopt.h>
 #endif
 
-#include "src/libzvbi.h"
-#define TEST 1 /* public dvb_mux only */
 #include "src/dvb_mux.h"
 #include "sliced.h"
 

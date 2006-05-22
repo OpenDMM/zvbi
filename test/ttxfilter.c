@@ -31,13 +31,14 @@
 #include <string.h>
 #include <assert.h>
 #include <unistd.h>
-#include <time.h>
+#include <sys/time.h>
 #include <ctype.h>
 #ifdef HAVE_GETOPT_LONG
 #  include <getopt.h>
 #endif
 
-#include "src/libzvbi.h"
+#include "src/dvb_demux.h"
+#include "src/hamm.h"
 #include "sliced.h"
 
 #define N_ELEMENTS(array) (sizeof (array) / sizeof (*(array)))

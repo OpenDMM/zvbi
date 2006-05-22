@@ -40,7 +40,13 @@
 
 #include "src/version.h"
 #if 2 == VBI_VERSION_MINOR
-#  include "src/libzvbi.h"
+#  include "src/bcd.h"
+#  include "src/pfc_demux.h"
+#  include "src/dvb_demux.h"
+#  include "src/idl_demux.h"
+#  include "src/xds_demux.h"
+#  include "src/vps.h"
+#  include "src/hamm.h"
 #  include "sliced.h"		/* sliced data from file */
 #  define HAVE_VBI_PFC_DEMUX 1 /* XXX port me */
 #else /* 0.3 */
