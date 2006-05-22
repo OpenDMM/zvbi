@@ -24,10 +24,9 @@
 
 #include <inttypes.h>		/* uint8_t */
 #include <stdio.h>		/* FILE */
-#include "macros.h"
 #include "bcd.h"		/* vbi_pgno */
 
-/* VBI_BEGIN_DECLS */
+VBI_BEGIN_DECLS
 
 /* Public */
 
@@ -139,6 +138,6 @@ _vbi_pfc_demux_init		(vbi_pfc_demux *	dx,
 				 void *			user_data);
 /** @} */
 
-/* VBI_END_DECLS */
+VBI_END_DECLS
 
 #endif /* __ZVBI_PFC_DEMUX_H__ */

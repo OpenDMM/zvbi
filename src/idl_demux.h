@@ -24,9 +24,9 @@
 
 #include <inttypes.h>		/* uint8_t */
 #include <stdio.h>		/* FILE */
-/* #include "macros.h" */
+#include "macros.h"
 
-/* VBI_BEGIN_DECLS */
+VBI_BEGIN_DECLS
 
 /* Public */
 
@@ -147,6 +147,6 @@ _vbi_idl_demux_init		(vbi_idl_demux *	dx,
 				 vbi_idl_demux_cb *	callback,
 				 void *			user_data);
 
-/* VBI_END_DECLS */
+VBI_END_DECLS
 
 #endif /* __ZVBI_IDL_DEMUX_H__ */
