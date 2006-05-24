@@ -193,6 +193,10 @@ extern void             vbi_channel_switched(vbi_decoder *vbi, vbi_nuid nuid);
 extern vbi_page_type	vbi_classify_page(vbi_decoder *vbi, vbi_pgno pgno,
 					  vbi_subno *subno, char **language);
 extern void		vbi_version(unsigned int *major, unsigned int *minor, unsigned int *micro);
+extern void
+vbi_set_log_fn			(vbi_log_mask		mask,
+				 vbi_log_fn *		log_fn,
+				 void *			user_data);
 /** @} */
 
 /* Private */
