@@ -35,6 +35,7 @@ extern vbi_bool
 vbi_raw_video_image		(uint8_t *		raw,
 				 unsigned long		raw_size,
 				 const vbi_sampling_par *sp,
+				 int			blank_level,
 				 int			black_level,
 				 int			white_level,
 				 unsigned int		pixel_mask,
