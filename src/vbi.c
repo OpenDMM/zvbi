@@ -98,6 +98,19 @@ vbi_init			(void)
 #endif
 }
 
+void
+vbi_set_log_fn			(vbi_log_mask		mask,
+				 vbi_log_fn *		log_fn,
+				 void *			user_data)
+{
+	if (NULL == log_fn)
+		mask = 0;
+
+	_vbi_global_log.mask		= mask;
+	_vbi_global_log.fn		= log_fn;
+	_vbi_global_log.user_data	= user_data;
+}
+
 /*
  *  Events
  */
