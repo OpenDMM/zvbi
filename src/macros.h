@@ -118,6 +118,8 @@ typedef enum {
 
 	/** Information useful to debug the library. */
 	VBI_LOG_DEBUG		= 1 << 7,
+	VBI_LOG_DEBUG2		= 1 << 8,
+	VBI_LOG_DEBUG3		= 1 << 9,
 } vbi_log_mask;
 
 typedef void
