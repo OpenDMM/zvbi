@@ -39,13 +39,6 @@
 #  define RAW_DECODER_LOG 0
 #endif
 
-#ifndef PRIx64
-#  define PRIx64 "llx"
-#endif
-#ifndef PRId64
-#  define PRId64 "lld"
-#endif
-
 #define sp_log(level, templ, args...)					\
 do {									\
 	_vbi_log_printf (log_fn, log_user_data,				\
@@ -986,25 +979,28 @@ vbi3_raw_decoder_add_services	(vbi3_raw_decoder *	rd,
 		samples_per_line = sp->bytes_per_line
 			/ VBI_PIXFMT_BPP (sp->sampling_format);
 
-		if (!_vbi3_bit_slicer_init (&job->slicer,
-					   sp->sampling_format,
-					   sp->sampling_rate,
-					   sample_offset,
-					   samples_per_line,
-					   par->cri_frc >> par->frc_bits,
-					   par->cri_frc_mask >> par->frc_bits,
-					   par->cri_bits,
-					   par->cri_rate,
-					   cri_end,
-					   (par->cri_frc
-					    & ((1U << par->frc_bits) - 1)),
-					   par->frc_bits,
-					   par->payload,
-					   par->bit_rate,
-					   par->modulation)) {
+		if (!_vbi3_bit_slicer_init (&job->slicer)) {
 			assert (!"bit_slicer_init");
 		}
 
+		if (!vbi3_bit_slicer_set_params
+		    (&job->slicer,
+		     sp->sampling_format,
+		     sp->sampling_rate,
+		     sample_offset,
+		     samples_per_line,
+		     par->cri_frc >> par->frc_bits,
+		     par->cri_frc_mask >> par->frc_bits,
+		     par->cri_bits,
+		     par->cri_rate,
+		     cri_end,
+		     (par->cri_frc & ((1U << par->frc_bits) - 1)),
+		     par->frc_bits,
+		     par->payload,
+		     par->bit_rate,
+		     par->modulation)) {
+			assert (!"bit_slicer_set_params");
+		}
 
 		lines_containing_data (start, count, sp, par);
 
