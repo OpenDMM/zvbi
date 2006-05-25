@@ -104,8 +104,9 @@ color_names[] __attribute__ ((unused)) = {
 };
 
 static const char *
-terminal[] __attribute__ ((unused)) = {
-	/* TRANSLATORS: Terminal control codes */
+terminal[] = {
+	/* TRANSLATORS:
+	   Terminal control codes. */
 	N_("None"), N_("ANSI X3.64 / VT 100"), N_("VT 200")
 };
 

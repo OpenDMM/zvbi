@@ -84,7 +84,7 @@ extern const char _zvbi_intl_domainname[];
  * functions and export modules. libzvbi client applications
  * don't use this.
  *
- * Export modules @c #include @c "export.h" to get these
+ * Export modules include @c "export.h" to get these
  * definitions. See example module exp-templ.c.
  */
 
