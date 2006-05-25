@@ -40,9 +40,9 @@
 #endif
 
 /**
- * @addtogroup BitSlicer Bit Slicer
- * @ingroup Raw
- * @brief Converting a single scan line of raw VBI
+ * $addtogroup BitSlicer Bit Slicer
+ * $ingroup Raw
+ * $brief Converting a single scan line of raw VBI
  *   data to sliced VBI data.
  *
  * These are low level functions most useful if you want to decode
