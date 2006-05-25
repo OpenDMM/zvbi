@@ -164,6 +164,7 @@ _vbi_sampling_par_valid_log	(const vbi_sampling_par *sp,
 	return TRUE;
 
  bad_samples:
+	/* XXX permit sp->samples_per_line * bpp < sp->bytes_per_line. */
 	notice (log,
 		"bytes_per_line value %u is no multiple of "
 		"the sample size %u.",
@@ -297,7 +298,10 @@ _vbi_sampling_par_permit_service
 
 		samples = samples_per_line / (double) sp->sampling_rate;
 
-		if (samples < (signal + 1.0e-6)) {
+		if (strict > 0)
+			samples -= 1e-6; /* headroom */
+
+		if (samples < signal) {
 			notice (log,
 				"Service 0x%08x (%s) signal length "
 				"%f us exceeds %f us sampling length.",
