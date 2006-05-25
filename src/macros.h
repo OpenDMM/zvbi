@@ -96,6 +96,10 @@ typedef void
 vbi_unlock_fn			(void *			user_data);
 #endif
 
+/**
+ * @ingroup Basic
+ * @{
+ */
 typedef enum {
 	/** External error causes, for example lack of memory. */
 	VBI_LOG_ERROR		= 1 << 3,
@@ -129,6 +133,7 @@ vbi_log_fn			(vbi_log_mask		level,
 				 void *			user_data);
 
 extern vbi_log_fn		vbi_log_on_stderr;
+/** @} */
 
 /* Private */
 
