@@ -28,11 +28,7 @@
 
 #include "bcd.h"		/* vbi_bool */
 #include "sliced.h"		/* vbi_sliced, vbi_service_set */
-
-typedef enum {
-	VBI_VIDEOSTD_SET_525_60 = 1,
-	VBI_VIDEOSTD_SET_625_50 = 2,
-} vbi_videostd_set;
+#include "sampling_par.h"	/* vbi_videostd_set */
 
 extern void
 _vbi_dvb_multiplex_sliced	(uint8_t **		packet,

@@ -976,6 +976,7 @@ vbi3_raw_decoder_add_services	(vbi3_raw_decoder *	rd,
 			cri_end = ~0;
 		}
 
+		/* XXX use sp->samples_per_line if available */
 		samples_per_line = sp->bytes_per_line
 			/ VBI_PIXFMT_BPP (sp->sampling_format);
 

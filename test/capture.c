@@ -40,6 +40,7 @@
 #include "src/dvb_mux.h"
 #include "src/decoder.h"
 #include "src/io.h"
+#include "src/io-sim.h"
 #include "src/hamm.h"
 
 vbi_capture *		cap;
@@ -63,8 +64,6 @@ int			do_sim;
 int			ignore_error;
 int			desync;
 int			strict;
-
-#include "sim.c"
 
 extern void
 vbi_capture_set_log_fp		(vbi_capture *		capture,
@@ -344,10 +343,7 @@ mainloop(void)
 	for (quit = FALSE; !quit;) {
 		int r;
 
-		if (do_sim) {
-			read_sim(raw, sliced, &lines, &timestamp);
-			r = 1;
-		} else if (do_read) {
+		if (do_read) {
 			r = vbi_capture_read(cap, raw, sliced,
 					     &lines, &timestamp, &tv);
 		} else {
@@ -529,7 +525,9 @@ Run  ./capture --sliced | ./decode --ttx --cc --xds  instead.\n");
 		| VBI_SLICED_WSS_625 | VBI_SLICED_WSS_CPR1204;
 
 	if (do_sim) {
-		par = init_sim (scanning, services, !desync);
+		cap = vbi_capture_sim_new (scanning, &services,
+					   /* interlaced */ FALSE, !desync);
+		assert ((par = vbi_capture_parameters(cap)));
 	} else {
 		do {
 			if (-1 != pid) {
