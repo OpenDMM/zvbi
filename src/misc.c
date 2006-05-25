@@ -215,6 +215,11 @@ _vbi_keyword_lookup		(int *			value,
 }
 
 /**
+ * @ingroup Basic
+ *
+ * Log function printing messages on standard output.
+ *
+ * @since 0.2.22
  */
 void
 vbi_log_on_stderr		(vbi_log_mask		level,
