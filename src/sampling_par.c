@@ -28,6 +28,7 @@
 #include "misc.h"
 #include "raw_decoder.h"
 #include "sampling_par.h"
+#include "sliced.h"
 #include "version.h"
 
 #if 2 == VBI_VERSION_MINOR
