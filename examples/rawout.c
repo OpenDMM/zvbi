@@ -45,9 +45,6 @@ static unsigned int		pixel_mask;
 static int64_t			last_pts;
 static vbi_raw_decoder		rd;
 
-extern unsigned int
-vbi_sliced_payload_bits		(vbi_service_set	service);
-
 static void
 raw_test			(const vbi_sliced *	expect_sliced,
 				 unsigned int		expect_n_lines)
