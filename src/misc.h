@@ -256,12 +256,6 @@ _vbi_keyword_lookup		(int *			value,
 
 /* Logging stuff. */
 
-typedef struct {
-	vbi_log_fn *		fn;
-	void *			user_data;
-	vbi_log_mask		mask;
-} _vbi_log_hook;
-
 extern _vbi_log_hook		_vbi_global_log;
 
 extern void
