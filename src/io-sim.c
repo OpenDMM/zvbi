@@ -2136,7 +2136,11 @@ sim_parameters			(vbi_capture *		cap)
 	/* For compatibility in libzvbi 0.2
 	   struct vbi_sampling_par == vbi_raw_decoder. In 0.3
 	   we'll drop the decoding related fields. */
+#if 3 == VBI_VERSION_MINOR
+	return &sim->rd;
+#else
 	return &sim->sp;
+#endif
 }
 
 static int
