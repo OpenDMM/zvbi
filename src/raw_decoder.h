@@ -80,10 +80,6 @@ vbi3_raw_decoder_decode		(vbi3_raw_decoder *	rd,
 
 /* Private */
 
-/* XXX make this public for rawout.c. */
-unsigned int
-vbi_sliced_payload_bits		(vbi_service_set	service);
-
 /* $internal */
 #define _VBI3_RAW_DECODER_MAX_JOBS 8
 /* $internal */
