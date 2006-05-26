@@ -137,6 +137,12 @@ extern vbi_log_fn		vbi_log_on_stderr;
 
 /* Private */
 
+typedef struct {
+	vbi_log_fn *		fn;
+	void *			user_data;
+	vbi_log_mask		mask;
+} _vbi_log_hook;
+
 VBI_END_DECLS
 
 #endif /* __ZVBI_MACROS_H__ */
