@@ -288,12 +288,12 @@ vbi_sliced_name			(vbi_service_set	service)
 }
 
 /**
- * $ingroup Sliced
- * $param service A data service identifier, for example from a
+ * @ingroup Sliced
+ * @param service A data service identifier, for example from a
  *   vbi_sliced structure.
  *
- * $return
- * Number of payload bits, $c 0 if the service is unknown.
+ * @return
+ * Number of payload bits, @c 0 if the service is unknown.
  */
 unsigned int
 vbi_sliced_payload_bits		(unsigned int		service)

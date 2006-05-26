@@ -22,8 +22,8 @@
 #ifndef __ZVBI_IDL_DEMUX_H__
 #define __ZVBI_IDL_DEMUX_H__
 
-#include <inttypes.h>		/* uint8_t */
 #include <stdio.h>		/* FILE */
+#include <inttypes.h>		/* uint8_t */
 #include "macros.h"
 
 VBI_BEGIN_DECLS
