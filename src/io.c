@@ -692,7 +692,7 @@ device_close			(FILE *			fp,
 
 	err = close (fd);
 
-	if (err) {
+	if (fp) {
 		int saved_errno;
 
 		saved_errno = errno;
