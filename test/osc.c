@@ -77,20 +77,6 @@ int			draw_row, draw_offset;
 int			draw_count = -1;
 int                     cur_x, cur_y;
 
-vbi_inline int
-_vbi_to_ascii			(int			c)
-{
-	if (c < 0)
-		return '?';
-
-	c &= 0x7F;
-
-	if (c < 0x20 || c >= 0x7F)
-		return '.';
-
-	return c;
-}
-
 extern void
 vbi_capture_set_log_fp		(vbi_capture *		capture,
 				 FILE *			fp);

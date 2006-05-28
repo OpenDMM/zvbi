@@ -112,20 +112,6 @@ _vbi_pfc_block_dump		(const vbi_pfc_block *	pb,
 				 FILE *			fp,
 				 vbi_bool		binary);
 
-static int
-_vbi_to_ascii			(int			c)
-{
-	if (c < 0)
-		return '?';
-
-	c &= 0x7F;
-
-	if (c < 0x20 || c >= 0x7F)
-		return '.';
-
-	return c;
-}
-
 static void
 error_exit			(const char *		template,
 				 ...)
