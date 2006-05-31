@@ -20,7 +20,9 @@
 
 /* $Id$ */
 
-#include <assert.h>
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
 
 #include <fcntl.h>		/* open() */
 #include <unistd.h>		/* close(), mmap(), munmap(), gettimeofday() */
@@ -30,6 +32,7 @@
 #include <sys/types.h>
 #include <errno.h>
 
+#include "misc.h"
 #include "io.h"
 
 /* Preliminary hack for tests. */
