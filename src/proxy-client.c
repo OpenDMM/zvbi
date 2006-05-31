@@ -190,7 +190,8 @@ static vbi_bool proxy_client_alloc_msg_buf( vbi_proxy_client * vpc )
       if (vpc->p_client_msg != NULL)
          free(vpc->p_client_msg);
 
-      dprintf2("alloc_msg_buf: allocate buffer for max. %zd bytes\n", msg_size);
+      dprintf2("alloc_msg_buf: allocate buffer for "
+	       "max. %lu bytes\n", (unsigned long) msg_size);
       vpc->max_client_msg_size = msg_size;
       vpc->p_client_msg = malloc(msg_size);
 
