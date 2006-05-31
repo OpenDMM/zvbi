@@ -804,6 +804,7 @@ lines_containing_data		(unsigned int		start[2],
 
 	start[0] = 0;
 	start[1] = sp->count[0];
+
 	count[0] = sp->count[0];
 	count[1] = sp->count[1];
 
@@ -826,11 +827,18 @@ lines_containing_data		(unsigned int		start[2],
 		first = sp->start[field];
 		last = first + sp->count[field] - 1;
 
-		if (first > 0) {
+		if (first > 0 && sp->count[field] > 0) {
+			assert (par->first[field] <= par->last[field]);
+
+			if ((unsigned int) par->first[field] > last
+			    || (unsigned int) par->last[field] < first)
+				continue;
+
 			first = MAX (first, (unsigned int) par->first[field]);
+			last = MIN ((unsigned int) par->last[field], last);
+
 			start[field] += first - sp->start[field];
-			last = MIN (last, (unsigned int) par->last[field]);
-			count[field] = last - first + 1;
+			count[field] = last + 1 - first;
 		}
 	}
 }
