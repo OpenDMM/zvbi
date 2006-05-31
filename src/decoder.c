@@ -21,10 +21,10 @@
 
 #include "site_def.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <assert.h>
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
+
 #include <pthread.h>
 
 #include "misc.h"

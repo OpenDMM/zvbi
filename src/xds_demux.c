@@ -20,14 +20,14 @@
 
 /* $Id$ */
 
-#include "../site_def.h"
-#include "../config.h"
+#include "site_def.h"
 
-#include <assert.h>
-#include <stdlib.h>		/* malloc() */
-#include <string.h>		/* memcpy() */
-#include "hamm.h"		/* vbi_ipar8() */
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
+
 #include "misc.h"		/* vbi_log_printf() */
+#include "hamm.h"		/* vbi_ipar8() */
 #include "tables.h"		/* vbi_rating/prog_type_string() */
 #include "xds_demux.h"
 

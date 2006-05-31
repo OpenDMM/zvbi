@@ -5,3 +5,4 @@ $Id$
 * vbi_page.text[1056] < 26 * 41. D'oh! (fixed in 0.3)
 * timestamp routines assume timeval.tv_sec and .tv_usec are signed.
 * Doxumentation needs compile instructions and more examples.
+* test/decode --idl, --pfc broken?

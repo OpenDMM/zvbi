@@ -24,15 +24,16 @@
 
 /* $Id$ */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <strings.h>
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
+
 #include <ctype.h>
 #include <time.h>
 #include <limits.h>
 #include <math.h>
 
+#include "misc.h"
 #include "trigger.h"
 #include "tables.h"
 #include "vbi.h"

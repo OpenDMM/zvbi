@@ -23,13 +23,14 @@
 
 /* $Id$ */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
+
 #include <limits.h>
 #include <iconv.h>
-#include <assert.h>
 
+#include "misc.h"
 #include "lang.h"
 #include "export.h"
 #include "exp-txt.h"

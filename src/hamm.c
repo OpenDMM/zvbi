@@ -24,6 +24,7 @@
 /* $Id$ */
 
 #include <limits.h>		/* CHAR_BIT */
+
 #include "hamm.h"
 
 const uint8_t
