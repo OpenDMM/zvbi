@@ -122,8 +122,13 @@ typedef enum {
 
 	/** Information useful to debug the library. */
 	VBI_LOG_DEBUG		= 1 << 7,
-	VBI_LOG_DEBUG2		= 1 << 8,
-	VBI_LOG_DEBUG3		= 1 << 9,
+
+	/** Driver responses (strace). Not implemented yet. */
+	VBI_LOG_DRIVER		= 1 << 8,
+
+	/** More detailed debugging information. */
+	VBI_LOG_DEBUG2		= 1 << 9,
+	VBI_LOG_DEBUG3		= 1 << 10,
 } vbi_log_mask;
 
 typedef void
