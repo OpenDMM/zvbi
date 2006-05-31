@@ -20,12 +20,13 @@
 
 /* $Id$ */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <assert.h>
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
 
+#include <unistd.h>
+
+#include "misc.h"
 #include "trigger.h"
 #include "format.h"
 #include "lang.h"

@@ -20,9 +20,11 @@
 
 /* $Id$ */
 
-#include <stdio.h>
-#include <string.h>
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
 
+#include "misc.h"
 #include "vbi.h"
 #include "hamm.h"
 #include "wss.h"
