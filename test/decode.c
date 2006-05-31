@@ -1079,7 +1079,7 @@ Decoding options:\n"
                        -i     decode IDL packets\n\
                        -a     decode everything\n\
                        -a -i  everything except IDL\n\
--c | --idl-ch N\n\
+-l | --idl-ch N\n\
 -d | --idl-addr NNN\n\
                        Decode Teletext IDL format A data from channel N,\n\
                        service packet address NNN [0]\n\
