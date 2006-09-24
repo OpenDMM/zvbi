@@ -761,6 +761,17 @@ vps				(const uint8_t		buffer[13],
 		if (option_dump_bin) {
 			printf ("VPS line=%3u ", line);
 			fwrite (buffer, 1, 13, stdout);
+			fflush (stdout);
+			return;
+		}
+
+		if (option_dump_hex) {
+			unsigned int j;
+
+			printf ("VPS line=%3u ", line);
+			for (j = 0; j < 13; ++j)
+				printf ("%02x ", buffer[j]);
+			fputc ('\n', stdout);
 			return;
 		}
 
