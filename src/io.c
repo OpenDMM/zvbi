@@ -750,16 +750,16 @@ device_ioctl			(FILE *			fp,
 		fputc ('(', fp);
       
 		if (IOCTL_WRITE (cmd))
-			log_fn (fp, cmd, IOCTL_READ (cmd) ? 2 : 0, &buf);
+			log_fn (fp, cmd, IOCTL_READ (cmd) ? 3 : 2, &buf);
 
 		if (-1 == err) {
 			fprintf (fp, "), errno = %d, %s\n",
-				 errno, strerror (errno));
+				 saved_errno, strerror (saved_errno));
 		} else {
 			if (IOCTL_READ (cmd)) {
 				fputs (") -> (", fp);
 				log_fn (fp, cmd, IOCTL_WRITE (cmd) ?
-					1 : 0, arg);
+					3 : 1, arg);
 			}
 
 			fputs (")\n", fp);
