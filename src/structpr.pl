@@ -247,15 +247,15 @@ sub test_cond {
 
         if ("R" eq $mode) {
 	    if ($selector{$item}) {
-		$$text .= "if (1 == rw && $sel) {\n";
+		$$text .= "if ((1 & rw) && $sel) {\n";
 	    } else {
-		$$text .= "if (1 == rw) {\n";
+		$$text .= "if (1 & rw) {\n";
 	    }
 	} elsif ("W" eq $mode) {
 	    if ($selector{$item}) {
-		$$text .= "if (2 == rw && $sel) {\n";
+		$$text .= "if ((2 & rw) && $sel) {\n";
 	    } else {
-		$$text .= "if (2 == rw) {\n";
+		$$text .= "if (2 & rw) {\n";
 	    }
 	} elsif ($selector{$item}) {
 	    $$text .= "if ($sel) {\n";
