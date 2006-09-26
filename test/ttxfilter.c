@@ -145,7 +145,7 @@ teletext			(const uint8_t		buffer[42],
 
 	pmag = vbi_unham16p (buffer);
 	if (pmag < 0) {
-		fprintf (stderr, "Hamming error in pmag\n");
+		fprintf (stderr, "Hamming error in packet number\n");
 		return FALSE;
 	}
 
