@@ -53,6 +53,8 @@ binary_ts_pes			(vbi_dvb_mux *		mx,
 		exit (EXIT_FAILURE);
 	}
 
+	fflush (stdout);
+
 	return TRUE;
 }
 

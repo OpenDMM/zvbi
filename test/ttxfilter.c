@@ -294,6 +294,8 @@ old_mainloop			(void)
 						/* n_lines */ 1,
 						timestamp);
 			assert (success);
+
+			fflush (stdout);
 		}
 	}
 

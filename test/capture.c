@@ -305,6 +305,8 @@ binary_sliced(vbi_sliced *s, double time, int lines)
 			}
 		}
 	}
+
+	fflush (stdout);
 }
 
 static vbi_bool
@@ -317,6 +319,9 @@ binary_ts_pes			(vbi_dvb_mux *		mx,
 	user_data = user_data;
 
 	fwrite (packet, 1, packet_size, stdout);
+
+	fflush (stdout);
+
 	return TRUE;
 }
 

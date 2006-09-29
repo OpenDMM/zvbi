@@ -913,6 +913,8 @@ decode				(const vbi_sliced *	s,
 		++s;
 		--n_lines;
 	}
+
+	fflush (stdout);
 }
 
 static void
