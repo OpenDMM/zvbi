@@ -987,7 +987,8 @@ caption_command(vbi_decoder *vbi, struct caption *cc,
 			} else {
 				vbi_char c = ch->attr;
 
-				c.unicode = vbi_caption_unicode(c2 & 15);
+				c.unicode = vbi_caption_unicode (0x1130 | (c2 & 15),
+								 /* to_upper */ FALSE);
 
 				put_char(cc, ch, c);
 			}
@@ -1368,7 +1369,7 @@ vbi_decode_caption(vbi_decoder *vbi, int line, uint8_t *buf)
 			if (ch == cc->channel + 5) // 'T2'
 				itv_separator(vbi, cc, ci);
 
-			c.unicode = vbi_caption_unicode(ci);
+			c.unicode = vbi_caption_unicode(ci, /* to_upper */ FALSE);
 
 			put_char(cc, ch, c);
 		}
