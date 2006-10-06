@@ -142,12 +142,14 @@ vbi_is_drcs(unsigned int unicode)
 	return unicode >= 0xF000;
 }
 
+extern unsigned int
+vbi_caption_unicode		(unsigned int		c,
+				 vbi_bool		to_upper);
+
 /* Private */
 
 extern unsigned int	vbi_teletext_unicode(vbi_character_set s, vbi_national_subset n, unsigned int c);
 extern unsigned int	vbi_teletext_composed_unicode(unsigned int a, unsigned int c);
-extern unsigned int	vbi_caption_unicode(unsigned int c);
-
 extern void		vbi_optimize_page(vbi_page *pg, int column, int row, int width, int height);
 
 #endif /* LANG_H */
