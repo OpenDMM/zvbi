@@ -777,9 +777,6 @@ main(int argc, char **argv)
 	src_w = par->bytes_per_line / 1;
 	src_h = par->count[0] + par->count[1];
 
-#warning
-//fprintf (stderr, "SRC: %dx%d\n", src_w, src_h);
-
 	init_window(argc, argv, dev_name);
 
 	mainloop();

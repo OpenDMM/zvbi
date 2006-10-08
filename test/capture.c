@@ -444,7 +444,7 @@ main(int argc, char **argv)
 	char *errstr;
 	unsigned int services;
 	int scanning = 625;
-	int strict;
+	int strict = 0;
 	int verbose = 0;
 	int c, index;
 	int interface = 0;

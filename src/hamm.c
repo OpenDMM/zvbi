@@ -23,6 +23,10 @@
 
 /* $Id$ */
 
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
+
 #include <limits.h>		/* CHAR_BIT */
 
 #include "hamm.h"
