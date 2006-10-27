@@ -29,6 +29,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 #include <assert.h>
 #include <unistd.h>
 #include <sys/time.h>
@@ -351,6 +352,8 @@ main				(int			argc,
 {
 	int index;
 	int c;
+
+	setlocale (LC_ALL, "");
 
 	while (-1 != (c = getopt_long (argc, argv, short_options,
 				       long_options, &index))) {
