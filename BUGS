@@ -8,3 +8,4 @@ $Id$
 * test/decode --idl, --pfc broken?
 * Make sure test apps flush their output buffers once per frame
   for real time output.
+* strerror() isn't thread-safe.
