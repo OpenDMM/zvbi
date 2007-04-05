@@ -1058,11 +1058,12 @@ v4l2_update_services(vbi_capture *vc,
 		    && 9 == vfmt.fmt.vbi.start[0]
 		    && 272 == vfmt.fmt.vbi.start[1]) {
 			/* Captures only 288 * 4 samples/line,
-			   work-around not possible. */
+			   no work-around possible. */
+			/* XXX when was this fixed? */
 			asprintf (errstr,
 				  _("A known bug in driver %s %u.%u.%u "
 				    "impedes VBI capturing in NTSC mode. "
-				    "Please upgrade."),
+				    "Please upgrade the driver."),
 				  v->vcap.driver,
 				  (v->vcap.version >> 16) & 0xFF,
 				  (v->vcap.version >> 8) & 0xFF,
