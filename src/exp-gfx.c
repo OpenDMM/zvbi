@@ -300,10 +300,14 @@ draw_char(int canvas_type, uint8_t *canvas, int rowstride,
 		int bits = ~0;
 
 		if (!(underline & 1)) {
+#ifdef __GNUC__
 #if #cpu (i386)
 			bits = (*((uint16_t *) src) >> shift);
 #else
                         /* unaligned/little endian */
+			bits = ((src[1] * 256 + src[0]) >> shift);
+#endif
+#else
 			bits = ((src[1] * 256 + src[0]) >> shift);
 #endif
 			bits |= bits << bold;

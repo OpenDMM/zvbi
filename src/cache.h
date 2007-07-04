@@ -35,22 +35,19 @@ typedef struct vbi_decoder vbi_decoder;
 
 #define HASH_SIZE 113
 
-typedef struct node node;
-typedef struct list list;
-
 struct node {
-	node *			_succ;
-	node *			_pred;
+	struct node *		_succ;
+	struct node *		_pred;
 };
 
 struct list {
-	node			_head;
+	struct node		_head;
 	unsigned int		_n_members;
 };
 
 struct cache {
 	/* TODO: thread safe */
-	list			hash[HASH_SIZE];
+	struct list		hash[HASH_SIZE];
 
 	int			n_pages;
 

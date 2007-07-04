@@ -416,7 +416,7 @@ reset_options(vbi_export *e)
 
 		default:
 			fprintf(stderr,	"%s: unknown export option type %d\n",
-				__PRETTY_FUNCTION__, oi->type);
+				__FUNCTION__, oi->type);
 			exit(EXIT_FAILURE);
 		}
 }
@@ -495,7 +495,7 @@ option_string(vbi_export *e, const char *s2)
 
 		default:
 			fprintf(stderr, "%s: unknown export option type %d\n",
-				__PRETTY_FUNCTION__, oi->type);
+				__FUNCTION__, oi->type);
 			exit(EXIT_FAILURE);
 		}
 
@@ -858,7 +858,7 @@ vbi_export_option_menu_get(vbi_export *export, const char *keyword,
 
 		default:
 			fprintf(stderr,	"%s: unknown export option type %d\n",
-				__PRETTY_FUNCTION__, oi->type);
+				__FUNCTION__, oi->type);
 			exit(EXIT_FAILURE);
 		}
 
@@ -917,7 +917,7 @@ vbi_export_option_menu_set(vbi_export *export, const char *keyword,
 
 	default:
 		fprintf(stderr, "%s: unknown export option type %d\n",
-			__PRETTY_FUNCTION__, oi->type);
+			__FUNCTION__, oi->type);
 		exit(EXIT_FAILURE);
 	}
 }

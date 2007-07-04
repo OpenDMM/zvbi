@@ -55,6 +55,14 @@ static const char rcsid [] =
 #include "raw_decoder.h"
 #include "version.h"
 
+#ifndef HAVE_S64_U64
+#  include <inttypes.h>
+  /* Linux 2.6.x asm/types.h defines __s64 and __u64 only
+     if __GNUC__ is defined. */
+typedef int64_t __s64;
+typedef uint64_t __u64;
+#endif
+
 #include "videodev2k.h"
 #include "_videodev2k.h"
 

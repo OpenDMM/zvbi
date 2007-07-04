@@ -477,7 +477,7 @@ vbi_teletext_unicode(vbi_character_set s, vbi_national_subset n, unsigned int c)
 
 	default:
 		fprintf(stderr, "%s: unknown char set %d\n",
-			__PRETTY_FUNCTION__, s);
+			__FUNCTION__, s);
 		exit(EXIT_FAILURE);
 	}
 }
