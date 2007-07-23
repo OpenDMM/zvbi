@@ -262,6 +262,7 @@ extern void
 _vbi_log_vprintf		(vbi_log_fn		log_fn,
 				 void *			user_data,
 				 vbi_log_mask		level,
+				 const char *		source_file,
 				 const char *		context,
 				 const char *		templ,
 				 va_list		ap);
@@ -269,6 +270,7 @@ extern void
 _vbi_log_printf			(vbi_log_fn		log_fn,
 				 void *			user_data,
 				 vbi_log_mask		level,
+				 const char *		source_file,
 				 const char *		context,
 				 const char *		templ,
 				 ...);
@@ -279,9 +281,20 @@ do {									\
 									\
 	if ((NULL != _h && 0 != (_h->mask & level))			\
 	    || (_h = &_vbi_global_log, 0 != (_h->mask & level)))	\
-		_vbi_log_printf (_h->fn, _h->user_data,		\
-				  level, __FUNCTION__,			\
+		_vbi_log_printf (_h->fn, _h->user_data,			\
+				  level, __FILE__, __FUNCTION__,	\
 				  templ , ##args);			\
+} while (0)
+
+#define _vbi_vlog(hook, level, templ, ap)				\
+do {									\
+	_vbi_log_hook *_h = hook;					\
+									\
+	if ((NULL != _h && 0 != (_h->mask & level))			\
+	    || (_h = &_vbi_global_log, 0 != (_h->mask & level)))	\
+		_vbi_log_vprintf (_h->fn, _h->user_data,		\
+				  level, __FILE__, __FUNCTION__,	\
+				  templ, ap);				\
 } while (0)
 
 #define error(hook, templ, args...)					\
@@ -352,3 +365,10 @@ _vbi_asprintf			(char **		dstp,
 				 ...);
 
 #endif /* MISC_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/
