@@ -93,3 +93,10 @@ typedef enum {
 } data_unit_id;
 
 #endif /* DVB_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

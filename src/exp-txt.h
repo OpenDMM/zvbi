@@ -75,3 +75,10 @@ vbi_print_page(vbi_page *pg, char *buf, int size,
 /* Private */
 
 #endif /* EXP_TXT_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

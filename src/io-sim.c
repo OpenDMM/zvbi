@@ -2365,3 +2365,10 @@ vbi_capture_sim_new		(int			scanning,
 
 	return NULL;
 }
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

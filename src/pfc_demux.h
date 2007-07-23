@@ -141,3 +141,10 @@ _vbi_pfc_demux_init		(vbi_pfc_demux *	dx,
 VBI_END_DECLS
 
 #endif /* __ZVBI_PFC_DEMUX_H__ */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

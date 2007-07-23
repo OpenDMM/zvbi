@@ -243,3 +243,10 @@ vbi_encode_vps_pdc		(uint8_t		buffer[13],
 }
 
 #endif /* 3 == VBI_VERSION_MINOR */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

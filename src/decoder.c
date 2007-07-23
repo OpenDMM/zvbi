@@ -823,3 +823,10 @@ vbi_raw_decoder_init		(vbi_raw_decoder *	rd)
 
 	rd->pattern = (int8_t *) rd3;
 }
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

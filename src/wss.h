@@ -22,3 +22,10 @@
 
 extern void		vbi_decode_wss_625(vbi_decoder *vbi, uint8_t *buf, double time);
 extern void		vbi_decode_wss_cpr1204(vbi_decoder *vbi, uint8_t *buf);
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

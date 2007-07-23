@@ -675,3 +675,10 @@ vbi_export_class_text = {
 	.option_set		= option_set,
 	.export			= export
 };
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

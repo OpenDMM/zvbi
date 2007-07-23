@@ -397,3 +397,10 @@ typedef struct vbi_page {
 /* Private */
 
 #endif /* FORMAT_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

@@ -853,3 +853,10 @@ device_munmap			(FILE *			fp,
 
 	return r;
 }
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

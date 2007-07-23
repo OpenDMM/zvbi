@@ -87,3 +87,10 @@ extern vbi_search_status vbi_search_next(vbi_search *search, vbi_page **pg, int 
 /* Private */
 
 #endif /* SEARCH_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

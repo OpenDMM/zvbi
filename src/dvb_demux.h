@@ -92,3 +92,10 @@ vbi_dvb_pes_demux_new		(vbi_dvb_demux_cb *	callback,
 VBI_END_DECLS
 
 #endif /* __ZVBI_DVB_DEMUX_H__ */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

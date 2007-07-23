@@ -403,3 +403,10 @@ extern int		vbi_raw_decode(vbi_raw_decoder *rd, uint8_t *raw, vbi_sliced *out);
 /* Private */
 
 #endif /* DECODER_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

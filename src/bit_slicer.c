@@ -909,3 +909,10 @@ vbi3_bit_slicer_new		(void)
 
 	return bs;
 }
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

@@ -183,3 +183,10 @@ _vbi3_bit_slicer_init		(vbi3_bit_slicer *	bs)
 VBI_END_DECLS
 
 #endif /* __ZVBI_BIT_SLICER_H__ */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

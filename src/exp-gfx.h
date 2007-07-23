@@ -98,3 +98,10 @@ extern void vbi_get_vt_cell_size(int *w, int *h);
 
 
 
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

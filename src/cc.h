@@ -104,3 +104,10 @@ extern void		vbi_caption_channel_switched(vbi_decoder *vbi);
 extern void		vbi_caption_color_level(vbi_decoder *vbi);
 
 #endif /* CC_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

@@ -466,3 +466,10 @@ vbi_idl_a_demux_new		(unsigned int		channel,
 
 	return dx;
 }
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

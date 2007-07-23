@@ -348,3 +348,10 @@ vbi_sliced_payload_bits		(vbi_service_set	service)
 /* Private */
 
 #endif /* SLICED_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

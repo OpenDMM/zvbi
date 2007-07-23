@@ -2362,3 +2362,10 @@ ure_exec(ure_dfa_t dfa, int flags, ucs2_t *text, unsigned long textlen,
 }
 
 #endif /* HAVE_GLIBC21 || HAVE_LIBUNICODE */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

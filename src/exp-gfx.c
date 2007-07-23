@@ -1286,3 +1286,10 @@ vbi_export_class_png = {
 VBI_AUTOREG_EXPORT_MODULE(vbi_export_class_png)
 
 #endif /* HAVE_LIBPNG */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

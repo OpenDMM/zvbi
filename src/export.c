@@ -37,7 +37,7 @@
 #include <iconv.h>
 
 #include "export.h"
-#include "vbi.h" /* vbi_asprintf */
+#include "vbi.h" /* asprintf */
 
 extern const char _zvbi_intl_domainname[];
 
@@ -1199,3 +1199,10 @@ vbi_export_errstr(vbi_export *export)
 
 	return export->errstr;
 }
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

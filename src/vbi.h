@@ -208,3 +208,10 @@ extern void		vbi_transp_colormap(vbi_decoder *vbi, vbi_rgba *d, vbi_rgba *s, int
 extern void             vbi_chsw_reset(vbi_decoder *vbi, vbi_nuid nuid);
 
 #endif /* VBI_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

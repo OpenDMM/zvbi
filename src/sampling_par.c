@@ -653,3 +653,10 @@ _vbi_videostd_name		(vbi_videostd		videostd)
 }
 
 #endif /* 3 == VBI_VERSION_MINOR */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

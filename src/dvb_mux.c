@@ -759,3 +759,10 @@ _vbi_dvb_mux_ts_new		(unsigned int		pid,
 
 	return mx;
 }
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

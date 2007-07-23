@@ -153,3 +153,10 @@ extern unsigned int	vbi_teletext_composed_unicode(unsigned int a, unsigned int c
 extern void		vbi_optimize_page(vbi_page *pg, int column, int row, int width, int height);
 
 #endif /* LANG_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

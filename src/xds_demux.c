@@ -1106,3 +1106,10 @@ vbi_xds_demux_new		(vbi_xds_demux_cb *	callback,
 
 	return xd;
 }
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

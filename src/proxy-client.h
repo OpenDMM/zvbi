@@ -166,3 +166,10 @@ vbi_proxy_client_has_channel_control( vbi_proxy_client * vpc );
 /* Private */
 
 #endif  /* PROXY_CLIENT_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

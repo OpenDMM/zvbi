@@ -322,3 +322,10 @@ vbi_unham24p			(const uint8_t *	p)
 
 	return x ^ (int) _vbi_hamm24_corr[e];
 }
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

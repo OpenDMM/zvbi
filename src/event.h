@@ -716,3 +716,10 @@ extern void		vbi_event_handler_unregister(vbi_decoder *vbi,
 extern void		vbi_send_event(vbi_decoder *vbi, vbi_event *ev);
 
 #endif /* EVENT_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

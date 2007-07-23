@@ -742,3 +742,10 @@ vbi_export_class_html = {
 };
 
 VBI_AUTOREG_EXPORT_MODULE(vbi_export_class_html)
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

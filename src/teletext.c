@@ -2636,3 +2636,10 @@ vbi_fetch_vt_page(vbi_decoder *vbi, vbi_page *pg,
 					  max_level, display_rows, navigation);
 	}
 }
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

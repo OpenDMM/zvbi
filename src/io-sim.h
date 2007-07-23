@@ -111,3 +111,10 @@ _vbi_raw_vbi_image		(uint8_t *		raw,
 VBI_END_DECLS
 
 #endif /* __ZVBI_IO_SIM_H__ */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

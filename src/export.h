@@ -489,3 +489,10 @@ static void vbi_autoreg_##name(void) {					\
 /** @} */
 
 #endif /* EXPORT_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

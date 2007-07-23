@@ -144,3 +144,10 @@ extern int ure_exec __((ure_dfa_t dfa, int flags,
 #endif /* HAVE_GLIBC21 || HAVE_LIBUNICODE */
 
 #endif /* _h_ure */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

@@ -634,3 +634,10 @@ vbi_search_delete(vbi_search *search)
 }
 
 #endif /* !HAVE_GLIBC21 && !HAVE_LIBUNICODE */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

@@ -297,3 +297,10 @@ vbi_export_class_tmpl = {
 #if 0
 VBI_AUTOREG_EXPORT_MODULE(vbi_export_class_tmpl)
 #endif
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

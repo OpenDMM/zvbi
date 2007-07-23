@@ -1245,3 +1245,10 @@ _vbi_dvb_demux_pes_new		(vbi_dvb_demux_cb *	callback,
 }
 
 #endif /* DOXYGEN_SHOULD_SKIP_THIS */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

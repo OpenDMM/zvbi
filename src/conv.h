@@ -118,3 +118,10 @@ _vbi_iconv_open			(const char *		dst_codeset,
 VBI_END_DECLS
 
 #endif /* __ZVBI_CONV_H__ */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

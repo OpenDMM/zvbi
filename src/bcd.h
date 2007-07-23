@@ -177,3 +177,10 @@ vbi_is_bcd(unsigned int bcd)
 /* Private */
 
 #endif /* BCD_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

@@ -2559,3 +2559,10 @@ vbi_teletext_init(vbi_decoder *vbi)
 
 	vbi_teletext_channel_switched(vbi);     /* Reset */
 }
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

@@ -1439,3 +1439,10 @@ vbi_capture_v4l_new(const char *dev_name, int scanning,
 }
 
 #endif /* !ENABLE_V4L */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

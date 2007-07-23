@@ -446,3 +446,10 @@ extern vbi_bool		vbi_format_vt_page(vbi_decoder *, vbi_page *,
 					   int display_rows, vbi_bool navigation);
 
 #endif
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

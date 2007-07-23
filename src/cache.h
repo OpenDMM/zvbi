@@ -82,3 +82,10 @@ extern int              vbi_cache_foreach(vbi_decoder *, int pgno, int subno, in
 extern void             vbi_cache_flush(vbi_decoder *);
 
 #endif /* CACHE_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

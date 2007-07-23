@@ -151,3 +151,10 @@ typedef struct {
 VBI_END_DECLS
 
 #endif /* __ZVBI_MACROS_H__ */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

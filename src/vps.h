@@ -57,3 +57,10 @@ vbi_encode_vps_pdc		(uint8_t		buffer[13],
 VBI_END_DECLS
 
 #endif /* __ZVBI_VPS_H__ */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

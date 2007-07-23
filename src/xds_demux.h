@@ -222,3 +222,10 @@ _vbi_xds_demux_init		(vbi_xds_demux *	xd,
 VBI_END_DECLS
 
 #endif /* __ZVBI_XDS_DEMUX_H__ */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

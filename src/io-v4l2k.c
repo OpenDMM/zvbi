@@ -1539,3 +1539,10 @@ vbi_capture_v4l2k_new(const char *dev_name, int fd, int buffers,
 }
 
 #endif /* !ENABLE_V4L2 */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

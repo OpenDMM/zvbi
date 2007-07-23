@@ -1222,3 +1222,10 @@ vbi_locale_codeset		(void)
 
 	return dst_format; /* may be NULL */
 }
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

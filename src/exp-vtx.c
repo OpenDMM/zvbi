@@ -146,3 +146,10 @@ vbi_export_class_vtx = {
 };
 
 VBI_AUTOREG_EXPORT_MODULE(vbi_export_class_vtx)
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

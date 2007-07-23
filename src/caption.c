@@ -1605,3 +1605,10 @@ vbi_fetch_cc_page(vbi_decoder *vbi, vbi_page *pg, vbi_pgno pgno, vbi_bool reset)
 
 	return 1;
 }
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

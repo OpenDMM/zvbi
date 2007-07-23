@@ -223,3 +223,10 @@ vbi_capture_v4l2_new		(const char *		dev_name,
 }
 
 #endif /* !ENABLE_V4L2 */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

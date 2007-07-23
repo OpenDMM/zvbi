@@ -333,3 +333,10 @@ wss_test_init(v4l_device *v4l)
 }
 
 #endif
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

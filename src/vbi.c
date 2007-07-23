@@ -887,3 +887,10 @@ vbi_version			(unsigned int *		major,
 	if (minor) *minor = VBI_VERSION_MINOR;
 	if (micro) *micro = VBI_VERSION_MICRO;
 }
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

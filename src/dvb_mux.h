@@ -81,3 +81,10 @@ _vbi_dvb_mux_ts_new		(unsigned int		pid,
 				 void *			user_data);
 
 #endif /* __ZVBI_DVB_MUX_H__ */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

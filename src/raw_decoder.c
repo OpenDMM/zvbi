@@ -1211,3 +1211,10 @@ vbi3_raw_decoder_new		(const vbi_sampling_par *sp)
 
 	return rd;
 }
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

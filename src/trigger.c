@@ -719,3 +719,10 @@ vbi_atvef_trigger(vbi_decoder *vbi, unsigned char *s)
 	}
 }
 
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

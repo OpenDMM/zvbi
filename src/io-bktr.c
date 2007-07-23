@@ -392,3 +392,10 @@ vbi_capture_bktr_new		(const char *		dev_name,
 }
 
 #endif /* !ENABLE_BKTR */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

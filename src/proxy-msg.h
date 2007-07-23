@@ -20,6 +20,9 @@
  *  $Id$
  *
  *  $Log$
+ *  Revision 1.10  2007/07/23 20:01:18  mschimek
+ *  *** empty log message ***
+ *
  *  Revision 1.9  2004/10/24 18:33:47  tomzo
  *  - cleaned up socket I/O interface functions
  *  - added defines for norm change events
@@ -589,3 +592,10 @@ int      vbi_proxy_msg_check_ioctl( VBI_DRIVER_API_REV vbi_api,
                                     int request, void * p_arg, vbi_bool * req_perm );
 
 #endif  /* PROXY_MSG_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

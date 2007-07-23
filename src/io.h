@@ -264,3 +264,10 @@ vbi_capture_io_select		(int			fd,
 				 struct timeval *	timeout);
 
 #endif /* IO_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

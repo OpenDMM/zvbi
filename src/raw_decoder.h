@@ -179,3 +179,10 @@ _vbi3_raw_decoder_dump		(const vbi3_raw_decoder *rd,
 				 FILE *			fp);
 
 #endif /* RAW_DECODER_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

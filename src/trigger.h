@@ -38,3 +38,10 @@ extern void		vbi_eacem_trigger(vbi_decoder *vbi, unsigned char *s);
 extern void		vbi_atvef_trigger(vbi_decoder *vbi, unsigned char *s);
 
 #endif /* TRIGGER_H */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

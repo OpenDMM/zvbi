@@ -1919,3 +1919,10 @@ vbi_proxy_client_create(const char *p_dev_name, const char *p_client_name,
 }
 
 #endif /* !ENABLE_PROXY */
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

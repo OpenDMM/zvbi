@@ -394,3 +394,10 @@ vbi_pfc_demux_new		(vbi_pgno		pgno,
 
 	return dx;
 }
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/

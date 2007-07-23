@@ -392,3 +392,10 @@ vbi_prog_type_string(vbi_prog_classf classf, int id)
 		return NULL;
 	}
 }
+
+/*
+Local variables:
+c-set-style: K&R
+c-basic-offset: 8
+End:
+*/
