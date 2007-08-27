@@ -562,12 +562,13 @@ print_char(text_instance *text, int endian, vbi_page *pg, vbi_char old, vbi_char
 			p = _stpcpy(p, "5;"); /* flash */
 		}
 
+		/* FIXME what is the real buffer size? */
 		if (chg.foreground)
-			p += sprintf(p, "3%c;", '0'
+			p += snprintf(p, 4, "3%c;", '0'
 				     + match_color8(pg->color_map[this.foreground]));
 
 		if (chg.background)
-			p += sprintf(p, "4%c;", '0'
+			p += snprintf(p, 4, "4%c;", '0'
 				     + match_color8(pg->color_map[this.background]));
 
 		if (p[-1] == '[')
