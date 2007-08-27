@@ -22,6 +22,10 @@
 #ifndef SLICED_H
 #define SLICED_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* Public */
 
 #include <inttypes.h>
@@ -346,6 +350,10 @@ vbi_sliced_payload_bits		(vbi_service_set	service)
 /** @} */
 
 /* Private */
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* SLICED_H */
 
