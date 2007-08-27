@@ -723,7 +723,7 @@ static vbi_bool proxy_client_start_acq( vbi_proxy_client * vpc )
    p_req_msg = &vpc->p_client_msg->body.connect_req;
    vbi_proxy_msg_fill_magics(&p_req_msg->magics);
 
-   strncpy((char *) p_req_msg->client_name, vpc->p_client_name, VBIPROXY_CLIENT_NAME_MAX_LENGTH);
+   strlcpy((char *) p_req_msg->client_name, vpc->p_client_name, VBIPROXY_CLIENT_NAME_MAX_LENGTH);
    p_req_msg->client_name[VBIPROXY_CLIENT_NAME_MAX_LENGTH - 1] = 0;
    p_req_msg->pid = getpid();
 
