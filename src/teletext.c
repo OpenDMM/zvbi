@@ -2280,7 +2280,8 @@ vbi_format_vt_page(vbi_decoder *vbi,
 
 	/* Current page number in header */
 
-	sprintf(buf, "\2%x.%02x\7", vtp->pgno, vtp->subno & 0xff);
+	snprintf (buf, sizeof (buf),
+		  "\2%x.%02x\7", vtp->pgno, vtp->subno & 0xff);
 
 	/* Level 1 formatting */
 
