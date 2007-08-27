@@ -26,13 +26,14 @@
 #if 3 == VBI_VERSION_MINOR
 #  include "intl.h"
 #else
-#  define vbi3_intl_domainname _zvbi_intl_domainname
+extern const char _zvbi_intl_domainname[];
+#  define vbi_intl_domainname _zvbi_intl_domainname
 #endif
 
 #ifdef ENABLE_NLS
 #  include <libintl.h>
 #  include <locale.h>
-#  define _(String) dgettext (vbi3_intl_domainname, String)
+#  define _(String) dgettext (vbi_intl_domainname, String)
 #  ifdef gettext_noop
 #    define N_(String) gettext_noop (String)
 #  else
