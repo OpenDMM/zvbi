@@ -67,7 +67,7 @@ do {									\
 	if (_vbi_global_log.mask & VBI_LOG_WARNING)			\
 		_vbi_log_printf (_vbi_global_log.fn,			\
 				  _vbi_global_log.user_data,		\
-				  VBI_LOG_WARNING, function,		\
+				  VBI_LOG_WARNING, __FILE__, function,	\
 				  templ , ##args);			\
 } while (0)
 
