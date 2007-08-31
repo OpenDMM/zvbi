@@ -362,7 +362,7 @@ vbi_pfc_demux_delete		(vbi_pfc_demux *	dx)
 /**
  * @param pgno Page to take PFC data from.
  * @param stream PFC stream to be demultiplexed.
- * @param cb Function to be called by vbi_pfc_demux_demux() when
+ * @param callback Function to be called by vbi_pfc_demux_demux() when
  *   a new data block is available.
  * @param user_data User pointer passed through to @a cb function.
  *
