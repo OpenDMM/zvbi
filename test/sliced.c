@@ -258,7 +258,7 @@ char *				program_invocation_short_name;
 #endif
 
 vbi_bool			option_quiet;
-unsigned int			option_ts_pid;
+unsigned long			option_ts_pid;
 unsigned int			option_log_mask;
 
 void

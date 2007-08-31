@@ -85,7 +85,7 @@ extern char *			program_invocation_short_name;
 #endif
 
 extern vbi_bool			option_quiet;
-extern unsigned int		option_ts_pid;
+extern unsigned long		option_ts_pid;
 extern unsigned int		option_log_mask;
 
 extern void
