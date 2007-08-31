@@ -29,6 +29,8 @@
 
 VBI_BEGIN_DECLS
 
+/* Public */
+
 /**
  * @addtogroup DVBMux
  * @{
@@ -137,6 +139,8 @@ vbi_dvb_ts_mux_new		(unsigned int		pid,
   __attribute__ ((_vbi_alloc));
 
 /** @} */
+
+/* Private */
 
 VBI_END_DECLS
 
