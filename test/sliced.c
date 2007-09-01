@@ -300,6 +300,15 @@ error_exit			(const char *		template,
 }
 
 void
+write_error_exit		(const char *		msg)
+{
+	if (NULL == msg)
+		msg = strerror (errno);
+
+	error_exit (_("Write error: %s."), msg);
+}
+
+void
 no_mem_exit			(void)
 {
 	error_exit (_("Out of memory."));
@@ -396,8 +405,6 @@ pes_ts_read_loop		(struct stream *	st)
 				   sample_time, pts))
 			return FALSE;
 	}
-
-	error_msg (_("End of stream."));
 
 	return TRUE;
 }
@@ -569,8 +576,6 @@ old_sliced_read_loop		(struct stream *	st)
 				   sample_time, stream_time))
 			return FALSE;
 	}
-
-	error_msg (_("End of stream."));
 
 	return TRUE;
 }

@@ -1,6 +1,6 @@
 /*
  *  zvbi-decode -- Decode sliced VBI data using low-level
- *		   libzvbi functions.
+ *		   libzvbi functions
  *
  *  Copyright (C) 2004, 2006, 2007 Michael H. Schimek
  *
@@ -1117,6 +1117,8 @@ main				(int			argc,
 		read_stream_delete (st);
 		st = NULL;
 	}
+
+	error_msg (_("End of stream."));
 
 	vbi_xds_demux_delete (xds);
 	xds = NULL;

@@ -161,7 +161,7 @@ filter_frame			(const vbi_sliced *	sliced_in,
 	}
 
 	if (!success)
-		error_exit ("Write error.");
+		write_error_exit (/* msg: errno */ NULL);
 
 	fflush (stdout);
 
@@ -426,6 +426,8 @@ main				(int			argc,
 	read_stream_loop (st);
 
 	read_stream_delete (st);
+
+	error_msg (_("End of stream."));
 
 	exit (EXIT_SUCCESS);
 

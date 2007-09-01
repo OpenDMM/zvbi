@@ -98,6 +98,8 @@ extern void
 error_exit			(const char *		template,
 				 ...);
 extern void
+write_error_exit		(const char *		msg);
+extern void
 no_mem_exit			(void);
 extern vbi_bool
 read_stream_loop		(struct stream *	st);
