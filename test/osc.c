@@ -192,7 +192,7 @@ decode_vps(uint8_t *buf)
 
 	pty = buf[12];
 
-#warning this sucks
+	/* FIXME use real buffer size. */
 	text += snprintf(text, 100, " CNI: %04x PCS: %d PTY: %d ", cni, pcs, pty);
 
 	text += snprintf(text, 50, " %s", dump_pil(pil));
