@@ -426,7 +426,7 @@ vbi_idl_demux_delete		(vbi_idl_demux *	dx)
 
 	_vbi_idl_demux_destroy (dx);
 
-	free (dx);		
+	vbi_free (dx);		
 }
 
 /**
@@ -460,7 +460,7 @@ vbi_idl_a_demux_new		(unsigned int		channel,
 
 	if (!_vbi_idl_demux_init (dx, _VBI_IDL_FORMAT_A, channel, address,
 				  callback, user_data)) {
-		free (dx);
+		vbi_free (dx);
 		dx = NULL;
 	}
 

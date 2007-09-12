@@ -356,7 +356,7 @@ vbi_pfc_demux_delete		(vbi_pfc_demux *	dx)
 
 	_vbi_pfc_demux_destroy (dx);
 
-	free (dx);		
+	vbi_free (dx);		
 }
 
 /**
@@ -382,13 +382,13 @@ vbi_pfc_demux_new		(vbi_pgno		pgno,
 {
 	vbi_pfc_demux *dx;
 
-	if (!(dx = malloc (sizeof (*dx)))) {
+	if (!(dx = vbi_malloc (sizeof (*dx)))) {
 		return NULL;
 	}
 
 	if (!_vbi_pfc_demux_init (dx, pgno, stream,
 				  callback, user_data)) {
-		free (dx);
+		vbi_free (dx);
 		dx = NULL;
 	}
 
