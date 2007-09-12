@@ -24,7 +24,9 @@
 
 #include <inttypes.h>		/* uint8_t */
 #include "macros.h"
-#include "version.h"
+#ifndef ZAPPING8
+#  include "version.h"
+#endif
 #include "pdc.h"		/* vbi_program_id */
 
 VBI_BEGIN_DECLS
@@ -37,20 +39,47 @@ VBI_BEGIN_DECLS
  */
 extern vbi_bool
 vbi_decode_vps_cni		(unsigned int *		cni,
-				 const uint8_t		buffer[13]);
+				 const uint8_t		buffer[13])
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+  __attribute__ ((_vbi_nonnull (1, 2)))
+#endif
+  ;
 extern vbi_bool
 vbi_encode_vps_cni		(uint8_t		buffer[13],
-				 unsigned int		cni);
+				 unsigned int		cni)
+  __attribute__ ((_vbi_nonnull (1)));
 
 /* Private */
 
-#if 3 == VBI_VERSION_MINOR
+#if defined ZAPPING8 || 3 == VBI_VERSION_MINOR
 extern vbi_bool
 vbi_decode_vps_pdc		(vbi_program_id *	pid,
-				 const uint8_t		buffer[13]);
+				 const uint8_t		buffer[13])
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+  __attribute__ ((_vbi_nonnull (1, 2)))
+#endif
+  ;
 extern vbi_bool
 vbi_encode_vps_pdc		(uint8_t		buffer[13],
-				 const vbi_program_id *pid);
+				 const vbi_program_id *pid)
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+  __attribute__ ((_vbi_nonnull (1, 2)))
+#endif
+  ;
+vbi_bool
+vbi_decode_dvb_pdc_descriptor	(vbi_program_id *	pid,
+				 const uint8_t		buffer[5])
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+  __attribute__ ((_vbi_nonnull (1, 2)))
+#endif
+  ;
+vbi_bool
+vbi_encode_dvb_pdc_descriptor	(uint8_t		buffer[5],
+				 const vbi_program_id *pid)
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+  __attribute__ ((_vbi_nonnull (1, 2)))
+#endif
+  ;
 #endif
 /** @} */
 
