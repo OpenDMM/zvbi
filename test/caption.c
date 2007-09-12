@@ -430,9 +430,13 @@ init_window			(int			ac,
 static vbi_bool
 decode_frame			(const vbi_sliced *	sliced,
 				 unsigned int		n_lines,
+				 const uint8_t *	raw,
+				 const vbi_sampling_par *sp,
 				 double			sample_time,
 				 int64_t		stream_time)
 {
+	raw = raw;
+	sp = sp;
 	stream_time = stream_time; /* unused */
 
 	vbi_decode (vbi, sliced, n_lines, sample_time);
@@ -661,9 +665,11 @@ main				 (int			argc,
 	} else {
 		struct stream *st;
 
-		st = read_stream_new (FILE_FORMAT_SLICED, decode_frame);
-		read_stream_loop (st);
-		read_stream_delete (st);
+		st = read_stream_new (FILE_FORMAT_SLICED,
+				      /* ts_pid */ 0,
+				      decode_frame);
+		stream_loop (st);
+		stream_delete (st);
 	}
 
 	printf ("Done.\n");
