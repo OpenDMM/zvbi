@@ -144,6 +144,8 @@ vbi3_bit_slicer_new		(void)
 typedef vbi_bool
 _vbi3_bit_slicer_fn		(vbi3_bit_slicer *	bs,
 				 uint8_t *		buffer,
+				 vbi3_bit_slicer_point *points,
+				 unsigned int *		n_points,
 				 const uint8_t *	raw);
 
 /** @internal */
@@ -165,6 +167,7 @@ struct _vbi3_bit_slicer {
 	unsigned int		total_bits;
 	unsigned int		payload;
 	unsigned int		endian;
+	unsigned int		bytes_per_sample;
 	unsigned int		skip;
 	unsigned int		green_mask;
 
