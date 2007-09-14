@@ -868,7 +868,9 @@ decode_frame			(const vbi_sliced *	s,
 static void
 usage				(FILE *			fp)
 {
-	fprintf (fp, _("\
+	/* FIXME Supposed to be localized but we can't use #ifs
+	   within the _() macro. */
+	fprintf (fp, "\
 %s %s -- Low-level VBI decoder\n\n\
 Copyright (C) 2004, 2006, 2007 Michael H. Schimek\n\
 This program is licensed under GPLv2 or later. NO WARRANTIES.\n\n\
@@ -914,7 +916,7 @@ Modifying options:\n\
 -m | --time            Dump capture timestamps\n\
 -M | --metronome tick  Compare timestamps against a metronome advancing\n\
                        by tick seconds per frame\n\
-"),
+",
 		 PROGRAM_NAME, VERSION, program_invocation_name);
 }
 

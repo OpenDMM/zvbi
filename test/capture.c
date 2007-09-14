@@ -407,9 +407,9 @@ Device options:\n\
 Output options:\n\
 -j | --dump            Sliced VBI data (text)\n\
 -l | --sliced          Sliced VBI data (binary)\n"
-#if 0 /* later */
+/* later */ /*
 "-r | --raw             Raw VBI data (binary)\n"
-#endif
+*/
 "-P | --pes             DVB PES stream\n\
 -T | --ts pid          DVB TS stream\n\
 "),
