@@ -23,6 +23,7 @@
 #include <stdlib.h>
 #include "src/misc.h"
 #include "test-common.h"
+#include "src/version.h"
 
 void *
 memset_rand			(void *			dst,
