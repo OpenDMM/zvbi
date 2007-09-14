@@ -447,7 +447,10 @@ decode_pattern			(vbi3_raw_decoder *	rd,
 			job = rd->jobs + j - 1;
 
 			if (!job->slicer.func (&job->slicer,
-					       sliced->data, raw)) {
+					       sliced->data,
+					       /* points */ NULL,
+					       /* n_points */ NULL,
+					       raw)) {
 				continue; /* no match, try next data service */
 			}
 
