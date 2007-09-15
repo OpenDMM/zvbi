@@ -289,7 +289,7 @@ BIT_SLICER (RGB16_BE, 4, bs->thresh_frac)
 BIT_SLICER (RGB8, 8, bs->thresh_frac)
 #endif
 
-static const unsigned int	LP_AVG = 4;
+static const unsigned int	LP_AVG = 3;
 
 static vbi_bool
 low_pass_bit_slicer_Y8		(vbi3_bit_slicer *	bs,
@@ -393,8 +393,8 @@ do {									\
 			* 256 / bs->bytes_per_sample			\
 			+ (1 << LP_AVG) * 128				\
 			+ ii * 256;					\
-		points->level = raw0;					\
-		points->thresh = tr << LP_AVG;				\
+		points->level = raw0 << (8 - LP_AVG);			\
+		points->thresh = tr << (8 - LP_AVG);			\
 		++points;						\
 	}								\
 } while (0)
