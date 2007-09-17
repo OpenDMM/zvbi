@@ -224,6 +224,8 @@ pes_ts_cb			(vbi_dvb_mux *		mx,
 
 	mx = mx; /* unused */
 
+	assert (packet_size < 66000);
+
 	actual = write (st->fd, packet, packet_size);
 	if (actual != (ssize_t) packet_size)
 		write_error_exit (/* msg: errno */ NULL);
@@ -570,6 +572,8 @@ write_func_old_sliced		(struct stream *	st,
 					   sliced->line >> 8);
 
 				n = service_map[i].n_bytes;
+				assert (n > 0 && n <= sizeof (sliced->data));
+
 				if (n != write (st->fd, sliced->data, n))
 					write_error_exit (NULL);
 			}
@@ -604,10 +608,14 @@ write_func_old_sliced		(struct stream *	st,
 #undef w16
 #undef w32
 		n = p - st->b64_buffer;
+		assert (n > 0 && n <= sizeof (st->b64_buffer));
+
 		if (n != write (st->fd, st->b64_buffer, n))
 			write_error_exit (NULL);
 
 		n = (sp->count[0] + sp->count[1]) * sp->bytes_per_line;
+		assert (n > 0 && n <= 625 * 4096);
+
 		if (n != write (st->fd, raw, n))
 			write_error_exit (NULL);
 	}
