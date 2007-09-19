@@ -15,4 +15,4 @@ $Id$
   make up line numbers to distinguish fields.
 * test: decode output differs from sliced2pes | decode output.
   Probably have to flush the PES demux.
-  
+* ntsc-cc needs an update to skip raw data in test samples.
