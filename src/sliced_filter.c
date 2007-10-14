@@ -63,6 +63,7 @@ struct _vbi_sliced_filter {
 	unsigned int		output_max_lines;
 
 	unsigned int		keep_mag_set_next;
+	vbi_bool		start;
 
 	vbi_service_set	keep_services;
 
@@ -313,6 +314,7 @@ vbi_sliced_filter_reset	(vbi_sliced_filter *	sf)
 	assert (NULL != sf);
 
 	sf->keep_mag_set_next = 0;
+	sf->start = TRUE;
 }
 
 static vbi_bool
@@ -382,6 +384,11 @@ decode_teletext_packet_0	(vbi_sliced_filter *	sf,
 		   packet of this page (keep_mag_set) but discard all
 		   following packets (keep_mag_set_next). */
 		sf->keep_mag_set_next = *keep_mag_set & ~mag_set;
+	} else if (sf->start) {
+		/* Keep the very first page header and its timestamp,
+		   which is important for subtitle timing. */
+		*keep_mag_set = mag_set;
+		sf->keep_mag_set_next = 0;
 	} else {
 		/* Discard this and following packets until we
 		   find another header packet. */
@@ -389,12 +396,16 @@ decode_teletext_packet_0	(vbi_sliced_filter *	sf,
 		sf->keep_mag_set_next = *keep_mag_set;
 	}
 
+	sf->start = FALSE;
+
 	return TRUE;
 
  match:
 	/* Keep this and following packets. */
 	*keep_mag_set |= mag_set;
 	sf->keep_mag_set_next = *keep_mag_set;
+
+	sf->start = FALSE;
 
 	return TRUE;
 }
@@ -683,6 +694,8 @@ vbi_sliced_filter_new		(vbi_sliced_filter_cb *callback,
 		vbi_free (sf);
 		return NULL;
 	}
+
+	vbi_sliced_filter_reset (sf);
 
 	sf->callback = callback;
 	sf->user_data = user_data;
