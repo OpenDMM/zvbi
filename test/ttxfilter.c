@@ -125,9 +125,9 @@ filter_frame			(const vbi_sliced *	sliced_in,
 			exit (EXIT_FAILURE);
 		}
 
-		assert (n_lines_in > 0);
+		/* Skip the consumed lines and the broken line. */
+		n_lines_prev_in += n_lines_in + 1;
 
-		n_lines_prev_in += n_lines_in;
 		n_lines_prev_out += n_lines_out;
 
 	} while (n_lines_prev_in < n_lines);
