@@ -51,8 +51,10 @@
  */
 
 #if 3 == VBI_VERSION_MINOR
+#  define sp_sample_format sample_format
 #  define sp_samples_per_line samples_per_line
 #else
+#  define sp_sample_format sampling_format
    /* Has no samples_per_line field yet. */
 #  define sp_samples_per_line bytes_per_line
 #endif
@@ -1215,7 +1217,7 @@ valid_sampling_par		(vbi_dvb_mux *		mx,
 	if (unlikely (0 == (sp->videostd_set & VBI_VIDEOSTD_SET_625_50)))
 		return FALSE;
 
-	switch (sp->sampling_format) {
+	switch (sp->sp_sample_format) {
 	case VBI_PIXFMT_Y8:
 	case VBI_PIXFMT_YUV420:
 		break;
@@ -1227,7 +1229,7 @@ valid_sampling_par		(vbi_dvb_mux *		mx,
 	if (unlikely (625 != sp->scanning))
 		return FALSE;
 
-	if (unlikely (VBI_PIXFMT_YUV420 != sp->sampling_format))
+	if (unlikely (VBI_PIXFMT_YUV420 != sp->sp_sample_format))
 		return FALSE;
 #endif
 

@@ -51,9 +51,11 @@
 #  include "src/vps.h"
 #  include "src/hamm.h"
 #  include "src/lang.h"
-#else /* 0.3 */
+#elif 3 == VBI_VERSION_MINOR
 #  include "src/zvbi.h"
 #  include "src/misc.h"		/* _vbi_to_ascii() */
+#else
+#  error VBI_VERSION_MINOR == ?
 #endif
 
 #include "sliced.h"

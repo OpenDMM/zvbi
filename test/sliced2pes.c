@@ -39,8 +39,10 @@
 #include "src/version.h"
 #if 2 == VBI_VERSION_MINOR
 #  include "src/dvb_mux.h"
-#else
+#elif 3 == VBI_VERSION_MINOR
 #  include "src/zvbi.h"
+#else
+#  error VBI_VERSION_MINOR == ?
 #endif
 
 #include "sliced.h"
