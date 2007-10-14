@@ -322,7 +322,7 @@ static void
 dump_option_info(vbi_export *ex, vbi_option_info *oi)
 {
 	vbi_option_value val;
-	char *type_str;
+	const char *type_str;
 	int i;
 
 	switch (oi->type) {

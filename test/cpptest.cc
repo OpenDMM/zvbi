@@ -27,5 +27,8 @@
 int
 main (int argc, char **argv)
 {
+	argc = argc; /* unused */
+	argv = argv;
+
 	return 0;
 }

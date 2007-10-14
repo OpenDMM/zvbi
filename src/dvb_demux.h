@@ -31,7 +31,6 @@ VBI_BEGIN_DECLS
 /* Public */
 
 /**
- * @ingroup LowDec
  * @addtogroup DVBDemux
  * @{
  */

@@ -40,7 +40,7 @@ extern const int8_t		_vbi_hamm24_inv_par [3][256];
 
 /**
  * @addtogroup Error Error correction functions
- * @ingroup LowDec
+ * @ingroup Raw
  * @brief Helper functions to decode sliced VBI data.
  * @{
  */
