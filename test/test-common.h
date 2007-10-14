@@ -37,6 +37,10 @@ xmalloc				(size_t			n_bytes)
 extern void *
 xralloc				(size_t			n_bytes)
   __attribute__ ((_vbi_alloc));
+extern void *
+xmemdup				(const void *		src,
+				 size_t			n_bytes)
+  __attribute__ ((_vbi_nonnull (1), _vbi_alloc));
 
 extern void
 test_malloc			(void			(* function)(void),
