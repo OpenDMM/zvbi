@@ -81,8 +81,10 @@ idl_a_demux_feed		(vbi_idl_demux *	dx,
 	unsigned int i;
 	unsigned int j;
 
-	if ((ial = vbi_unham8 (buffer[3])) < 0)
+	ial = vbi_unham8 (buffer[3]);
+	if (ial < 0) {
 		return FALSE;
+	}
 
 	spa_length = (unsigned int) ial & 7;
 	if (7 == spa_length) /* reserved */
@@ -93,8 +95,9 @@ idl_a_demux_feed		(vbi_idl_demux *	dx,
 	for (i = 0; i < spa_length; ++i)
 		spa |= vbi_unham8 (buffer[4 + i]) << (4 * i);
 
-	if (spa < 0)
+	if (spa < 0) {
 		return FALSE;
+	}
 
 	if (spa != dx->address)
 		return TRUE;
@@ -118,7 +121,7 @@ idl_a_demux_feed		(vbi_idl_demux *	dx,
 	}
 
 	if (0 != crc) {
-		if (!(ri & RI_PACKET_REPEATS)) {
+		if (0 == (ri & RI_PACKET_REPEATS)) {
 			/* Packet is corrupt and won't repeat. */
 
 			dx->ci = -1;

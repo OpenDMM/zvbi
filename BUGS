@@ -15,4 +15,5 @@ $Id$
   make up line numbers to distinguish fields.
 * test: decode output differs from sliced2pes | decode output.
   Probably have to flush the PES demux.
-* ntsc-cc needs an update to skip raw data in test samples.
+* dvb-t/de-Berlin/773-551-VOX-20041103.pes.bz2:
+  libzvbi:dvb_demux:line_address: Illegal line order: 10 <= 333.
