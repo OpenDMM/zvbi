@@ -124,12 +124,14 @@ write_stream_set_pes_packet_size
 				 unsigned int		min,
 				 unsigned int		max);
 extern struct stream *
-write_stream_new		(enum file_format	file_format,
+write_stream_new		(const char *		file_name,
+				 enum file_format	file_format,
 				 unsigned int		ts_pid,
 				 unsigned int		system);
 
 extern struct stream *
-read_stream_new			(enum file_format	file_format,
+read_stream_new			(const char *		file_name,
+				 enum file_format	file_format,
 				 unsigned int		ts_pid,
 				 stream_callback_fn *	callback);
 
