@@ -57,6 +57,7 @@ enum interface {
 	INTERFACE_V4L2		= (1 << 2),
 	INTERFACE_V4L		= (1 << 3),
 	INTERFACE_BKTR		= (1 << 4),
+	INTERFACE_PROXY		= (1 << 5),
 };
 
 typedef vbi_bool

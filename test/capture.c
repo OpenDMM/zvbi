@@ -465,6 +465,7 @@ static const struct option
 long_options[] = {
 	{ "sim-cc",	required_argument,	NULL,		'c' },
 	{ "device",	required_argument,	NULL,		'd' },
+	{ "proxy",	no_argument,		NULL,		'x' },
 	{ "help",	no_argument,		NULL,		'h' },
 	{ "usage",	no_argument,		NULL,		'h' },
 	{ "pid",	required_argument,	NULL,		'i' },
@@ -627,6 +628,11 @@ main				(int			argc,
 
 		case 'd':
 			parse_option_dev_name ();
+			break;
+
+		case 'x':
+			interfaces &= ~(INTERFACE_SIM | INTERFACE_DVB);
+			interfaces |= INTERFACE_PROXY;
 			break;
 
 		case 'h':
