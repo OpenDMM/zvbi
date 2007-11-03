@@ -882,7 +882,7 @@ parse_output_option		(void)
 			if (NULL == filename_prefix)
 				no_mem_exit ();
 
-			filename_suffix = strdup (s);
+			filename_suffix = strdup (s + 1);
 			if (NULL == filename_suffix)
 				no_mem_exit ();
 		}
