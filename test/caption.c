@@ -665,7 +665,8 @@ main				 (int			argc,
 	} else {
 		struct stream *st;
 
-		st = read_stream_new (FILE_FORMAT_SLICED,
+		st = read_stream_new (/* filename: stdin */ NULL,
+				      FILE_FORMAT_SLICED,
 				      /* ts_pid */ 0,
 				      decode_frame);
 		stream_loop (st);
