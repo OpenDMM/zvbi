@@ -459,7 +459,7 @@ Output options:\n\
 		 option_dev_name);
 }
 
-static const char short_options[] = "c:d:hi:jlmno:pqr:suvwPT:V";
+static const char short_options[] = "c:d:hi:jlmno:pqr:suvwxPT:V";
 
 #ifdef HAVE_GETOPT_LONG
 static const struct option
