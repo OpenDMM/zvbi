@@ -616,7 +616,7 @@ mainloop(void)
 	}
 }
 
-static const char short_options[] = "123cd:enpsv";
+static const char short_options[] = "1234cd:enpsv";
 
 #ifdef HAVE_GETOPT_LONG
 static const struct option
