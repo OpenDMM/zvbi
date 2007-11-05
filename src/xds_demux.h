@@ -26,6 +26,7 @@
 #include <inttypes.h>		/* uint8_t */
 #include <stdio.h>		/* FILE */
 #include "macros.h"
+#include "sliced.h"
 
 VBI_BEGIN_DECLS
 
@@ -182,6 +183,10 @@ vbi_xds_demux_reset		(vbi_xds_demux *	xd);
 extern vbi_bool
 vbi_xds_demux_feed		(vbi_xds_demux *	xd,
 				 const uint8_t		buffer[2]);
+extern vbi_bool
+vbi_xds_demux_feed_frame	(vbi_xds_demux *	xd,
+				 const vbi_sliced *	sliced,
+				 unsigned int		n_lines);
 extern void
 vbi_xds_demux_delete		(vbi_xds_demux *	xd);
 extern vbi_xds_demux *

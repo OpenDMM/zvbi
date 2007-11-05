@@ -2317,6 +2317,9 @@ vbi_dvb_demux_cor		(vbi_dvb_demux *	dx,
 	/* FIXME in future version:
 	   buffer_left ought to be an unsigned long. */
 
+	/* FIXME can we handle this? */
+	assert (NULL == dx->callback);
+
 	/* Doesn't work with TS, and isn't safe in any case. */
 	/* dx->frame.sliced_begin = sliced;
 	   dx->frame.sliced_end = sliced + max_lines; */

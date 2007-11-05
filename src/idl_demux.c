@@ -354,6 +354,39 @@ vbi_idl_demux_feed		(vbi_idl_demux *	dx,
 	}
 }
 
+/**
+ * @param dx IDL demultiplexer allocated with vbi_idl_a_demux_new().
+ * @param sliced Sliced VBI data.
+ * @param n_lines Number of lines in the @a sliced array.
+ *
+ * This function works like vbi_idl_demux_feed() but operates
+ * on sliced VBI data and filters out @c VBI_SLICED_TELETEXT_B_625.
+ *
+ * @returns
+ * FALSE if any Teletext lines contained incorrectable errors.
+ *
+ * @since 0.2.26
+ */
+vbi_bool
+vbi_idl_demux_feed_frame	(vbi_idl_demux *	dx,
+				 const vbi_sliced *	sliced,
+				 unsigned int		n_lines)
+{
+	const vbi_sliced *end;
+
+	assert (NULL != dx);
+	assert (NULL != sliced);
+
+	for (end = sliced + n_lines; sliced < end; ++sliced) {
+		if (sliced->id & VBI_SLICED_TELETEXT_B_625) {
+			if (!vbi_idl_demux_feed (dx, sliced->data))
+				return FALSE;
+		}
+	}
+
+	return TRUE;
+}
+
 /** @internal */
 void
 _vbi_idl_demux_destroy		(vbi_idl_demux *	dx)
@@ -456,6 +489,8 @@ vbi_idl_a_demux_new		(unsigned int		channel,
 				 void *			user_data)
 {
 	vbi_idl_demux *dx;
+
+	assert (NULL != callback);
 
 	if (!(dx = vbi_malloc (sizeof (*dx)))) {
 		return NULL;
