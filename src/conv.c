@@ -842,8 +842,8 @@ strndup_iconv_to_ucs2		(unsigned long *	out_size,
  *
  * @since 0.2.23
  */
-static char *
-strndup_iconv			(unsigned long *	out_size,
+char *
+_vbi_strndup_iconv		(unsigned long *	out_size,
 				 const char *		dst_codeset,
 				 const char *		src_codeset,
 				 const char *		src,
@@ -928,11 +928,11 @@ vbi_strndup_iconv		(const char *		dst_codeset,
 	char *buffer;
 	unsigned long size;
 
-	buffer = strndup_iconv (&size,
-				dst_codeset,
-				src_codeset,
-				src, src_size,
-				repl_char);
+	buffer = _vbi_strndup_iconv (&size,
+				     dst_codeset,
+				     src_codeset,
+				     src, src_size,
+				     repl_char);
 	if (NULL == buffer)
 		return NULL;
 
@@ -1159,11 +1159,11 @@ vbi_fputs_iconv			(FILE *			fp,
 			== fwrite (src, 1, src_size, fp));
 	}
 
-	buffer = strndup_iconv (&size,
-				dst_codeset,
-				src_codeset,
-				src, src_size,
-				repl_char);
+	buffer = _vbi_strndup_iconv (&size,
+				     dst_codeset,
+				     src_codeset,
+				     src, src_size,
+				     repl_char);
 	if (NULL == buffer)
 		return FALSE;
 
