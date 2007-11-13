@@ -142,6 +142,7 @@ _vbi_vasprintf			(char **		dstp,
 {
 	char *buf;
 	unsigned long size;
+	va_list ap2;
 	int temp;
 
 	assert (NULL != dstp);
@@ -151,6 +152,8 @@ _vbi_vasprintf			(char **		dstp,
 
 	buf = NULL;
 	size = 64;
+
+	__va_copy (ap2, ap);
 
 	for (;;) {
 
@@ -175,6 +178,9 @@ _vbi_vasprintf			(char **		dstp,
 			/* Size needed. */
 			size = len + 1;
 		}
+
+		/* vsnprintf() may advance ap. */
+		__va_copy (ap, ap2);
 	}
 
 	vbi_free (buf);
