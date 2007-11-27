@@ -4,8 +4,9 @@
  *  Copyright (C) 2000-2004 Michael H. Schimek
  *
  *  This program is free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License version 2 as
- *  published by the Free Software Foundation.
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
  *
  *  This program is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -14,7 +15,7 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
 /* $Id$ */
@@ -41,13 +42,13 @@ extern vbi_bool
 vbi_decode_vps_cni		(unsigned int *		cni,
 				 const uint8_t		buffer[13])
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
-  __attribute__ ((_vbi_nonnull (1, 2)))
+  _vbi_attribute ((_vbi_nonnull (1, 2)))
 #endif
   ;
 extern vbi_bool
 vbi_encode_vps_cni		(uint8_t		buffer[13],
 				 unsigned int		cni)
-  __attribute__ ((_vbi_nonnull (1)));
+  _vbi_attribute ((_vbi_nonnull (1)));
 
 /* Private */
 
@@ -56,28 +57,28 @@ extern vbi_bool
 vbi_decode_vps_pdc		(vbi_program_id *	pid,
 				 const uint8_t		buffer[13])
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
-  __attribute__ ((_vbi_nonnull (1, 2)))
+  _vbi_attribute ((_vbi_nonnull (1, 2)))
 #endif
   ;
 extern vbi_bool
 vbi_encode_vps_pdc		(uint8_t		buffer[13],
 				 const vbi_program_id *pid)
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
-  __attribute__ ((_vbi_nonnull (1, 2)))
+  _vbi_attribute ((_vbi_nonnull (1, 2)))
 #endif
   ;
 vbi_bool
 vbi_decode_dvb_pdc_descriptor	(vbi_program_id *	pid,
 				 const uint8_t		buffer[5])
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
-  __attribute__ ((_vbi_nonnull (1, 2)))
+  _vbi_attribute ((_vbi_nonnull (1, 2)))
 #endif
   ;
 vbi_bool
 vbi_encode_dvb_pdc_descriptor	(uint8_t		buffer[5],
 				 const vbi_program_id *pid)
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
-  __attribute__ ((_vbi_nonnull (1, 2)))
+  _vbi_attribute ((_vbi_nonnull (1, 2)))
 #endif
   ;
 #endif

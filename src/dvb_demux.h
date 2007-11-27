@@ -4,8 +4,9 @@
  *  Copyright (C) 2004, 2007 Michael H. Schimek
  *
  *  This program is free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License version 2 as
- *  published by the Free Software Foundation.
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
  *
  *  This program is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -14,7 +15,7 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
 /* $Id$ */
@@ -93,7 +94,7 @@ vbi_dvb_pes_demux_new		(vbi_dvb_demux_cb *	callback,
 vbi_bool
 _vbi_dvb_skip_data_unit		(const uint8_t **	buffer,
 				 unsigned int *		buffer_left)
-  __attribute__ ((_vbi_nonnull (1, 2)));
+  _vbi_attribute ((_vbi_nonnull (1, 2)));
 /* Experimental. */
 vbi_bool
 _vbi_dvb_demultiplex_sliced	(vbi_sliced *		sliced,
@@ -101,7 +102,7 @@ _vbi_dvb_demultiplex_sliced	(vbi_sliced *		sliced,
 				 unsigned int		max_lines,
 				 const uint8_t **	buffer,
 				 unsigned int *		buffer_left)
-  __attribute__ ((_vbi_nonnull (1, 2, 4, 5)));
+  _vbi_attribute ((_vbi_nonnull (1, 2, 4, 5)));
 /* Experimental. */
 extern vbi_dvb_demux *
 _vbi_dvb_ts_demux_new		(vbi_dvb_demux_cb *	callback,
