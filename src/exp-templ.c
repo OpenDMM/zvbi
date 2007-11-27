@@ -230,15 +230,12 @@ option_set(vbi_export *e, const char *keyword, va_list args)
  *  The output function, mandatory.
  */
 static vbi_bool
-export(vbi_export *e, FILE *fp, vbi_page *pg)
+export(vbi_export *e, vbi_page *pg)
 {
 	tmpl_instance *tmpl = TMPL(e);
 
-	/*
-	 *  Write pg to fp, that's all.
-	 */
-	fp = fp;
-	pg = pg;
+	/* Write pg to target, that's all. */
+	vbi_export_printf (e, "Page %x.%x\n", pg->pgno, pg->subno);
 
 	tmpl->counter++; /* just for fun */
 
