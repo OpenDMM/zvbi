@@ -18,7 +18,7 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
 /* $Id$ */
@@ -62,7 +62,7 @@ extern int		vbi_print_page_region(vbi_page *pg, char *buf, int size,
  * data. Note this function does not append a terminating null
  * character.
  **/
-vbi_inline int
+_vbi_inline int
 vbi_print_page(vbi_page *pg, char *buf, int size,
 	       const char *format, vbi_bool table, vbi_bool ltr)
 {
