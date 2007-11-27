@@ -15,7 +15,7 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
 /* $Id$ */
@@ -81,14 +81,14 @@ language[8] = {
 };
 
 #ifdef __GNUC__
-#define UNUSED __attribute__ ((unused))
+#define UNUSED _vbi_attribute ((unused))
 #else
 #define UNUSED
 #endif
 
 static uint32_t hcrc[128];
 
-static void init_hcrc(void) __attribute__ ((constructor));
+static void init_hcrc(void) _vbi_attribute ((constructor));
 
 
 /*

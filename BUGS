@@ -5,7 +5,6 @@ $Id$
 * vbi_page.text[1056] < 26 * 41. D'oh! (fixed in 0.3)
 * timestamp routines assume timeval.tv_sec and .tv_usec are signed.
 * Doxumentation needs compile instructions and more examples.
-* test/decode --idl, --pfc broken?
 * Make sure test apps flush their output buffers once per frame
   for real time output.
 * strerror() isn't thread-safe.
@@ -16,4 +15,5 @@ $Id$
 * test: decode output differs from sliced2pes | decode output.
   Probably have to flush the PES demux.
 * dvb-t/de-Berlin/773-551-VOX-20041103.pes.bz2:
-  libzvbi:dvb_demux:line_address: Illegal line order: 10 <= 333.
+  libzvbi:dvb_demux:line_address: Illegal line order: 10 <= 333 ?
+
