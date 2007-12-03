@@ -82,7 +82,7 @@ typedef struct _vbi_pfc_demux vbi_pfc_demux;
  * @returns
  * FALSE on error, will be returned by vbi_pfc_demux_feed().
  *
- * @bugs
+ * @bug
  * vbi_pfc_demux_feed() returns the @a user_data pointer as second
  * parameter the @a block pointer as third parameter, but prior to
  * version 0.2.26 this function incorrectly defined @a block as
