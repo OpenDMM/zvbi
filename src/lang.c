@@ -855,7 +855,7 @@ vbi_caption_unicode		(unsigned int		c,
 			return caption[c - 0x20][to_upper];
 		}
 	} else {
-		c &= ~0x0700;
+		c &= ~0x0800;
 
 		if (c < 0x1240) {
 			if (c < 0x1140 && c >= 0x1130) {
