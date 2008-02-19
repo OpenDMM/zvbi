@@ -1,22 +1,24 @@
 /*
- *  libzvbi - V4L2 (version 2002-10 and later) interface
+ *  libzvbi -- Video For Linux Two (version 2002-10 and later)
+ *             driver interface
  *
  *  Copyright (C) 2002-2005 Michael H. Schimek
- *  Copyright (C) 2003-2004 Tom Zoerner
+ *  Copyright (C) 2003, 2004 Tom Zoerner
  *
- *  This program is free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
- *  (at your option) any later version.
+ *  This library is free software; you can redistribute it and/or
+ *  modify it under the terms of the GNU Library General Public
+ *  License as published by the Free Software Foundation; either
+ *  version 2 of the License, or (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  This library is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ *  Library General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ *  You should have received a copy of the GNU Library General Public
+ *  License along with this library; if not, write to the 
+ *  Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, 
+ *  Boston, MA  02110-1301  USA.
  */
 
 static const char rcsid [] =
@@ -50,7 +52,7 @@ static const char rcsid [] =
 #include <sys/types.h>		/* fd_set */
 #include <sys/ioctl.h>		/* for (_)videodev2k.h */
 #include <sys/mman.h>		/* PROT_READ, MAP_SHARED */
-#include <asm/types.h>		/* for videodev2k.h */
+#include <asm/types.h>		/* __u8 and friends for videodev2k.h */
 #include <pthread.h>
 
 #include "raw_decoder.h"

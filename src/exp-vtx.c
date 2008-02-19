@@ -27,6 +27,12 @@
 
 /* $Id$ */
 
+/* Disabled for now because this code is licensed under GPLv2+ and
+   cannot be linked with the rest of libzvbi which is licensed under
+   LGPLv2+ since version 0.2.28. */
+
+#if 0
+
 /*
  *  VTX is the file format used by VideoteXt. It stores Teletext pages in
  *  raw level 1.0 format. Level 1.5 additional characters (e.g. accents), the
@@ -150,6 +156,8 @@ vbi_export_class_vtx = {
 };
 
 VBI_AUTOREG_EXPORT_MODULE(vbi_export_class_vtx)
+
+#endif /* 0 */
 
 /*
 Local variables:
