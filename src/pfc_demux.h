@@ -34,7 +34,7 @@ VBI_BEGIN_DECLS
 /* Public */
 
 /**
- * @addtogroup PFCDemux
+ * @addtogroup PFCDemux Teletext PFC packet demultiplexer
  * @ingroup LowDec
  * @brief Functions to decode data transmissions in Teletext
  *   Page Function Clear packets (EN 300 708 section 4).

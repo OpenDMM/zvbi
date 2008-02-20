@@ -2728,7 +2728,6 @@ vbi_format_vt_page(vbi_decoder *vbi,
 			success = enhance(vbi, mag, ext, pg, vtp, LOCAL_ENHANCEMENT_DATA,
 				vtp->data.enh_lop.enh, elements(vtp->data.enh_lop.enh),
 				0, 0, max_level, display_rows == 1, NULL);
-							   // here --^
 		} else
 			success = default_object_invocation(vbi, mag, ext, pg, vtp,
 							    max_level, display_rows == 1);

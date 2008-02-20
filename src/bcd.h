@@ -188,6 +188,7 @@ vbi_is_bcd(unsigned int bcd)
 }
 
 /**
+ * @ingroup BCD
  * @param bcd Unsigned BCD number.
  * @param maximum Unsigned maximum value.
  *

@@ -20,7 +20,14 @@
 
 /* $Id$ */
 
+#undef NDEBUG
+
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
+
 #include <stdlib.h>
+
 #include "src/misc.h"
 #include "test-common.h"
 #include "src/version.h"

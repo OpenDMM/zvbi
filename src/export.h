@@ -446,7 +446,7 @@ struct vbi_export_class {
 };
 
 /**
- * @example exp-templ.c
+ * @example src/exp-templ.c
  * @ingroup Exmod
  *
  * Template for internal export module.
