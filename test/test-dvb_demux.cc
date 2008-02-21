@@ -22,7 +22,12 @@
 
 #undef NDEBUG
 
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
+
 #include <assert.h>
+
 #include "src/dvb_demux.h"
 #include "test-common.h"
 

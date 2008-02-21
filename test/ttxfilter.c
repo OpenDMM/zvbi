@@ -22,6 +22,8 @@
 
 /* For libzvbi version 0.2.x / 0.3.x. */
 
+#undef NDEBUG
+
 #ifdef HAVE_CONFIG_H
 #  include "config.h"
 #endif
