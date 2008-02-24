@@ -117,6 +117,7 @@ xmemdup				(const void *		src,
 static unsigned int		malloc_count;
 static unsigned int		malloc_fail_cycle;
 
+#if 3 == VBI_VERSION_MINOR
 static void *
 my_malloc			(size_t			n_bytes)
 {
@@ -125,6 +126,7 @@ my_malloc			(size_t			n_bytes)
 	else
 		return malloc (n_bytes);
 }
+#endif
 
 void
 test_malloc			(void			(* function)(void),
@@ -140,6 +142,9 @@ test_malloc			(void			(* function)(void),
 	}
 
 	vbi_malloc = malloc;
+#else
+	function = function; /* unused */
+	n_cycles = n_cycles;
 #endif
 }
 
