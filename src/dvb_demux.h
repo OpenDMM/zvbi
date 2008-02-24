@@ -95,7 +95,7 @@ vbi_dvb_pes_demux_new		(vbi_dvb_demux_cb *	callback,
 vbi_bool
 _vbi_dvb_skip_data_unit		(const uint8_t **	buffer,
 				 unsigned int *		buffer_left)
-  _vbi_attribute ((_vbi_nonnull (1, 2)));
+  _vbi_nonnull ((1, 2));
 /* Experimental. */
 vbi_bool
 _vbi_dvb_demultiplex_sliced	(vbi_sliced *		sliced,
@@ -103,7 +103,7 @@ _vbi_dvb_demultiplex_sliced	(vbi_sliced *		sliced,
 				 unsigned int		max_lines,
 				 const uint8_t **	buffer,
 				 unsigned int *		buffer_left)
-  _vbi_attribute ((_vbi_nonnull (1, 2, 4, 5)));
+  _vbi_nonnull ((1, 2, 4, 5));
 /* Experimental. */
 extern vbi_dvb_demux *
 _vbi_dvb_ts_demux_new		(vbi_dvb_demux_cb *	callback,

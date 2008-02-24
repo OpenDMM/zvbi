@@ -345,10 +345,10 @@ typedef struct {
  */
 extern const char *
 vbi_sliced_name			(vbi_service_set	service)
-  _vbi_attribute ((const));
+  _vbi_const;
 extern unsigned int
 vbi_sliced_payload_bits		(vbi_service_set	service)
-  _vbi_attribute ((const));
+  _vbi_const;
 /** @} */
 
 /* Private */

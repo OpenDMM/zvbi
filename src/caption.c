@@ -81,15 +81,9 @@ language[8] = {
 	"None"
 };
 
-#ifdef __GNUC__
-#define UNUSED _vbi_attribute ((unused))
-#else
-#define UNUSED
-#endif
-
 static uint32_t hcrc[128];
 
-static void init_hcrc(void) _vbi_attribute ((constructor));
+static void init_hcrc(void) __attribute__ ((constructor));
 
 
 /*
@@ -897,7 +891,7 @@ row_mapping[] = {
 // not verified means I didn't encounter the code in a
 // sample stream yet
 
-static inline void
+_vbi_inline void
 caption_command(vbi_decoder *vbi, struct caption *cc,
 	unsigned char c1, unsigned char c2, vbi_bool field2)
 {

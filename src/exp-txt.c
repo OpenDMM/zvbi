@@ -96,7 +96,7 @@ iconv_formats[] = {
 };
 
 static const char *
-color_names[] _vbi_attribute ((unused)) = {
+color_names[] _vbi_unused = {
 	N_("Black"), N_("Red"), N_("Green"), N_("Yellow"),
 	N_("Blue"), N_("Magenta"), N_("Cyan"), N_("White"),
 	N_("Any")
