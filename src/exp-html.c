@@ -34,7 +34,7 @@
 
 #include "lang.h"
 #include "export.h"
-#include "vt.h"
+#include "teletext_decoder.h"
 
 typedef struct style {
 	struct style *		next;
