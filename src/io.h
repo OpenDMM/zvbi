@@ -70,7 +70,7 @@ typedef enum {
         * not the actual device.  In this case it can only be
         * used for select(2) and not for ioctl(2)
         */
-        VBI_FD_IS_DEVICE   = 1<<2,
+        VBI_FD_IS_DEVICE   = 1<<2
 } VBI_CAPTURE_FD_FLAGS;
 
 /**
@@ -111,7 +111,7 @@ vbi_capture_dvb_new		(char *			dev,
 				 int			strict,
 				 char **		errstr,
 				 vbi_bool		trace)
-  __attribute__ ((_vbi_deprecated));
+  _vbi_deprecated;
 
 extern int64_t
 vbi_capture_dvb_last_pts	(const vbi_capture *	cap);
