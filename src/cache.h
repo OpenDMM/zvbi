@@ -30,6 +30,7 @@
 #  include "lang.h"
 typedef struct _vbi_cache vbi_cache;
 #elif 3 == VBI_VERSION_MINOR
+#  include <sys/time.h>		/* struct timeval */
 #  include "network.h"
 #  include "page.h"
 #  include "top_title.h"
@@ -511,7 +512,7 @@ typedef enum {
 	 */
 	VBI_DEFAULT_BACKGROUND,
 
-	VBI_ROW_CHANGE,
+	VBI_ROW_CHANGE
 } vbi_format_option;
 
 /* in teletext.c */
