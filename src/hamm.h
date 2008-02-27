@@ -25,7 +25,7 @@
 #define __ZVBI_HAMM_H__
 
 #include <inttypes.h>		/* uintN_t */
-#include "misc.h"
+#include "macros.h"
 
 VBI_BEGIN_DECLS
 
