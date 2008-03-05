@@ -577,8 +577,18 @@ vbi_cache_set_network_limit	(vbi_cache *		ca,
 
 #if 2 == VBI_VERSION_MINOR
 
-void
-vbi_unref_page			(vbi_page *		pg);
+/* Public */
+
+/**
+ * @addtogroup Cache
+ * @{
+ */
+extern void             vbi_unref_page(vbi_page *pg);
+extern int              vbi_is_cached(vbi_decoder *, int pgno, int subno);
+extern int              vbi_cache_hi_subno(vbi_decoder *vbi, int pgno);
+/** @} */
+
+/* Private */
 
 #endif /* 2 == VBI_VERSION_MINOR */
 
