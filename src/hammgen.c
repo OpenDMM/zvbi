@@ -61,7 +61,7 @@ generate_hamm24_inv_tables	(void)
 	   // Correct single bit error, set bit 31 on double bit error.
 	   d ^= _vbi_hamm24_inv_err[ABCDEF];
 
-	   This algorithm is based on an idea by R. Ganzarz in
+	   This algorithm is based on an idea by R. Gancarz in
 	   AleVT 1.5.1. */
 
 	for (i = 0; i < 256; ++i) {
