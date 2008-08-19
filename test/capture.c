@@ -746,11 +746,29 @@ main				(int			argc,
 		exit (EXIT_FAILURE);
 	}
 
-	services = VBI_SLICED_VBI_525 | VBI_SLICED_VBI_625
-		| VBI_SLICED_TELETEXT_B | VBI_SLICED_CAPTION_525
-		| VBI_SLICED_CAPTION_625
-	  	| VBI_SLICED_VPS | VBI_SLICED_VPS_F2
-		| VBI_SLICED_WSS_625 | VBI_SLICED_WSS_CPR1204;
+	services = (VBI_SLICED_VBI_525 |
+		    VBI_SLICED_VBI_625 |
+		    VBI_SLICED_TELETEXT_B |
+		    VBI_SLICED_CAPTION_525 |
+		    VBI_SLICED_CAPTION_625 |
+		    VBI_SLICED_VPS |
+		    VBI_SLICED_VPS_F2 |
+		    VBI_SLICED_WSS_625 |
+		    VBI_SLICED_WSS_CPR1204);
+
+	switch (option_out_file_format) {
+	case FILE_FORMAT_DVB_PES:
+	case FILE_FORMAT_DVB_TS:
+		/* Other formats cannot be encoded. */
+		services &= (VBI_SLICED_TELETEXT_B |
+			     VBI_SLICED_CAPTION_625 |
+			     VBI_SLICED_VPS |
+			     VBI_SLICED_WSS_625);
+		break;
+
+	default:
+		break;
+	}
 
 	cst = capture_stream_new (interfaces,
 				  option_dev_name,
