@@ -16,4 +16,4 @@ $Id$
   Probably have to flush the PES demux.
 * dvb-t/de-Berlin/773-551-VOX-20041103.pes.bz2:
   libzvbi:dvb_demux:line_address: Illegal line order: 10 <= 333 ?
-
+* Sometimes src/version.h isn't updated.

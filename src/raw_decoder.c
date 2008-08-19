@@ -499,6 +499,8 @@ decode_pattern			(vbi3_raw_decoder *	rd,
 
 			/* Positive match, output decoded line. */
 
+			/* FIXME: if we have a field number we should
+			   really only set the service id of one field. */
 			sliced->id = job->id;
 			sliced->line = 0;
 
