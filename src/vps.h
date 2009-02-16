@@ -53,14 +53,14 @@ vbi_encode_vps_cni		(uint8_t		buffer[13],
 
 /* Private */
 
-#if defined ZAPPING8 || 3 == VBI_VERSION_MINOR
 extern vbi_bool
-vbi_decode_vps_pdc		(vbi_program_id *	pid,
+_vbi_decode_vps_pdc		(vbi_program_id *	pid,
 				 const uint8_t		buffer[13])
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
   _vbi_nonnull ((1, 2))
 #endif
   ;
+#if defined ZAPPING8 || 3 == VBI_VERSION_MINOR
 extern vbi_bool
 vbi_encode_vps_pdc		(uint8_t		buffer[13],
 				 const vbi_program_id *pid)
