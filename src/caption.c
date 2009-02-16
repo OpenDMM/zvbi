@@ -778,7 +778,8 @@ roll_up(vbi_page *pg, int first_row, int last_row)
 static inline void
 update(cc_channel *ch)
 {
-	vbi_char *acp = ch->line - ch->pg[0].text + ch->pg[1].text;
+	vbi_char *acp = ch->line - ch->pg[ch->hidden].text
+		+ ch->pg[ch->hidden ^ 1].text;
 
 	memcpy(acp, ch->line, sizeof(*acp) * COLUMNS);
 }
