@@ -297,7 +297,7 @@ _vbi_sampling_par_permit_service
 	samples_per_line = sp->samples_per_line;
 #endif
 
-	if (sp->offset > 0 && strict > 0) {
+	if (0 && sp->offset > 0 && strict > 0) {
 		double sampling_rate;
 		double offset;
 		double end;
