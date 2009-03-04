@@ -29,6 +29,8 @@
 
 VBI_BEGIN_DECLS
 
+/* Public */
+
 /**
  * @addtogroup Packet830
  * @{
@@ -36,22 +38,36 @@ VBI_BEGIN_DECLS
 extern vbi_bool
 vbi_decode_teletext_8301_cni	(unsigned int *		cni,
 				 const uint8_t		buffer[42])
-  _vbi_nonnull ((1, 2));
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+  _vbi_nonnull ((1, 2))
+#endif
+  ;
 extern vbi_bool
 vbi_decode_teletext_8301_local_time
 				(time_t *		utc_time,
 				 int *			seconds_east,
 				 const uint8_t		buffer[42])
-  _vbi_nonnull ((1, 2, 3));
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+  _vbi_nonnull ((1, 2, 3))
+#endif
+  ;
 extern vbi_bool
 vbi_decode_teletext_8302_cni	(unsigned int *		cni,
 				 const uint8_t		buffer[42])
-  _vbi_nonnull ((1, 2));
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+  _vbi_nonnull ((1, 2))
+#endif
+  ;
 extern vbi_bool
 vbi_decode_teletext_8302_pdc	(vbi_program_id *	pid,
 				 const uint8_t		buffer[42])
-  _vbi_nonnull ((1, 2));
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+  _vbi_nonnull ((1, 2))
+#endif
+  ;
 /** @} */
+
+/* Private */
 
 VBI_END_DECLS
 
