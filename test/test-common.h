@@ -29,7 +29,11 @@
 #define RAND(var) memset_rand (&(var), sizeof (var))
 
 extern void *
-memset_rand			(void *			d1,
+memset_rand			(void *			dst,
+				 size_t			n)
+  _vbi_nonnull ((1));
+extern int
+memcmp_zero			(const void *		src,
 				 size_t			n)
   _vbi_nonnull ((1));
 extern void *
