@@ -36,6 +36,7 @@
 #include "cache-priv.h"
 #include "trigger.h"
 #include "pfc_demux.h"
+#include "pdc.h"
 
 struct event_handler {
 	struct event_handler *	next;
@@ -81,6 +82,8 @@ struct vbi_decoder {
 	unsigned char		wss_last[2];
 	int			wss_rep_ct;
 	double			wss_time;
+
+	vbi_program_id		vps_pid;
 };
 
 #ifndef VBI_DECODER
