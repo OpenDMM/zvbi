@@ -140,11 +140,11 @@ mainloop			(void)
 			fprintf (stderr, "VBI read error %d (%s)\n",
 				 errno, strerror (errno));
 			/* Could be ignored, esp. EIO with some drivers. */
-			exit(EXIT_FAILURE);
+			exit (EXIT_FAILURE);
 
 		case 0: 
 			fprintf (stderr, "VBI read timeout\n");
-			exit(EXIT_FAILURE);
+			exit (EXIT_FAILURE);
 
 		case 1: /* success */
 			break;
@@ -192,7 +192,6 @@ main				(void)
 			 errstr);
 
 		free (errstr);
-		errstr = NULL;
 
 		exit (EXIT_FAILURE);
 	}
@@ -210,10 +209,8 @@ main				(void)
 	mainloop ();
 
 	vbi_decoder_delete (dec);
-	dec = NULL;
 
 	vbi_capture_delete (cap);
-	cap = NULL;
 
 	exit (EXIT_SUCCESS);
 }
