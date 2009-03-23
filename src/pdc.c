@@ -76,6 +76,7 @@
  * VBI_EVENT_PROG_ID.
  *
  * @example examples/pdc1.c
+ * @example examples/pdc2.c
  */
 
 /* XXX Preliminary, will not be returned to clients. */
