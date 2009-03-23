@@ -346,7 +346,7 @@ typedef enum {
  */
 typedef struct {
 	/** Source of this PID. */
-	vbi_pid_channel		channel;
+	vbi_pid_channel			channel;
 
 	/**
 	 * Network identifier type, one of
@@ -368,7 +368,7 @@ typedef struct {
 	 * Program Identification Label. This is the only information
 	 * available from all PID sources.
 	 */
-	vbi_pil			pil;
+	vbi_pil				pil;
 
 	/**
 	 * PDC Label Update Flag (only transmitted in Teletext
