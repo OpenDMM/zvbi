@@ -1446,16 +1446,7 @@ capture_stream_sim_load_caption	(struct stream *	st,
 	if (0 == (st->interfaces & INTERFACE_SIM))
 		return FALSE;
 
-#if 2 == VBI_VERSION_MINOR
-	stream = stream; /* unused */
-	append = append;
-
-	return FALSE;
-#elif 3 == VBI_VERSION_MINOR
 	return vbi_capture_sim_load_caption (st->cap, stream, append);
-#else
-#  error VBI_VERSION_MINOR == ?
-#endif
 }
 
 vbi_bool
