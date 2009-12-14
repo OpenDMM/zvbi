@@ -46,6 +46,36 @@ VBI_BEGIN_DECLS
 #define VBI_CAPTION_T3 7 /* third text service (F2) */
 #define VBI_CAPTION_T4 8 /* fourth text service (F2) */
 
+/** @internal */
+typedef enum {
+	_VBI_CC608_MODE_UNKNOWN,
+	_VBI_CC608_MODE_ROLL_UP,
+	_VBI_CC608_MODE_POP_ON,
+	_VBI_CC608_MODE_PAINT_ON,
+	_VBI_CC608_MODE_TEXT
+} _vbi_cc608_mode;
+
+/** @internal */
+typedef enum {
+	_VBI_CC608_START_ROLLING = (1 << 0)
+} _vbi_cc608_event_flags;
+
+/** @internal */
+struct _vbi_event_cc608_page {
+	int				channel;
+	_vbi_cc608_mode			mode;
+	_vbi_cc608_event_flags		flags;
+};
+
+/** @internal */
+struct _vbi_event_cc608_stream {
+	double				capture_time;
+	int64_t				pts;
+	int				channel;
+	_vbi_cc608_mode			mode;
+	vbi_char			text[32];
+};
+
 typedef struct _vbi_cc608_decoder _vbi_cc608_decoder;
 
 extern void
