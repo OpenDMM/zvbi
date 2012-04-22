@@ -1563,7 +1563,7 @@ store_lop(vbi_decoder *vbi, const cache_page *vtp)
 					vbi->vt.header_page.pgno, vbi->vt.header + 8,
 					&event.ev.ttx_page.pn_offset);
 			event.ev.ttx_page.clock_update =
-				!same_clock(vtp->data.lop.raw[0], vbi->vt.header);
+				!same_clock(&vtp->data.lop.raw[0][32], &vbi->vt.header[32]);
 		}
 
 		switch (r) {
