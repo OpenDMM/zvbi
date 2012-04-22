@@ -957,8 +957,8 @@ extract_data_units		(struct frame *		f,
 			if (unlikely (0 != err))
 				goto failed;
 
-			if (unlikely (16 != s->line))
-				goto bad_line;
+/*			if (unlikely (16 != s->line))
+				goto bad_line;*/
 
 			s->id = (0 == f->last_field) ?
 				VBI_SLICED_VPS : VBI_SLICED_VPS_F2;
