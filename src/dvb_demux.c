@@ -1448,8 +1448,8 @@ valid_vbi_pes_packet_header	(vbi_dvb_demux *	dx,
 			"PTS missing in PES header.");
 
 		/* XXX make this optional to handle broken sources. */
-		if (dx->new_frame)
-			return FALSE;
+/*		if (dx->new_frame)
+			return FALSE;*/
 
 		break;
 	}
