@@ -72,6 +72,210 @@ struct vbi_search {
 #define FIRST_ROW 1
 #define LAST_ROW 24
 
+vbi_search_status
+vbi_catch_page(vbi_decoder *vbi,
+			vbi_pgno pgno,
+			vbi_subno subno,
+			int *r,
+			int *c,
+			vbi_page *pg,
+			int dir)
+{
+	cache_page *cp;
+	int tmp_page, allowwrap = 1; /* allow first wrap around */
+	int firstlineinc;
+	int inc;
+
+	if (vbi->ca == NULL
+		|| vbi->cn == NULL
+		|| pg == NULL
+		|| 0 == vbi->cn->n_cached_pages
+		)
+	{
+		return VBI_SEARCH_ERROR;
+	}
+
+	if (!(cp = _vbi_cache_get_page (vbi->ca, vbi->cn, pgno, subno, -1)))
+	{
+		return VBI_SEARCH_ERROR;
+	}
+	subno = cp->subno;
+
+	if (cp->function != PAGE_FUNCTION_LOP
+		|| !vbi_format_vt_page(vbi, pg, cp, vbi->vt.max_level, 25, 1)
+		)
+	{
+		cache_page_unref(cp);
+		return VBI_SEARCH_ERROR; /* formatting error, abort */
+	}
+
+	switch (dir)
+	{
+		case DIR_RIGHT:
+			firstlineinc = 0;
+			inc = 1;
+			break;
+		case DIR_LEFT:
+			firstlineinc = 0;
+			inc = -1;
+			break;
+		case DIR_DOWN:
+			firstlineinc = 1;
+			inc = 1;
+			break;
+		case DIR_UP:
+			firstlineinc = -1;
+			inc = -1;
+			break;
+		default:
+			cache_page_unref(cp);
+			return VBI_SEARCH_ERROR;
+	}
+
+	for(;;)
+	{
+		vbi_char *p;
+
+		if (firstlineinc > 0)
+		{
+			(*r)++;
+			*c = 0;
+			firstlineinc = 0;
+		}
+		else if (firstlineinc < 0)
+		{
+			(*r)--;
+			*c = 37;
+			firstlineinc = 0;
+		}
+		else
+			*c += inc;
+
+		if (*c > 37)
+		{
+			(*r)++;
+			*c = 0;
+		}
+		else if (*c < 0)
+		{
+			(*r)--;
+			*c = 37;
+		}
+
+		if (*r > 23)
+		{
+			if (allowwrap)
+			{
+				allowwrap = 0;
+				*r = 1;
+				*c = 0;
+			}
+			else
+			{
+				cache_page_unref(cp);
+				return VBI_SEARCH_ERROR; /* no PageNumber found */
+			}
+		}
+		else if (*r < 1)
+		{
+			if (allowwrap)
+			{
+				allowwrap = 0;
+				*r = 23;
+				*c = 37;
+			}
+			else
+			{
+				cache_page_unref(cp);
+				return VBI_SEARCH_ERROR; /* no PageNumber found */
+			}
+		}
+
+		p = &pg->text[*r * pg->columns + *c];
+
+		if (!p->conceal &&						/* not concealed */
+			(p->foreground != p->background) && /* not hidden */
+			(p->unicode >= '1' && p->unicode <= '8') && /* valid first digit */
+			(*c == 0 || /* non-numeric char before */
+			 (*c >= 1 && ((p-1)->size == VBI_NORMAL_SIZE || (p-1)->size == VBI_DOUBLE_HEIGHT) &&
+			  ((p-1)->unicode < '0' || (p-1)->unicode > '9')) ||
+			 (*c >= 2 && ((p-2)->size == VBI_DOUBLE_WIDTH || (p-2)->size == VBI_DOUBLE_SIZE) &&
+			  ((p-2)->unicode < '0' || (p-2)->unicode > '9'))))
+		{
+			switch (p->size)
+			{
+				case VBI_NORMAL_SIZE:
+				case VBI_DOUBLE_HEIGHT:
+					if ((p->size == VBI_NORMAL_SIZE && (p+1)->size == VBI_NORMAL_SIZE && (p+2)->size == VBI_NORMAL_SIZE ||
+						 p->size == VBI_DOUBLE_HEIGHT && (p+1)->size == VBI_DOUBLE_HEIGHT && (p+2)->size == VBI_DOUBLE_HEIGHT) && /* all 3 same size */
+						(p+1)->unicode >= '0' && (p+1)->unicode <= '9' && /* valid page number */
+						(p+2)->unicode >= '0' && (p+2)->unicode <= '9' &&
+						(*c == 37 || (p+3)->unicode < '0' || (p+3)->unicode > '9'))	/* non-numeric char behind */
+					{
+						int bg = (p->background == VBI_YELLOW) ? (32 + VBI_BLACK) : (32 + VBI_YELLOW);
+						int fg = (p->background == VBI_YELLOW) ? (32 + VBI_YELLOW) : (32 + VBI_BLACK);
+
+						tmp_page = ((p->unicode - '0')<<8) | (((p+1)->unicode - '0')<<4) | ((p+2)->unicode - '0');
+
+						p->foreground = (p+1)->foreground = (p+2)->foreground = fg;
+						p->background = (p+1)->background = (p+2)->background = bg;
+						if (p->size == VBI_DOUBLE_HEIGHT)
+						{
+							(p+pg->columns)->foreground = (p+pg->columns+1)->foreground = (p+pg->columns+2)->foreground = fg;
+							(p+pg->columns)->background = (p+pg->columns+1)->background = (p+pg->columns+2)->background = bg;
+						}
+
+						pg->nav_index[0] = p->unicode;
+						pg->nav_index[1] = (p+1)->unicode;
+						pg->nav_index[2] = (p+2)->unicode;
+
+						cache_page_unref(cp);
+						return VBI_SEARCH_SUCCESS;
+					}
+					break;
+				case VBI_DOUBLE_WIDTH:
+				case VBI_DOUBLE_SIZE:
+					if (*c <= 34 &&
+						(p->size == VBI_DOUBLE_WIDTH && (p+2)->size == VBI_DOUBLE_WIDTH && (p+4)->size == VBI_DOUBLE_WIDTH ||
+						 p->size == VBI_DOUBLE_SIZE && (p+2)->size == VBI_DOUBLE_SIZE && (p+4)->size == VBI_DOUBLE_SIZE) && /* all 3 same size */
+						(p+2)->unicode >= '0' && (p+2)->unicode <= '9' && /* valid page number */
+						(p+4)->unicode >= '0' && (p+4)->unicode <= '9' &&
+						(*c == 34 || (p+6)->unicode < '0' || (p+6)->unicode > '9'))	/* non-numeric char behind */
+					{
+						int bg = (p->background == VBI_YELLOW) ? (32 + VBI_BLACK) : (32 + VBI_YELLOW);
+						int fg = (p->background == VBI_YELLOW) ? (32 + VBI_YELLOW) : (32 + VBI_BLACK);
+
+						tmp_page = ((p->unicode - '0')<<8) | (((p+2)->unicode - '0')<<4) | ((p+4)->unicode - '0');
+
+						p->foreground = (p+1)->foreground = (p+2)->foreground =
+							(p+3)->foreground = (p+4)->foreground = (p+5)->foreground = fg;
+						p->background = (p+1)->background = (p+2)->background =
+							(p+3)->background = (p+4)->background = (p+5)->background = bg;
+						if (p->size == VBI_DOUBLE_SIZE)
+						{
+							(p+pg->columns)->foreground = (p+pg->columns+1)->foreground =
+								(p+pg->columns+2)->foreground = (p+pg->columns+3)->foreground =
+								(p+pg->columns+4)->foreground = (p+pg->columns+5)->foreground = fg;
+							(p+pg->columns)->background = (p+pg->columns+1)->background =
+								(p+pg->columns+2)->background = (p+pg->columns+3)->background =
+								(p+pg->columns+4)->background = (p+pg->columns+5)->background = bg;
+						}
+
+						pg->nav_index[0] = p->unicode;
+						pg->nav_index[1] = (p+2)->unicode;
+						pg->nav_index[2] = (p+4)->unicode;
+
+						cache_page_unref(cp);
+						return VBI_SEARCH_SUCCESS;
+					}
+					break;
+				default:
+					break;
+			}
+		}
+	}
+}
+
 static void
 highlight(struct vbi_search *s, cache_page *vtp,
 	  ucs2_t *first, long ms, long me)
