@@ -34,6 +34,14 @@ typedef struct vbi_decoder vbi_decoder;
 
 /* Public */
 
+typedef enum
+{
+	DIR_LEFT,
+	DIR_RIGHT,
+	DIR_UP,
+	DIR_DOWN
+};
+
 /**
  * @ingroup Search
  * @brief Return codes of the vbi_search_next() function.
@@ -83,6 +91,8 @@ extern vbi_search *	vbi_search_new(vbi_decoder *vbi,
 				       int (* progress)(vbi_page *pg));
 extern void		vbi_search_delete(vbi_search *search);
 extern vbi_search_status vbi_search_next(vbi_search *search, vbi_page **pg, int dir);
+extern vbi_search_status vbi_catch_page(vbi_decoder *vbi, vbi_pgno pgno, vbi_subno subno, int *r, int *c, vbi_page *pg, int dir);
+
 /** @} */
 
 /* Private */
