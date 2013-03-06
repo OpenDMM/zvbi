@@ -1672,11 +1672,11 @@ write_png			(gfx_instance *		gfx,
 	char title[80];
 	unsigned int i;
 
-	if (setjmp (png_ptr->jmpbuf))
+	if (setjmp (png_jmpbuf(png_ptr)))
 		return FALSE;
 
 	png_set_write_fn (png_ptr,
-			  (voidp) gfx,
+			  (png_voidp) gfx,
 			  write_data,
 			  flush_data);
 
