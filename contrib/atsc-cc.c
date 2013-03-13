@@ -31,7 +31,6 @@
 
 #define _GNU_SOURCE 1
 
-#include <aio.h>
 #include <assert.h>
 #include <ctype.h>
 #include <dirent.h>
