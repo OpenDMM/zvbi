@@ -8,6 +8,7 @@ Version 0.3
   as a valid CC signal. Try to reproduce this. Try a minimum amplitude
   check.
 * Arabic character set is related to ASMO 449?
+* test/date: Consider adjtime().
 
 -------------------------------------------------------------------------------
 Ideas? Drop us a note at http://zapping.sourceforge.net.
