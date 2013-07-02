@@ -355,7 +355,7 @@ vbi_print_page_region(vbi_page *pg, char *buf, int size,
 
 	rtl = rtl;
 
-	if (1)
+	if (0)
 		fprintf (stderr, "vbi_print_page_region '%s' "
 		         "table=%d col=%d row=%d width=%d height=%d\n",
 			 format, table, column, row, width, height);
