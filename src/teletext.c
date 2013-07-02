@@ -1555,6 +1555,8 @@ enhance(vbi_decoder *vbi,
 
 				if (row > active_row)
 					flush_row();
+				else
+					flush(active_column + 1);
 
 				active_row = row;
 				active_column = column;
