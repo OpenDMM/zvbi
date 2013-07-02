@@ -298,12 +298,13 @@ draw_char(int canvas_type, uint8_t *canvas, int rowstride,
 
 		if (!(underline & 1)) {
 #ifdef __GNUC__
+/* FIXME #cpu is deprecated
 #if #cpu (i386)
 			bits = (*((uint16_t *) src) >> shift);
-#else
+#else*/
                         /* unaligned/little endian */
 			bits = ((src[1] * 256 + src[0]) >> shift);
-#endif
+/*#endif*/
 #else
 			bits = ((src[1] * 256 + src[0]) >> shift);
 #endif
