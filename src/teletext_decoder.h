@@ -30,7 +30,9 @@
 
 struct raw_page {
 	cache_page		page[1];
+	uint8_t			lop_raw[26][40];
 	uint8_t			drcs_mode[48];
+	unsigned int		lop_packets;
 	int			num_triplets;
 	int			ait_page;
 };
