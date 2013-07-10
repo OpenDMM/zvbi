@@ -2167,7 +2167,7 @@ parse_8_30(vbi_decoder *vbi, uint8_t *buffer, int packet)
  * state accordingly. This function may send events.
  * 
  * Return value:
- * FALSE if the packet contained incorrectable errors. 
+ * FALSE if the packet contained uncorrectable errors. 
  */
 vbi_bool
 vbi_decode_teletext(vbi_decoder *vbi, uint8_t *buffer)

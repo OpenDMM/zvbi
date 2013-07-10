@@ -200,7 +200,7 @@ _vbi_pfc_demux_decode		(vbi_pfc_demux *	dx,
  * it calls the output function given to vbi_pfc_demux_new().
  *
  * @returns
- * FALSE if the packet contained incorrectable errors.
+ * FALSE if the packet contained uncorrectable errors.
  */
 vbi_bool
 vbi_pfc_demux_feed		(vbi_pfc_demux *	dx,
@@ -311,7 +311,7 @@ vbi_pfc_demux_feed		(vbi_pfc_demux *	dx,
  * on sliced VBI data and filters out @c VBI_SLICED_TELETEXT_B_625.
  *
  * @returns
- * FALSE if any Teletext lines contained incorrectable errors.
+ * FALSE if any Teletext lines contained uncorrectable errors.
  *
  * @since 0.2.26
  */

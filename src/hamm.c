@@ -132,7 +132,7 @@ vbi_ham24p			(uint8_t *		p,
  * 
  * @return
  * Triplet data bits D18 [msb] ... D1 [lsb] or a negative value
- * if the triplet contained incorrectable errors.
+ * if the triplet contained uncorrectable errors.
  *
  * @since 0.2.12
  */

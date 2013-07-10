@@ -298,7 +298,7 @@ vbi_idl_demux_reset		(vbi_idl_demux *	dx)
  * function given to vbi_idl_a_demux_new() when new user data is available.
  *
  * @returns
- * FALSE if the packet contained incorrectable errors.
+ * FALSE if the packet contained uncorrectable errors.
  *
  * @since 0.2.14
  */
@@ -365,7 +365,7 @@ vbi_idl_demux_feed		(vbi_idl_demux *	dx,
  * on sliced VBI data and filters out @c VBI_SLICED_TELETEXT_B_625.
  *
  * @returns
- * FALSE if any Teletext lines contained incorrectable errors.
+ * FALSE if any Teletext lines contained uncorrectable errors.
  *
  * @since 0.2.26
  */
