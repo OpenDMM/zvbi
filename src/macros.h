@@ -114,14 +114,14 @@ typedef enum {
 
 	/**
 	 * Invalid parameters and similar problems which suggest
-	 * a bug in the caller.
+	 * a bug in the application using the library.
 	 */
 	VBI_LOG_WARNING		= 1 << 4,
 
 	/**
 	 * Causes of possibly undesired results, for example when a
 	 * data service cannot be decoded with the current video
-	 * standard.
+	 * standard setting.
 	 */
 	VBI_LOG_NOTICE		= 1 << 5,
 
