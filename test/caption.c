@@ -833,7 +833,7 @@ decode_frame			(const vbi_sliced *	sliced,
 		_vbi_cc608_decoder_feed_frame (cd, sliced, n_lines,
 					       sample_time, stream_time);
 	} else {
-		vbi_decode (vbi, sliced, n_lines, sample_time);
+		vbi_decode (vbi, (vbi_sliced *) sliced, n_lines, sample_time);
 	}
 
 	x_event ();
