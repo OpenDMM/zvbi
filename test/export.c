@@ -44,7 +44,7 @@
 #  include "src/vbi.h"
 #  include "src/vt.h"
 #  define vbi_decoder_feed(vbi, sliced, n_lines, ts)			\
-	vbi_decode (vbi, sliced, n_lines, ts)
+	vbi_decode (vbi, (vbi_sliced *) sliced, n_lines, ts)
 #  define vbi_export_info_from_export(ex)				\
 	vbi_export_info_export (ex)
    /* Not available. */
