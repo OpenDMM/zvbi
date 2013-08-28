@@ -37,6 +37,11 @@
  *  $Id$
  *
  *  $Log$
+ *  Revision 1.21  2013/08/28 14:45:06  mschimek
+ *  vbi_proxy_msg_v4l_ioctl, vbi_proxy_msg_v4l2_ioctl: Changed the ioctl
+ *  request type to unsigned int because clang pointed out the v4l/v4l2
+ *  ioctl codes exceed int range.
+ *
  *  Revision 1.20  2008/02/19 00:35:21  mschimek
  *  *** empty log message ***
  *
@@ -1330,7 +1335,7 @@ vbi_bool vbi_proxy_msg_finish_connect( int sock_fd, char ** ppErrorText )
 ** Query size and character of an ioctl request for v4l1 drivers
 */
 static int
-vbi_proxy_msg_v4l_ioctl( int request, void * p_arg, vbi_bool * req_perm )
+vbi_proxy_msg_v4l_ioctl( unsigned int request, void * p_arg, vbi_bool * req_perm )
 {
    p_arg = p_arg;
 
@@ -1374,7 +1379,7 @@ vbi_proxy_msg_v4l_ioctl( int request, void * p_arg, vbi_bool * req_perm )
 ** Query size and character of an ioctl request for v4l2 drivers
 */
 static int
-vbi_proxy_msg_v4l2_ioctl( int request, void * p_arg, vbi_bool * req_perm )
+vbi_proxy_msg_v4l2_ioctl( unsigned int request, void * p_arg, vbi_bool * req_perm )
 {
    switch (request)
    {
