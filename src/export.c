@@ -1599,7 +1599,9 @@ vbi_export_mem			(vbi_export *		e,
 
 	e->write_error = FALSE;
 
-	if (e->_class->export (e, pg)) {
+	/* Const cast because page formatting may alter private
+	   fields of pg. */
+	if (e->_class->export (e, (vbi_page *) pg)) {
 		if (VBI_EXPORT_TARGET_ALLOC == e->target) {
 			/* buffer_size was not enough, return the
 			   actual size needed. */
@@ -1673,7 +1675,9 @@ vbi_export_alloc		(vbi_export *		e,
 
 	e->write_error = FALSE;
 
-	if (e->_class->export (e, pg)) {
+	/* Const cast because page formatting may alter private
+	   fields of pg. */
+	if (e->_class->export (e, (vbi_page *) pg)) {
 		void *data = e->buffer.data;
 		size_t offset = e->buffer.offset;
 
