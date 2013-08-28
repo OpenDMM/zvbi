@@ -774,7 +774,7 @@ read_more			(struct stream *	st)
 	uint8_t *s;
 	uint8_t *e;
 
-	s = /* const cast */ st->end;
+	s = (uint8_t *) st->end;
 	e = st->buffer + sizeof (st->buffer);
 
 	if (s >= e)
