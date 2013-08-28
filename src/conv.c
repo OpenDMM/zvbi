@@ -786,7 +786,7 @@ strndup_iconv_to_ucs2		(unsigned long *	out_size,
 
 			/* Ignore compiler warnings if second argument
 			   is declared as char** instead of const char**. */
-			r = iconv (cd->icd, &s, &s_left, &d, &d_left);
+			r = iconv (cd->icd, (char **) &s, &s_left, &d, &d_left);
 
 			_vbi_iconv_close (cd);
 			cd = NULL;
