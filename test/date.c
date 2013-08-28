@@ -93,7 +93,7 @@ set_time			(const vbi_local_time *	lt)
 		ts.tv_sec = lt->time; /* UTC */
 		ts.tv_nsec = 0;
 
-		if (0 == clock_settime (CLOCK_REALTIME, ts))
+		if (0 == clock_settime (CLOCK_REALTIME, &ts))
 			return;
 	}
 #endif
@@ -163,7 +163,8 @@ decode_function			(const vbi_sliced *	sliced,
 			      "or date and time not transmitted."));
 	}
 
-	vbi_decode (dec, sliced, n_lines, sample_time);
+	/* Should really be const vbi_sliced *. */
+	vbi_decode (dec, (vbi_sliced *) sliced, n_lines, sample_time);
 
 	return TRUE;
 }
