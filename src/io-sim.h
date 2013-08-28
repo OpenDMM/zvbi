@@ -79,6 +79,10 @@ vbi_capture_sim_add_noise	(vbi_capture *		cap,
 				 unsigned int		min_freq,
 				 unsigned int		max_freq,
 				 unsigned int		amplitude);
+extern vbi_bool
+vbi_capture_sim_load_caption	(vbi_capture *		cap,
+				 const char *		stream,
+				 vbi_bool		append);
 #if 3 == VBI_VERSION_MINOR
 extern vbi_bool
 vbi_capture_sim_load_vps	(vbi_capture *		cap,
@@ -86,10 +90,6 @@ vbi_capture_sim_load_vps	(vbi_capture *		cap,
 extern vbi_bool
 vbi_capture_sim_load_wss_625	(vbi_capture *		cap,
 				 const vbi_aspect_ratio *ar);
-extern vbi_bool
-vbi_capture_sim_load_caption	(vbi_capture *		cap,
-				 const char *		stream,
-				 vbi_bool		append);
 #endif
 extern void
 vbi_capture_sim_decode_raw	(vbi_capture *		cap,
