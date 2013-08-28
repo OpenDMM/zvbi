@@ -741,7 +741,7 @@ vbi_classify_page(vbi_decoder *vbi, vbi_pgno pgno,
 		if ((current_time() - vbi->cc.channel[pgno - 1].time) > 20)
 			return VBI_NO_PAGE;
 
-		*language = vbi->cc.channel[pgno - 1].language;
+		*language = (char *) vbi->cc.channel[pgno - 1].language;
 
 		return (pgno <= 4) ? VBI_SUBTITLE_PAGE : VBI_NORMAL_PAGE;
 	} else if (pgno < 0x100 || pgno > 0x8FF) {
