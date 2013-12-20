@@ -1346,7 +1346,9 @@ decode_timestamp		(vbi_dvb_demux *	dx,
 	if (mark != (p[0] & 0xF1u)) {
 		debug2 (&dx->frame.log,
 			"Invalid PTS/DTS byte[0]=0x%02x.", p[0]);
-		return FALSE;
+		/* Check disabled to work around invalid mark 0xF1
+		   transmitted instead of 0x21 on Dantoto Racing. */
+		/* return FALSE; */
 	}
 
 	t  = p[1] << 22;
