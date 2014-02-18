@@ -2069,7 +2069,7 @@ parse_28_29(vbi_decoder *vbi, uint8_t *p,
 		coding = get_bits (&bs, 3); /* page coding ignored */
 
 		if (function != PAGE_FUNCTION_GDRCS
-		    || function != PAGE_FUNCTION_DRCS)
+		    && function != PAGE_FUNCTION_DRCS)
 			return FALSE;
 
 		if (cvtp->function == PAGE_FUNCTION_UNKNOWN) {
